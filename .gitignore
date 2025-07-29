@@ -115,3 +115,4 @@ InitTestScene*.unity*
 
 # FMOD log
 fmod_editor.log
+.vsconfig
