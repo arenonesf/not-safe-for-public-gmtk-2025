@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,6 +21,12 @@ public class Tape : MonoBehaviour
         {
             var gameobject = Instantiate(_framePrefab, _StartPosition.position, Quaternion.identity);
             gameobject.GetComponent<Frame>().InitFrame(_frameDataList[i], this);
+            if (i != 0) 
+            {
+                float width = _frames[i - 1].GetComponent<BoxCollider2D>().size.x;
+                gameobject.transform.position += new Vector3(width, 0, 0) * i;
+                Debug.Log($"Frame {i} position: {gameobject.transform.position}");
+            }
             gameobject.SetActive(false);
             _frames.Add(gameobject);   
         }
