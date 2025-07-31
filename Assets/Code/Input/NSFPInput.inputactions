@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "NSFPInput",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "d9c630f4-a07f-41c0-a197-9efa5ea958c4",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "a001d0ab-e17d-440c-a011-1e030061b5b0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "74acb0cf-ccf2-4ed6-b361-3c6f9501a786",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
