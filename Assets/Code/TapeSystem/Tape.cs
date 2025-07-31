@@ -19,8 +19,8 @@ public class Tape : MonoBehaviour
     void Start()
     {
         _timer = new CountdownTimer(_spawnRate);
-        _timer.OnTimerStart += () => Debug.Log("Timer Started");
-        _timer.OnTimerStop += () => Debug.Log("Timer Ended");
+        //_timer.OnTimerStart += () => Debug.Log("Timer Started");
+        //_timer.OnTimerStop += () => Debug.Log("Timer Ended");
         InitFrames();
     }
 

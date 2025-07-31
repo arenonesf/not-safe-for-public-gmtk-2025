@@ -24,15 +24,12 @@ public class EndOfTapeTrigger : MonoBehaviour
 
         // Posición del borde izquierdo (a la mitad de la altura)
         Vector3 ladoIzquierdo = new Vector3(centro.x - (ancho / 2f), centro.y, centro.z);
-
-        Debug.Log("Posición del borde izquierdo: " + ladoIzquierdo);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.TryGetComponent<Frame>(out Frame frameObject))
         {
-            Debug.Log("End of tape reached");
             frameObject.ReturnToStartPosition();
         }
     }
