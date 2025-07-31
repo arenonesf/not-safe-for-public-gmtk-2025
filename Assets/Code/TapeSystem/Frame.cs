@@ -26,5 +26,10 @@ public class Frame : MonoBehaviour
         _spriteRenderer.sprite = data.FrameImage;
         _boxCollider2D.size = _spriteRenderer.bounds.size;
         _boxCollider2D.offset = _spriteRenderer.bounds.center - transform.position;
-    }    
+    }
+
+    public void ReturnToStartPosition() 
+    {
+        _rigidbody2D.position = _tape.StartPosition.position;
+    }
 }
