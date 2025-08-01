@@ -1,0 +1,1105 @@
+fileFormatVersion: 2
+guid: 82268c607231432478c58739b870506f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4673988621281829148
+    second: InkStain_0
+  - first:
+      213: 2775926656328216583
+    second: InkStain_1
+  - first:
+      213: 5819798111600922279
+    second: InkStain_2
+  - first:
+      213: 4972792670119439092
+    second: InkStain_3
+  - first:
+      213: -8624949679319123932
+    second: InkStain_4
+  - first:
+      213: 2152166121871126880
+    second: InkStain_5
+  - first:
+      213: 4008179886705265700
+    second: InkStain_6
+  - first:
+      213: -3894851649084066956
+    second: InkStain_7
+  - first:
+      213: -4372782290794215560
+    second: InkStain_8
+  - first:
+      213: -6650952571730884727
+    second: InkStain_9
+  - first:
+      213: -9067206132376709547
+    second: InkStain_10
+  - first:
+      213: 957277560546232648
+    second: InkStain_11
+  - first:
+      213: 242121435147970572
+    second: InkStain_12
+  - first:
+      213: -879343989986931511
+    second: InkStain_13
+  - first:
+      213: 1838880504264194555
+    second: InkStain_14
+  - first:
+      213: 4207435293293972716
+    second: InkStain_15
+  - first:
+      213: -5252936529035600361
+    second: InkStain_16
+  - first:
+      213: -1173781506748357480
+    second: InkStain_17
+  - first:
+      213: 6446894177918379078
+    second: InkStain_18
+  - first:
+      213: 7577310428967254045
+    second: InkStain_19
+  - first:
+      213: -1511476797663831944
+    second: InkStain_20
+  - first:
+      213: 5702844607755878542
+    second: InkStain_21
+  - first:
+      213: -6432416973211816549
+    second: InkStain_22
+  - first:
+      213: 6917832404642438803
+    second: InkStain_23
+  - first:
+      213: -4020558897426836882
+    second: InkStain_24
+  - first:
+      213: 4400079964162936765
+    second: InkStain_25
+  - first:
+      213: 3770370770219985662
+    second: InkStain_26
+  - first:
+      213: 209606725312578451
+    second: InkStain_27
+  - first:
+      213: 7424054392623787126
+    second: InkStain_28
+  - first:
+      213: 6563144522221578073
+    second: InkStain_29
+  - first:
+      213: 1012534891849972420
+    second: InkStain_30
+  - first:
+      213: 5877349703730424323
+    second: InkStain_31
+  - first:
+      213: 2711386933519781052
+    second: InkStain_32
+  - first:
+      213: 4231117099888600351
+    second: InkStain_33
+  - first:
+      213: -1166475190874132258
+    second: InkStain_34
+  - first:
+      213: 1292100724948395173
+    second: InkStain_35
+  - first:
+      213: 3390623536589333639
+    second: InkStain_36
+  - first:
+      213: -2617252413147254121
+    second: InkStain_37
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 250
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: InkStain_0
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 171
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c11a8bf13e75dd040800000000000000
+      internalID: 4673988621281829148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 192
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7003bf02692168620800000000000000
+      internalID: 2775926656328216583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_2
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 193
+        width: 23
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ae46724c8314c050800000000000000
+      internalID: 5819798111600922279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_3
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 195
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4faa2242698e20540800000000000000
+      internalID: 4972792670119439092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_4
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 197
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 428709ea6f50e4880800000000000000
+      internalID: -8624949679319123932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_5
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 144
+        width: 134
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06132c76fa70edd10800000000000000
+      internalID: 2152166121871126880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 6
+        width: 211
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42ccee6ee5aef9730800000000000000
+      internalID: 4008179886705265700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_7
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 171
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 473ff7b9f05b2f9c0800000000000000
+      internalID: -3894851649084066956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_8
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 180
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 877871daca1c053c0800000000000000
+      internalID: -4372782290794215560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_9
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 182
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9878200dfd113b3a0800000000000000
+      internalID: -6650952571730884727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_10
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 178
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 556517e0010da2280800000000000000
+      internalID: -9067206132376709547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_11
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 137
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8498fc39edee84d00800000000000000
+      internalID: 957277560546232648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_12
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 122
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c08a08699203c5300800000000000000
+      internalID: 242121435147970572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_13
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 130
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cc4471dc41fbc3f0800000000000000
+      internalID: -879343989986931511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_14
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 133
+        width: 5
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf9fe096314058910800000000000000
+      internalID: 1838880504264194555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_15
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 101
+        width: 36
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cec8a387b10d36a30800000000000000
+      internalID: 4207435293293972716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_16
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 98
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71ed82fde02d917b0800000000000000
+      internalID: -5252936529035600361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_17
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 107
+        width: 12
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 894675640f3e5bfe0800000000000000
+      internalID: -1173781506748357480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 79
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 644eb530918f77950800000000000000
+      internalID: 6446894177918379078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_19
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 93
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d18b47750b3082960800000000000000
+      internalID: 7577310428967254045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_20
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 84
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87890055cd7260be0800000000000000
+      internalID: -1511476797663831944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_21
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 81
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e808a8ea4f2942f40800000000000000
+      internalID: 5702844607755878542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_22
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 91
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9d2480e7d67bb6a0800000000000000
+      internalID: -6432416973211816549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_23
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 87
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39e16667be3110060800000000000000
+      internalID: 6917832404642438803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_24
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 75
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6256501cfa1438c0800000000000000
+      internalID: -4020558897426836882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 68
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbfce3f2a69301d30800000000000000
+      internalID: 4400079964162936765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_26
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 18
+        width: 59
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efa6a7e3d3c035430800000000000000
+      internalID: 3770370770219985662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_27
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 72
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3930ac4c43ca8e200800000000000000
+      internalID: 209606725312578451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_28
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 13
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67ce481c22a870760800000000000000
+      internalID: 7424054392623787126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_29
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 4
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95761908b29f41b50800000000000000
+      internalID: 6563144522221578073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_30
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 15
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4caf7679e1f3d0e00800000000000000
+      internalID: 1012534891849972420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_31
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 8
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30a699f7a6a809150800000000000000
+      internalID: 5877349703730424323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_32
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 15
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbc051dec08c0a520800000000000000
+      internalID: 2711386933519781052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_33
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 8
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f15e0fdb592f7ba30800000000000000
+      internalID: 4231117099888600351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_34
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 16
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed034a08ef8dfcfe0800000000000000
+      internalID: -1166475190874132258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_35
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 8
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a4e29473c67ee110800000000000000
+      internalID: 1292100724948395173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_36
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 7
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7846c79642aed0f20800000000000000
+      internalID: 3390623536589333639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InkStain_37
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 0
+        width: 35
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 792f2da0cc6adabd0800000000000000
+      internalID: -2617252413147254121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      InkStain_0: 4673988621281829148
+      InkStain_1: 2775926656328216583
+      InkStain_10: -9067206132376709547
+      InkStain_11: 957277560546232648
+      InkStain_12: 242121435147970572
+      InkStain_13: -879343989986931511
+      InkStain_14: 1838880504264194555
+      InkStain_15: 4207435293293972716
+      InkStain_16: -5252936529035600361
+      InkStain_17: -1173781506748357480
+      InkStain_18: 6446894177918379078
+      InkStain_19: 7577310428967254045
+      InkStain_2: 5819798111600922279
+      InkStain_20: -1511476797663831944
+      InkStain_21: 5702844607755878542
+      InkStain_22: -6432416973211816549
+      InkStain_23: 6917832404642438803
+      InkStain_24: -4020558897426836882
+      InkStain_25: 4400079964162936765
+      InkStain_26: 3770370770219985662
+      InkStain_27: 209606725312578451
+      InkStain_28: 7424054392623787126
+      InkStain_29: 6563144522221578073
+      InkStain_3: 4972792670119439092
+      InkStain_30: 1012534891849972420
+      InkStain_31: 5877349703730424323
+      InkStain_32: 2711386933519781052
+      InkStain_33: 4231117099888600351
+      InkStain_34: -1166475190874132258
+      InkStain_35: 1292100724948395173
+      InkStain_36: 3390623536589333639
+      InkStain_37: -2617252413147254121
+      InkStain_4: -8624949679319123932
+      InkStain_5: 2152166121871126880
+      InkStain_6: 4008179886705265700
+      InkStain_7: -3894851649084066956
+      InkStain_8: -4372782290794215560
+      InkStain_9: -6650952571730884727
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
