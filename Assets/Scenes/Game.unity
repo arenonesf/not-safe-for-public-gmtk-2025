@@ -1790,7 +1790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13bf0064968d13e4ab79a519fad91da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stampedSprite: {fileID: 0}
+  _stampedSprite: {fileID: 8277155475492361754, guid: 7fbfb43e6ca19e043bd13c8932ad910d, type: 3}
 --- !u!61 &1610599903
 BoxCollider2D:
   m_ObjectHideFlags: 0
