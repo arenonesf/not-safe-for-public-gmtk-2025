@@ -3,6 +3,8 @@ using UnityEngine;
 public class Frame : MonoBehaviour
 {
     private Tape _tape;
+    private FrameData _frameData;
+    public FrameData FrameData => _frameData;
     private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _rigidbody2D;
     private BoxCollider2D _boxCollider2D;
@@ -23,6 +25,7 @@ public class Frame : MonoBehaviour
     public void InitFrame(FrameData data, Tape tape)
     {
         _tape = tape;
+        _frameData = data;
         _spriteRenderer.sprite = data.FrameImage;
         _boxCollider2D.size = _spriteRenderer.bounds.size;
         _boxCollider2D.offset = _spriteRenderer.bounds.center - transform.position;
