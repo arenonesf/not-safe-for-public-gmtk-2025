@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class Tape : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    [SerializeField] private TapeData _tapeData;
     [SerializeField] private GameObject _framePrefab;
-    [SerializeField] private List<FrameData> _frameDataList = new();
     [SerializeField] private Transform _startPosition;
-    [SerializeField] private float _spawnOffset;
-    [SerializeField] private float _spawnRate;
+    private float _speed;
     public float TapeSpeed => _speed;
     private List<GameObject> _frames = new();
     private CountdownTimer _timer;
@@ -18,7 +16,7 @@ public class Tape : MonoBehaviour
 
     void Start()
     {
-        _timer = new CountdownTimer(_spawnRate);
+        _timer = new CountdownTimer(_tapeData.SpawnRate);
         //_timer.OnTimerStart += () => Debug.Log("Timer Started");
         //_timer.OnTimerStop += () => Debug.Log("Timer Ended");
         InitFrames();
@@ -37,7 +35,7 @@ public class Tape : MonoBehaviour
 
             if (_currentFrame != _frames.Count)
             {
-                _timer.Reset(_spawnRate);
+                _timer.Reset(_tapeData.SpawnRate);
                 _timer.Start();
             }               
         }
@@ -45,15 +43,23 @@ public class Tape : MonoBehaviour
 
     private void InitFrames()
     {
-        for (int i = 0; i < _frameDataList.Count; i++)
+        _speed = _tapeData.InitialSpeed;
+
+        for (int i = 0; i < _tapeData.Frames.Count; i++)
         {
-            Vector3 spawnPosition = _startPosition.position + Vector3.right * i * _spawnOffset;
+            Vector3 spawnPosition = _startPosition.position - _tapeData.SpawnOffset * i * Vector3.right;
             var gameobject = Instantiate(_framePrefab, spawnPosition, Quaternion.identity);
-            gameobject.GetComponent<Frame>().InitFrame(_frameDataList[i], this);
+            gameobject.GetComponent<Frame>().InitFrame(_tapeData.Frames[i], this);
             gameobject.SetActive(false);
             _frames.Add(gameobject);   
         }
+        Loops.Instance.RegistrerFrame(_frames);
         _timer.Start();
+    }
+
+    private void InitTape()
+    {
+        _speed = _tapeData.InitialSpeed;
     }
 
     private void SetActiveFrame(int index)
@@ -64,7 +70,7 @@ public class Tape : MonoBehaviour
 
     public Frame GetReturnFirstFrame()
     {
-        return _frames[0].GetComponent<Frame>();
+        return _frames[^1].GetComponent<Frame>();
     }
 
     public void SetSpeed(float value)

@@ -267,7 +267,6 @@ GameObject:
   - component: {fileID: 540579215}
   - component: {fileID: 540579214}
   - component: {fileID: 540579216}
-  - component: {fileID: 540579217}
   m_Layer: 0
   m_Name: Tape
   m_TagString: Untagged
@@ -287,24 +286,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57fed72d3a5980241b743099d6d9ac3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
+  _tapeData: {fileID: 11400000, guid: 35a8f73daceb7d84998af2766f74caf2, type: 2}
   _framePrefab: {fileID: 9019433239480846398, guid: 29efc0e52189aef4186f1e7bf1051c8b, type: 3}
-  _frameDataList:
-  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
-  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
-  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
-  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
-  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
-  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
-  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
-  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
-  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
-  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
-  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
-  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
   _startPosition: {fileID: 1997736369}
-  _spawnOffset: 1.5
-  _spawnRate: 0.1
 --- !u!4 &540579215
 Transform:
   m_ObjectHideFlags: 0
@@ -335,21 +319,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74850230248f860478fcc3c04c6e80e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxMistakes: 3
---- !u!114 &540579217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540579213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71a18a48105eda946a3a947e58e1ea53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   AutoUnparentOnAwake: 0
-  _currentTape: {fileID: 540579214}
+  _maxMistakes: 3
 --- !u!1 &589408310
 GameObject:
   m_ObjectHideFlags: 0

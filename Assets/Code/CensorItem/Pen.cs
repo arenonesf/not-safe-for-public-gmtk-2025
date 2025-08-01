@@ -1,12 +1,13 @@
 using UnityEngine;
 
-public class Pen : MonoBehaviour, ICensorItem
+public class Pen : CensorItemBase
 {
     private readonly CensorItemType _type = CensorItemType.Pen;
-    public CensorItemType Type => _type;
+    public override CensorItemType Type => _type;
 
-    public void ApplyAction(Frame frame)
+    protected override void ApplyEffect(Frame frame)
     {
+        frame.ActivateCensoredPenImage();
         Debug.Log("Pen Applied");
     }
 }

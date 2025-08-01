@@ -1,4 +1,4 @@
-using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,9 +8,11 @@ public class Frame : MonoBehaviour
     private FrameData _frameData;
     public FrameData FrameData => _frameData;
     private SpriteRenderer _spriteRenderer;
+    [SerializeField] private SpriteRenderer _penCensoredSpriteRenderer;
     private Rigidbody2D _rigidbody2D;
     private BoxCollider2D _boxCollider2D;
     private List<CensorItemType> _censorsApplied = new();
+    public Action<Frame> OnErrorCensoring;
 
     private void Awake()
     {
@@ -30,6 +32,7 @@ public class Frame : MonoBehaviour
         _tape = tape;
         _frameData = data;
         _spriteRenderer.sprite = data.FrameImage;
+        _penCensoredSpriteRenderer.sprite = data.CensoredPenImage;
         _boxCollider2D.size = _spriteRenderer.bounds.size;
         _boxCollider2D.offset = _spriteRenderer.bounds.center - transform.position;
     }
@@ -46,7 +49,28 @@ public class Frame : MonoBehaviour
 
     public bool CanApplyCensor(CensorItemType type)
     {
+        if (!_frameData.FrameCensorType.Contains(type))
+        {
+            OnErrorCensoring?.Invoke(this);
+            return false;
+        }
+
         bool canApply = !_censorsApplied.Contains(type);
         return canApply;
+    }
+
+    public void ActivateCensoredPenImage()
+    {
+        _penCensoredSpriteRenderer.gameObject.SetActive(true);
+    }
+
+    public bool CheckFrame()
+    {
+        foreach (var censor in _censorsApplied)
+        {
+            if (!_frameData.FrameCensorType.Contains(censor)) return false;
+        }
+
+        return true;
     }
 }

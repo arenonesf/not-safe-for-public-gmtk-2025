@@ -3,5 +3,5 @@ using UnityEngine;
 public interface ICensorItem
 {
     CensorItemType Type { get; }
-    void ApplyAction(Frame frame);
+    void TryApplyCensorToolToFrame(Frame frame);
 }

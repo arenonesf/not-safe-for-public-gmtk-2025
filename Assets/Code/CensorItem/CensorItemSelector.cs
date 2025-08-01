@@ -72,7 +72,7 @@ public class CensorItemSelector : MonoBehaviour
                 if (_censorItemSelected == null)
                     return;
 
-                _censorItemSelected.ApplyAction(frameItem);
+                _censorItemSelected.TryApplyCensorToolToFrame(frameItem);
             }
             else
             {

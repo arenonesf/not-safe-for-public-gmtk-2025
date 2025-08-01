@@ -1,12 +1,11 @@
-using Code.Core.UnityUtils.Persistence;
 using UnityEngine;
 
-public class Scissors : MonoBehaviour, ICensorItem
+public class Scissors : CensorItemBase
 {
     private readonly CensorItemType _type = CensorItemType.Scissors;
-    public CensorItemType Type => _type;
+    public override CensorItemType Type => _type;
 
-    public void ApplyAction(Frame frame)
+    protected override void ApplyEffect(Frame frame)
     {
         GameObject gameObject = frame.gameObject;
         SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
