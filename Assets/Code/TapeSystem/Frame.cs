@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Frame : MonoBehaviour
@@ -8,6 +10,7 @@ public class Frame : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _rigidbody2D;
     private BoxCollider2D _boxCollider2D;
+    private List<CensorItemType> _censorsApplied = new();
 
     private void Awake()
     {
@@ -34,5 +37,16 @@ public class Frame : MonoBehaviour
     public void ReturnToStartPosition() 
     {
         _rigidbody2D.position = _tape.StartPosition.position;
+    }
+
+    public void AddCensorToList(CensorItemType type)
+    {
+        _censorsApplied.Add(type);
+    }
+
+    public bool CanApplyCensor(CensorItemType type)
+    {
+        bool canApply = !_censorsApplied.Contains(type);
+        return canApply;
     }
 }

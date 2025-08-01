@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FrameName: Photo
   FrameImage: {fileID: 7482667652216324306, guid: e200c4d55a85e9f41ae7a2f899d3e15d, type: 3}
-  FrameCensorType: 1
+  FrameCensorType: 0200000003000000
