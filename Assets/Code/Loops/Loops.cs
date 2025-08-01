@@ -6,16 +6,19 @@ using UnityEngine;
 public class Loops : PersistentSingleton<Loops>
 {
     [SerializeField] private int _maxMistakes;
+    private int _mistakes = 0;
     private int _currentMistakes = 0;
     private List<Frame> _frames = new();
     private CountdownTimer _timer;   
     private Tape _tape;
     private float _prevSpeed;
+   
 
     void Start()
     {
         _tape = GetComponent<Tape>();
         _timer = new CountdownTimer(1f);
+        _timer.Reset();
         _timer.OnTimerStart += () => Debug.Log($"El timer de {gameObject.name} ha empezado");
         _prevSpeed = _tape.TapeSpeed;
     }
@@ -41,11 +44,14 @@ public class Loops : PersistentSingleton<Loops>
             CheckErrorInFrames();
             CheckChangeSpeed();
         }
+
     }
 
     private void CheckChangeSpeed()
     {
-        if (_maxMistakes <= _currentMistakes)
+        _mistakes += _currentMistakes;
+        Debug.Log($"Player has made {_mistakes} mistakes in total.");
+        if (_maxMistakes <= _mistakes)
             Debug.Log("Perdiste");
         else
         {
@@ -55,6 +61,7 @@ public class Loops : PersistentSingleton<Loops>
                 _tape.SetSpeed(_prevSpeed);
 
         }
+        _currentMistakes = 0;
     }
 
     public void RegistrerFrame(List<GameObject> frames)
@@ -70,8 +77,8 @@ public class Loops : PersistentSingleton<Loops>
 
     private void OnFrameCensorError(Frame frame)
     {
-        _currentMistakes++;
-        Debug.Log($"Player has failed {_currentMistakes} times.");
+        _mistakes++;
+        Debug.Log($"Player has failed {_mistakes} times.");
     }
 
     private void OnDisable()
@@ -87,9 +94,7 @@ public class Loops : PersistentSingleton<Loops>
         foreach (var frame in _frames)
         {
             if (!frame.CheckFrame())
-            {
                 _currentMistakes++;
-            }
         }
     }
 }
