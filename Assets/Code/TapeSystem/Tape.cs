@@ -61,4 +61,14 @@ public class Tape : MonoBehaviour
         _frames[index].SetActive(true);
         _currentFrame++;
     }
+
+    public Frame GetReturnFirstFrame()
+    {
+        return _frames[0].GetComponent<Frame>();
+    }
+
+    public void SetSpeed(float value)
+    {
+        _speed = value;
+    }
 }

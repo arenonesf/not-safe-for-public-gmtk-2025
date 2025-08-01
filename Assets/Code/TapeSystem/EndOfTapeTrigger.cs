@@ -3,6 +3,8 @@ using UnityEngine;
 public class EndOfTapeTrigger : MonoBehaviour
 {
     private Camera _camera;
+    [SerializeField] private Tape _tape;
+    [SerializeField] private Loops _loop;
 
     private void Awake()
     {
@@ -30,6 +32,11 @@ public class EndOfTapeTrigger : MonoBehaviour
     {
         if (collision.TryGetComponent<Frame>(out Frame frameObject))
         {
+            if (_tape.GetReturnFirstFrame().Equals(frameObject))
+            {
+                _loop.SetFinishLoop();
+            }
+
             frameObject.ReturnToStartPosition();
         }
     }
