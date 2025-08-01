@@ -16,7 +16,7 @@ public class Loops : PersistentSingleton<Loops>
 
     void Start()
     {
-        _tape = GetComponent<Tape>();
+        _tape = GameManager.instance.GetTape();
         _timer = new CountdownTimer(1f);
         _timer.Reset();
         _timer.OnTimerStart += () => Debug.Log($"El timer de {gameObject.name} ha empezado");

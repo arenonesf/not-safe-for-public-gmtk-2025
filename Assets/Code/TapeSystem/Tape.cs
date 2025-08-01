@@ -7,6 +7,7 @@ public class Tape : MonoBehaviour
     [SerializeField] private TapeData _tapeData;
     [SerializeField] private GameObject _framePrefab;
     [SerializeField] private Transform _startPosition;
+    private FSM _fsm;
     private float _speed;
     public float TapeSpeed => _speed;
     private List<GameObject> _frames = new();
@@ -17,14 +18,12 @@ public class Tape : MonoBehaviour
     void Start()
     {
         _timer = new CountdownTimer(_tapeData.SpawnRate);
+        GameManager.OnGameStarted += SetSpeed;
+
         //_timer.OnTimerStart += () => Debug.Log("Timer Started");
         //_timer.OnTimerStop += () => Debug.Log("Timer Ended");
-        InitFrames();
-    }
 
-    private void OnDestroy()
-    {
-        _timer.Dispose();
+        InitFrames();
     }
 
     private void Update()
@@ -43,7 +42,7 @@ public class Tape : MonoBehaviour
 
     private void InitFrames()
     {
-        _speed = _tapeData.InitialSpeed;
+        _speed = 0;
 
         for (int i = 0; i < _tapeData.Frames.Count; i++)
         {
@@ -55,11 +54,6 @@ public class Tape : MonoBehaviour
         }
         Loops.Instance.RegistrerFrame(_frames);
         _timer.Start();
-    }
-
-    private void InitTape()
-    {
-        _speed = _tapeData.InitialSpeed;
     }
 
     private void SetActiveFrame(int index)
@@ -76,5 +70,16 @@ public class Tape : MonoBehaviour
     public void SetSpeed(float value)
     {
         _speed = value;
+    }
+
+    public void SetSpeed() 
+    {
+        _speed = _tapeData.InitialSpeed;
+    }
+
+    private void OnDestroy()
+    {
+        _timer.Dispose();
+        GameManager.OnGameStarted -= SetSpeed;
     }
 }
