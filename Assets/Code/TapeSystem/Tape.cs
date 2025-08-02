@@ -14,17 +14,19 @@ public class Tape : MonoBehaviour
     private int _currentFrame = 0;
     public Transform StartPosition => _startPosition;
 
+    private void Awake()
+    {
+        _speed = 0f;    
+    }
+
     void Start()
     {
         _timer = new CountdownTimer(_tapeData.SpawnRate);
+
         //_timer.OnTimerStart += () => Debug.Log("Timer Started");
         //_timer.OnTimerStop += () => Debug.Log("Timer Ended");
-        InitFrames();
-    }
 
-    private void OnDestroy()
-    {
-        _timer.Dispose();
+        InitFrames();
     }
 
     private void Update()
@@ -43,7 +45,7 @@ public class Tape : MonoBehaviour
 
     private void InitFrames()
     {
-        _speed = _tapeData.InitialSpeed;
+        _speed = 0;
 
         for (int i = 0; i < _tapeData.Frames.Count; i++)
         {
@@ -55,11 +57,6 @@ public class Tape : MonoBehaviour
         }
         Loops.Instance.RegistrerFrame(_frames);
         _timer.Start();
-    }
-
-    private void InitTape()
-    {
-        _speed = _tapeData.InitialSpeed;
     }
 
     private void SetActiveFrame(int index)
@@ -76,5 +73,10 @@ public class Tape : MonoBehaviour
     public void SetSpeed(float value)
     {
         _speed = value;
+    }
+
+    private void OnDestroy()
+    {
+        _timer.Dispose();
     }
 }
