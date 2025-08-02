@@ -7,12 +7,16 @@ public class GameManager : PersistentSingleton<GameManager>
 {
     private Tape _tape;
 
-    private bool _hasStartedWorking = false;
-    public bool HasStartedWorking => _hasStartedWorking;
+    private bool _changeToTapeRunning = false;
 
     private int _numOfPlayer = 0000;
 
     private FSM _fsm;
+
+    private bool _hasLosed = false;
+
+    public bool HasLosed => _hasLosed;
+
     //private Notebook _notebook;
 
     private void OnEnable()
@@ -24,14 +28,18 @@ public class GameManager : PersistentSingleton<GameManager>
         _fsm = new();
 
         var stop = new State_Stop(_tape);
-        var running = new State_Running();
+        var running = new State_Running(_tape);
 
         void At(IState from, IState to, Func<bool> condition) => _fsm.AddTransition((IState)from, (IState)to, condition);
 
         /*Func<bool> NotebookOpen() => () => _notebook.NotebookIsOpen;
-        Func<bool> NotebookClosed() => () => !_notebook.NotebookIsOpen;
+        Func<bool> NotebookClosed() => () => !_notebook.NotebookIsOpen;*/
+        Func<bool> StartWorking() => () => _changeToTapeRunning;
+        Func<bool> StopWorking() => () => !_changeToTapeRunning;
 
-        At(stop, running, NotebookClosed());
+        At(stop, running, StartWorking());
+        At(running, stop, StopWorking());
+        /*At(stop, running, NotebookClosed());
         At(running, stop, NotebookOpen());*/
 
         _fsm.SetState(stop);
@@ -53,12 +61,13 @@ public class GameManager : PersistentSingleton<GameManager>
         return _tape;
     }
 
-    /*public void StartWorking() 
+    public void ChangeToTapeRunning(bool wantToRun) 
     {
-        _hasStartedWorking = true;
-        OnGameStarted?.Invoke();
+        _changeToTapeRunning = wantToRun;
+        Debug.Log($"ChangeToTapeRunning: {_changeToTapeRunning}");
     }
 
+    /*
     public void StopTape() 
     {
         OnStopTape?.Invoke();
@@ -71,6 +80,7 @@ public class GameManager : PersistentSingleton<GameManager>
 
     public void PlayerLose()
     {
+        _hasLosed = true;
         ++_numOfPlayer;
         RestartGame();
     }

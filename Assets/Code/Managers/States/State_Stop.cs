@@ -14,9 +14,9 @@ public class State_Stop : MonoBehaviour, IState
     public void OnEnter()
     {
         Debug.Log(_tape);
-        Debug.Log(_tape.TapeSpeed);
         Loops.Instance._prevSpeed = _tape.TapeSpeed;
         _tape.SetSpeed(0);
+        Debug.Log($"prevSpeed: {Loops.Instance._prevSpeed}");
 
         _censorItem = FindFirstObjectByType<CensorItemSelector>();
         _prevCensorItem = _censorItem.GetCensorItemSelect();
@@ -27,8 +27,8 @@ public class State_Stop : MonoBehaviour, IState
 
     public void OnExit()
     {
-        _censorItem.SetCensorItemSelect(_prevCensorItem);
-        _censorItem.ChangeToolCursor(_prevCensorItem.Type);
+        //_censorItem.SetCensorItemSelect(_prevCensorItem);
+        //_censorItem.ChangeToolCursor(_prevCensorItem.Type);
     }
 
     public void OnUpdate()

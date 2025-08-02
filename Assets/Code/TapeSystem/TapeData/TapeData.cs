@@ -5,6 +5,7 @@ using UnityEngine;
 public class TapeData : ScriptableObject
 {
     public List<FrameData> Frames = new();
+    public int MinGoodChoices;
     public float InitialSpeed;
     public float SpawnOffset;
     public float SpawnRate;

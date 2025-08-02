@@ -164,7 +164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AutoUnparentOnAwake: 1
-  _tape: {fileID: 540579214}
 --- !u!1 &99091329
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,15 +296,15 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 33008580}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: StartWorking
-        m_Mode: 1
+        m_MethodName: ChangeToTapeRunning
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &183691888
 MonoBehaviour:
