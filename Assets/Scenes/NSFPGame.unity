@@ -510,7 +510,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 150, y: 94}
+  m_AnchoredPosition: {x: 160, y: 122}
   m_SizeDelta: {x: 97, y: 129}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &609502367
@@ -607,14 +607,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcddc2f2817b4c04c8c487e203a9c167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetScale: 5
-  _targetYPosition: 540
-  _targetXPosition: 600
+  _hoveredScale: 3
+  _targetHoverYPosition: 159
   _selectedSprite: {fileID: 7836556468871505497, guid: 6839a2d8d6e223e4dacbcadeeaf85274, type: 3}
   _defaultYPosition: -27
   _defaultScale: 3
   _moveDuration: 0.075
   _scaleDuration: 0.3
+  _clickedScale: 6
+  _targetClickedYPosition: 540
+  _targetClickedXPosition: 960
 --- !u!1 &639492020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1392,7 +1394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &909551523
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2459,7 +2461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onButtonSelected: {fileID: 609502370}
-  _notebook: {fileID: 909551522}
+  _notebook: {fileID: 708354400}
 --- !u!1 &1943564274
 GameObject:
   m_ObjectHideFlags: 0
