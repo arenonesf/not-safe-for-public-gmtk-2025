@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 553af06dfee6f8a4ba00d276a275c829, type: 3}
-  m_Name: T1- PLUMA +STAMP
+  m_Name: CLD Cristo - print
   m_EditorClassIdentifier: 
   FrameName: 
-  FrameImage: {fileID: 8816422387918611026, guid: bc17c22057e759548befbb397315f25f, type: 3}
-  CensoredPenImage: {fileID: -4833554221381556901, guid: 25cfcd021d05110469845e65ecb87514, type: 3}
-  FrameCensorType: 0200000000000000
+  FrameImage: {fileID: -3759898828130351229, guid: 71b25d58135a19f41a6cbf4884a12ef1, type: 3}
+  CensoredPenImage: {fileID: 21300000, guid: 892b02509770eff458326f3033f1b2c2, type: 3}
+  FrameCensorType: 02000000
