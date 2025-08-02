@@ -16,16 +16,16 @@ public class CensorItemSelector : MonoBehaviour
 
     void Start()
     {
-        ClickController.OnMouseLeftButtonClick += TryFindCensorItem;
-        ClickController.OnMouseLeftButtonClick += ApplySelectedToolAction;
-        ClickController.OnMouseRightButtonClick += ResetCursorToDefault;
+        _clickController.OnMouseLeftButtonClick += TryFindCensorItem;
+        _clickController.OnMouseLeftButtonClick += ApplySelectedToolAction;
+        _clickController.OnMouseRightButtonClick += ResetCursorToDefault;
     }
 
     private void OnDisable()
     {
-        ClickController.OnMouseLeftButtonClick -= TryFindCensorItem;
-        ClickController.OnMouseLeftButtonClick -= ApplySelectedToolAction;
-        ClickController.OnMouseRightButtonClick -= ResetCursorToDefault;
+        _clickController.OnMouseLeftButtonClick -= TryFindCensorItem;
+        _clickController.OnMouseLeftButtonClick -= ApplySelectedToolAction;
+        _clickController.OnMouseRightButtonClick -= ResetCursorToDefault;
     }
 
     private void TryFindCensorItem(Vector2 mousePosition)
@@ -41,7 +41,6 @@ public class CensorItemSelector : MonoBehaviour
 
             if (hit.collider.TryGetComponent<ICensorItem>(out var censorItem))
             {
-                // TODO: Make the proper changes to the mouseSprite or gameobject Sprite
                 Debug.Log($"Censor Item Selected: {censorItem.Type}");
                 _censorItemSelected = censorItem;
                 ChangeToolCursor(censorItem.Type);

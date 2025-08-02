@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 public class ClickController : MonoBehaviour
 {
     private NSFPInput _input;
-    public static Action<Vector2> OnMouseLeftButtonClick;
-    public static Action OnMouseRightButtonClick;
+    public Action<Vector2> OnMouseLeftButtonClick;
+    public Action OnMouseRightButtonClick;
 
     private void Awake()
     {
