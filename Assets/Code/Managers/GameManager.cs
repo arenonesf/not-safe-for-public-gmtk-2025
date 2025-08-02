@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : PersistentSingleton<GameManager>
 {
-    [SerializeField] private Tape _tape;
+    private Tape _tape;
 
     private bool _hasStartedWorking = false;
     public bool HasStartedWorking => _hasStartedWorking;
@@ -19,11 +19,11 @@ public class GameManager : PersistentSingleton<GameManager>
     {
         SceneManager.sceneLoaded += FindSceneReference;
     }
-    private void Awake()
+    private void Start()
     {
         _fsm = new();
 
-        var stop = new State_Stop();
+        var stop = new State_Stop(_tape);
         var running = new State_Running();
 
         void At(IState from, IState to, Func<bool> condition) => _fsm.AddTransition((IState)from, (IState)to, condition);

@@ -10,17 +10,16 @@ public class State_Running : MonoBehaviour, IState
         _pen = FindFirstObjectByType<Pen>();
         _scissor = FindFirstObjectByType<Scissors>();
         _stamp = FindFirstObjectByType<Stamp>();
-
-        _pen.enabled = false;
-        _scissor.enabled = false;
-        _stamp.enabled = false;
+        _pen.enabled = true;
+        _scissor.enabled = true;
+        _stamp.enabled = true;
     }
 
     public void OnExit()
     {
-        _pen.enabled = true;
-        _scissor.enabled = true;
-        _stamp.enabled = true;
+        _pen.enabled = false;
+        _scissor.enabled = false;
+        _stamp.enabled = false;     
     }
 
     public void OnUpdate()

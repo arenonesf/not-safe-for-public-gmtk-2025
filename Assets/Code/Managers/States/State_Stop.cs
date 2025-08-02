@@ -6,10 +6,13 @@ public class State_Stop : MonoBehaviour, IState
     private CensorItemSelector _censorItem;
     private ICensorItem _prevCensorItem;
 
+    public State_Stop(Tape tape)
+    {
+        _tape = tape;
+    }
+
     public void OnEnter()
     {
-        _tape = GameManager.Instance.GetTape();
-
         Debug.Log(_tape);
         Debug.Log(_tape.TapeSpeed);
         Loops.Instance._prevSpeed = _tape.TapeSpeed;
