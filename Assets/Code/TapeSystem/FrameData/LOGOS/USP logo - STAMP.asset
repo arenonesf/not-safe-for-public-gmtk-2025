@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 553af06dfee6f8a4ba00d276a275c829, type: 3}
-  m_Name: photo1
+  m_Name: USP logo - STAMP
   m_EditorClassIdentifier: 
-  FrameName: Photo
-  FrameImage: {fileID: 7482667652216324306, guid: e200c4d55a85e9f41ae7a2f899d3e15d, type: 3}
-  CensoredPenImage: {fileID: 21300000, guid: 82268c607231432478c58739b870506f, type: 3}
-  FrameCensorType: 02000000
+  FrameName: 
+  FrameImage: {fileID: 838255823261701204, guid: 42e72b92a393a0b498cf626efd8b013e, type: 3}
+  CensoredPenImage: {fileID: 0}
+  FrameCensorType: 00000000

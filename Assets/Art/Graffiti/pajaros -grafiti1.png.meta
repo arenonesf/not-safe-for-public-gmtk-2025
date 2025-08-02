@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: 904f7d2df4e0af849aa3029bc7cbf5b2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1619755795171744818
+    second: pajaros -grafiti1_0
+  - first:
+      213: 5129572076058659432
+    second: pajaros -grafiti1_1
+  - first:
+      213: -3006460526209247557
+    second: pajaros -grafiti1_2
+  - first:
+      213: -938822348711505363
+    second: pajaros -grafiti1_3
+  - first:
+      213: 7031876328156838014
+    second: pajaros -grafiti1_4
+  - first:
+      213: -8839647881645506614
+    second: pajaros -grafiti1_5
+  - first:
+      213: 4418102539240106214
+    second: pajaros -grafiti1_6
+  - first:
+      213: 3512048813693688258
+    second: pajaros -grafiti1_7
+  - first:
+      213: -1214596910413409340
+    second: pajaros -grafiti1_8
+  - first:
+      213: 719673306630422452
+    second: pajaros -grafiti1_9
+  - first:
+      213: 8094568448841135714
+    second: pajaros -grafiti1_10
+  - first:
+      213: 4456642235944308477
+    second: pajaros -grafiti1_11
+  - first:
+      213: -4014610141129079099
+    second: pajaros -grafiti1_12
+  - first:
+      213: 5658569314151730104
+    second: pajaros -grafiti1_13
+  - first:
+      213: 5068245018569844474
+    second: pajaros -grafiti1_14
+  - first:
+      213: -4527275688270804114
+    second: pajaros -grafiti1_15
+  - first:
+      213: -4902190390438540269
+    second: pajaros -grafiti1_16
+  - first:
+      213: -8844605917516732455
+    second: pajaros -grafiti1_17
+  - first:
+      213: 6343638004421732347
+    second: pajaros -grafiti1_18
+  - first:
+      213: -7254765307653050601
+    second: pajaros -grafiti1_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pajaros -grafiti1_0
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 71
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec368e5afa87589e0800000000000000
+      internalID: -1619755795171744818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pajaros -grafiti1_1
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 78
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86a4d3320a6ef2740800000000000000
+      internalID: 5129572076058659432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pajaros -grafiti1_2
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 84
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb650109418e646d0800000000000000
+      internalID: -3006460526209247557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pajaros -grafiti1_3
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 87
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d225ad54c02a8f2f0800000000000000
+      internalID: -938822348711505363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pajaros -grafiti1_4
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 69
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e783444934e369160800000000000000
+      internalID: 7031876328156838014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pajaros -grafiti1_5
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 53
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acf3cfa0613435580800000000000000
+      internalID: -8839647881645506614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pajaros -grafiti1_6
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 57
+        width: 32
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e868a0f9d0405d30800000000000000
+      internalID: 4418102539240106214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pajaros -grafiti1_7
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 64
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c95b06d9cd4db030800000000000000
+      internalID: 3512048813693688258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pajaros -grafiti1_8
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 60
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c395819b82e42fe0800000000000000
+      internalID: -1214596910413409340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pajaros -grafiti1_9
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 54
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bf79043f0bccf900800000000000000
+      internalID: 719673306630422452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pajaros -grafiti1_10
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 61
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 266b24b0e1fa55070800000000000000
+      internalID: 8094568448841135714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pajaros -grafiti1_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 23
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfe8674508c29dd30800000000000000
+      internalID: 4456642235944308477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pajaros -grafiti1_12
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 46
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c60252d85d3948c0800000000000000
+      internalID: -4014610141129079099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pajaros -grafiti1_13
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 14
+        width: 39
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bb80f29fc6478e40800000000000000
+      internalID: 5658569314151730104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pajaros -grafiti1_14
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 0
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af6af7eddf5065640800000000000000
+      internalID: 5068245018569844474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pajaros -grafiti1_15
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 4
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6b4b508fb2eb21c0800000000000000
+      internalID: -4527275688270804114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pajaros -grafiti1_16
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31cc39410dbe7fbb0800000000000000
+      internalID: -4902190390438540269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pajaros -grafiti1_17
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 12
+        width: 58
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d7e81c57c5a14580800000000000000
+      internalID: -8844605917516732455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pajaros -grafiti1_18
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 0
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf7a93da721290850800000000000000
+      internalID: 6343638004421732347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pajaros -grafiti1_19
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 2
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71f238cd365e15b90800000000000000
+      internalID: -7254765307653050601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pajaros -grafiti1_0: -1619755795171744818
+      pajaros -grafiti1_1: 5129572076058659432
+      pajaros -grafiti1_10: 8094568448841135714
+      pajaros -grafiti1_11: 4456642235944308477
+      pajaros -grafiti1_12: -4014610141129079099
+      pajaros -grafiti1_13: 5658569314151730104
+      pajaros -grafiti1_14: 5068245018569844474
+      pajaros -grafiti1_15: -4527275688270804114
+      pajaros -grafiti1_16: -4902190390438540269
+      pajaros -grafiti1_17: -8844605917516732455
+      pajaros -grafiti1_18: 6343638004421732347
+      pajaros -grafiti1_19: -7254765307653050601
+      pajaros -grafiti1_2: -3006460526209247557
+      pajaros -grafiti1_3: -938822348711505363
+      pajaros -grafiti1_4: 7031876328156838014
+      pajaros -grafiti1_5: -8839647881645506614
+      pajaros -grafiti1_6: 4418102539240106214
+      pajaros -grafiti1_7: 3512048813693688258
+      pajaros -grafiti1_8: -1214596910413409340
+      pajaros -grafiti1_9: 719673306630422452
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
