@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 public class ClickController : MonoBehaviour
 {
     private NSFPInput _input;
-    public static Action<Vector2> OnMouseClicked;
+    public Action<Vector2> OnMouseLeftButtonClick;
+    public Action OnMouseRightButtonClick;
 
     private void Awake()
     {
@@ -16,19 +17,26 @@ public class ClickController : MonoBehaviour
     void Start()
     {
         _input.Gameplay.Enable();
-        _input.Gameplay.Click.performed += OnClick;
+        _input.Gameplay.LeftClick.performed += OnLeftClick;
+        _input.Gameplay.RightClick.performed += OnRightClick;
     }
 
     private void OnDisable()
     {
-        _input.Gameplay.Click.performed -= OnClick;
+        _input.Gameplay.LeftClick.performed -= OnLeftClick;
+        _input.Gameplay.RightClick.performed -= OnRightClick;
         _input.Gameplay.Disable();
     }
 
-    private void OnClick(InputAction.CallbackContext context)
+    private void OnLeftClick(InputAction.CallbackContext context)
     {
         var mousePosition = Mouse.current.position.ReadValue();
         Debug.Log($"Mouse Clicked at position: {mousePosition}");
-        OnMouseClicked?.Invoke(mousePosition);
+        OnMouseLeftButtonClick?.Invoke(mousePosition);
+    }
+
+    private void OnRightClick(InputAction.CallbackContext context)
+    {
+        OnMouseRightButtonClick?.Invoke();
     }
 }

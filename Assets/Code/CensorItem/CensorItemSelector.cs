@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class CensorItemSelector : MonoBehaviour
     private Camera _camera;
     private ICensorItem _censorItemSelected;
     [SerializeField] private List<Texture2D> _CursorTextureList = new();
+    [SerializeField] private ClickController _clickController;
 
     private void Awake()
     {
@@ -14,14 +16,16 @@ public class CensorItemSelector : MonoBehaviour
 
     void Start()
     {
-        ClickController.OnMouseClicked += TryFindCensorItem;
-        ClickController.OnMouseClicked += ApplySelectedToolAction;
+        _clickController.OnMouseLeftButtonClick += TryFindCensorItem;
+        _clickController.OnMouseLeftButtonClick += ApplySelectedToolAction;
+        _clickController.OnMouseRightButtonClick += ResetCursorToDefault;
     }
 
     private void OnDisable()
     {
-        ClickController.OnMouseClicked -= TryFindCensorItem;
-        ClickController.OnMouseClicked -= ApplySelectedToolAction;
+        _clickController.OnMouseLeftButtonClick -= TryFindCensorItem;
+        _clickController.OnMouseLeftButtonClick -= ApplySelectedToolAction;
+        _clickController.OnMouseRightButtonClick -= ResetCursorToDefault;
     }
 
     private void TryFindCensorItem(Vector2 mousePosition)
@@ -98,5 +102,10 @@ public class CensorItemSelector : MonoBehaviour
                 Cursor.SetCursor(null, Vector2.left, CursorMode.Auto);
                 break;
         }
+    }
+
+    private void ResetCursorToDefault()
+    {
+        Cursor.SetCursor(null, Vector2.left, CursorMode.Auto);
     }
 }
