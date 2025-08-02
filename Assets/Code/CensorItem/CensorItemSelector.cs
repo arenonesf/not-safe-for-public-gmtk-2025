@@ -7,6 +7,7 @@ public class CensorItemSelector : MonoBehaviour
     private Camera _camera;
     private ICensorItem _censorItemSelected;
     [SerializeField] private List<Texture2D> _CursorTextureList = new();
+    [SerializeField] private ClickController _clickController;
 
     private void Awake()
     {
@@ -15,14 +16,16 @@ public class CensorItemSelector : MonoBehaviour
 
     void Start()
     {
-        ClickController.OnMouseClicked += TryFindCensorItem;
-        ClickController.OnMouseClicked += ApplySelectedToolAction;
+        _clickController.OnMouseLeftButtonClick += TryFindCensorItem;
+        _clickController.OnMouseLeftButtonClick += ApplySelectedToolAction;
+        _clickController.OnMouseRightButtonClick += ResetCursorToDefault;
     }
 
     private void OnDisable()
     {
-        ClickController.OnMouseClicked -= TryFindCensorItem;
-        ClickController.OnMouseClicked -= ApplySelectedToolAction;
+        _clickController.OnMouseLeftButtonClick -= TryFindCensorItem;
+        _clickController.OnMouseLeftButtonClick -= ApplySelectedToolAction;
+        _clickController.OnMouseRightButtonClick -= ResetCursorToDefault;
     }
 
     private void TryFindCensorItem(Vector2 mousePosition)
@@ -38,7 +41,6 @@ public class CensorItemSelector : MonoBehaviour
 
             if (hit.collider.TryGetComponent<ICensorItem>(out var censorItem))
             {
-                // TODO: Make the proper changes to the mouseSprite or gameobject Sprite
                 Debug.Log($"Censor Item Selected: {censorItem.Type}");
                 _censorItemSelected = censorItem;
                 ChangeToolCursor(censorItem.Type);
@@ -81,7 +83,7 @@ public class CensorItemSelector : MonoBehaviour
         }
     }
 
-    private void ChangeToolCursor(CensorItemType censorItemType) 
+    public void ChangeToolCursor(CensorItemType censorItemType) 
     {
         
         switch (censorItemType)
@@ -99,5 +101,20 @@ public class CensorItemSelector : MonoBehaviour
                 Cursor.SetCursor(null, Vector2.left, CursorMode.Auto);
                 break;
         }
+    }
+
+    private void ResetCursorToDefault()
+    {
+        Cursor.SetCursor(null, Vector2.left, CursorMode.Auto);
+    }
+
+    public ICensorItem GetCensorItemSelect()
+    {
+        return _censorItemSelected;
+    }
+
+    public void SetCensorItemSelect(ICensorItem censorItem)
+    {
+        _censorItemSelected = censorItem;
     }
 }
