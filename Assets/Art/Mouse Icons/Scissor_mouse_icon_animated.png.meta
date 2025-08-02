@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: 1bc5d867d0fd2be4bbd408775cd3c8f1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5102435923082679212
+    second: Scissor_mouse_icon_animated_0
+  - first:
+      213: -4669463343501169939
+    second: Scissor_mouse_icon_animated_1
+  - first:
+      213: -1672342041478246230
+    second: Scissor_mouse_icon_animated_2
+  - first:
+      213: 1341918379510950021
+    second: Scissor_mouse_icon_animated_3
+  - first:
+      213: 308577176134731491
+    second: Scissor_mouse_icon_animated_4
+  - first:
+      213: 1486671498889146777
+    second: Scissor_mouse_icon_animated_5
+  - first:
+      213: -8373079245434619887
+    second: Scissor_mouse_icon_animated_6
+  - first:
+      213: -4822266643596896381
+    second: Scissor_mouse_icon_animated_7
+  - first:
+      213: 8908983782864619891
+    second: Scissor_mouse_icon_animated_8
+  - first:
+      213: -2580005318452263167
+    second: Scissor_mouse_icon_animated_9
+  - first:
+      213: -5665164153483023416
+    second: Scissor_mouse_icon_animated_10
+  - first:
+      213: 169437598307316293
+    second: Scissor_mouse_icon_animated_11
+  - first:
+      213: 3483906344483617430
+    second: Scissor_mouse_icon_animated_12
+  - first:
+      213: -7914351084797013872
+    second: Scissor_mouse_icon_animated_13
+  - first:
+      213: 4932089425263319954
+    second: Scissor_mouse_icon_animated_14
+  - first:
+      213: 902322429896380504
+    second: Scissor_mouse_icon_animated_15
+  - first:
+      213: 5031943534895695176
+    second: Scissor_mouse_icon_animated_16
+  - first:
+      213: 7852293218668445104
+    second: Scissor_mouse_icon_animated_17
+  - first:
+      213: 5618515166592304989
+    second: Scissor_mouse_icon_animated_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Scissor_mouse_icon_animated_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 4
+        width: 44
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca3198c207e7fc640800000000000000
+      internalID: 5102435923082679212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scissor_mouse_icon_animated_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 4
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deaa7e634dbb23fb0800000000000000
+      internalID: -4669463343501169939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scissor_mouse_icon_animated_2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 4
+        width: 39
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa0dcb216c5aac8e0800000000000000
+      internalID: -1672342041478246230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scissor_mouse_icon_animated_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 7
+        width: 29
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 588615808a37f9210800000000000000
+      internalID: 1341918379510950021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scissor_mouse_icon_animated_4
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 19
+        width: 38
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e6cd498e49484400800000000000000
+      internalID: 308577176134731491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scissor_mouse_icon_animated_5
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 8
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9913cfcf9d7b1a410800000000000000
+      internalID: 1486671498889146777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scissor_mouse_icon_animated_6
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 7
+        width: 61
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1187cabe9c8dccb80800000000000000
+      internalID: -8373079245434619887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scissor_mouse_icon_animated_7
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 8
+        width: 65
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3871130890ed31db0800000000000000
+      internalID: -4822266643596896381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scissor_mouse_icon_animated_8
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 8
+        width: 65
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3798c577c8113ab70800000000000000
+      internalID: 8908983782864619891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scissor_mouse_icon_animated_9
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 8
+        width: 65
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 107c80315daf13cd0800000000000000
+      internalID: -2580005318452263167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scissor_mouse_icon_animated_10
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 8
+        width: 65
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cb2e5db73b4161b0800000000000000
+      internalID: -5665164153483023416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scissor_mouse_icon_animated_11
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 9
+        width: 65
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 542f3b21996f95200800000000000000
+      internalID: 169437598307316293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scissor_mouse_icon_animated_12
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 6
+        width: 65
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69afcad9c52595030800000000000000
+      internalID: 3483906344483617430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scissor_mouse_icon_animated_13
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 6
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09052f2de939a2290800000000000000
+      internalID: -7914351084797013872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scissor_mouse_icon_animated_14
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 19
+        width: 54
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29bd741733d427440800000000000000
+      internalID: 4932089425263319954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scissor_mouse_icon_animated_15
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 7
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85057d22871b58c00800000000000000
+      internalID: 902322429896380504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scissor_mouse_icon_animated_16
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 4
+        width: 44
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 845084f0cfd05d540800000000000000
+      internalID: 5031943534895695176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scissor_mouse_icon_animated_17
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 3
+        width: 40
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bdf0f24413f8fc60800000000000000
+      internalID: 7852293218668445104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scissor_mouse_icon_animated_18
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 4
+        width: 44
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5701ed96c9f8fd40800000000000000
+      internalID: 5618515166592304989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Scissor_mouse_icon_animated_0: 5102435923082679212
+      Scissor_mouse_icon_animated_1: -4669463343501169939
+      Scissor_mouse_icon_animated_10: -5665164153483023416
+      Scissor_mouse_icon_animated_11: 169437598307316293
+      Scissor_mouse_icon_animated_12: 3483906344483617430
+      Scissor_mouse_icon_animated_13: -7914351084797013872
+      Scissor_mouse_icon_animated_14: 4932089425263319954
+      Scissor_mouse_icon_animated_15: 902322429896380504
+      Scissor_mouse_icon_animated_16: 5031943534895695176
+      Scissor_mouse_icon_animated_17: 7852293218668445104
+      Scissor_mouse_icon_animated_18: 5618515166592304989
+      Scissor_mouse_icon_animated_2: -1672342041478246230
+      Scissor_mouse_icon_animated_3: 1341918379510950021
+      Scissor_mouse_icon_animated_4: 308577176134731491
+      Scissor_mouse_icon_animated_5: 1486671498889146777
+      Scissor_mouse_icon_animated_6: -8373079245434619887
+      Scissor_mouse_icon_animated_7: -4822266643596896381
+      Scissor_mouse_icon_animated_8: 8908983782864619891
+      Scissor_mouse_icon_animated_9: -2580005318452263167
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
