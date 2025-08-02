@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AutoUnparentOnAwake: 1
-  _tape: {fileID: 0}
+  _tape: {fileID: 540579214}
 --- !u!1 &99091329
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AutoUnparentOnAwake: 0
   _maxMistakes: 3
+  _prevSpeed: 0
 --- !u!1 &183691885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,6 +1455,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 7ce701432a984824ba256bea964a6f88, type: 3}
   - {fileID: 2800000, guid: fd2aa0e53ea093f45929ed6a61e721fc, type: 3}
   - {fileID: 2800000, guid: 439af3ab649bd254fbccbc8b337cb200, type: 3}
+  _clickController: {fileID: 0}
 --- !u!4 &1358349556
 Transform:
   m_ObjectHideFlags: 0

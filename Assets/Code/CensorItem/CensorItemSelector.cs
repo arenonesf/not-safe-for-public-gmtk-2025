@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class CensorItemSelector : MonoBehaviour
     private Camera _camera;
     private ICensorItem _censorItemSelected;
     [SerializeField] private List<Texture2D> _CursorTextureList = new();
+    [SerializeField] private ClickController _clickController;
 
     private void Awake()
     {
@@ -14,14 +16,16 @@ public class CensorItemSelector : MonoBehaviour
 
     void Start()
     {
-        ClickController.OnMouseClicked += TryFindCensorItem;
-        ClickController.OnMouseClicked += ApplySelectedToolAction;
+        ClickController.OnMouseLeftButtonClick += TryFindCensorItem;
+        ClickController.OnMouseLeftButtonClick += ApplySelectedToolAction;
+        ClickController.OnMouseRightButtonClick += ResetCursorToDefault;
     }
 
     private void OnDisable()
     {
-        ClickController.OnMouseClicked -= TryFindCensorItem;
-        ClickController.OnMouseClicked -= ApplySelectedToolAction;
+        ClickController.OnMouseLeftButtonClick -= TryFindCensorItem;
+        ClickController.OnMouseLeftButtonClick -= ApplySelectedToolAction;
+        ClickController.OnMouseRightButtonClick -= ResetCursorToDefault;
     }
 
     private void TryFindCensorItem(Vector2 mousePosition)
@@ -80,7 +84,7 @@ public class CensorItemSelector : MonoBehaviour
         }
     }
 
-    private void ChangeToolCursor(CensorItemType censorItemType) 
+    public void ChangeToolCursor(CensorItemType censorItemType) 
     {
         
         switch (censorItemType)
@@ -98,5 +102,20 @@ public class CensorItemSelector : MonoBehaviour
                 Cursor.SetCursor(null, Vector2.left, CursorMode.Auto);
                 break;
         }
+    }
+
+    private void ResetCursorToDefault()
+    {
+        Cursor.SetCursor(null, Vector2.left, CursorMode.Auto);
+    }
+
+    public ICensorItem GetCensorItemSelect()
+    {
+        return _censorItemSelected;
+    }
+
+    public void SetCensorItemSelect(ICensorItem censorItem)
+    {
+        _censorItemSelected = censorItem;
     }
 }

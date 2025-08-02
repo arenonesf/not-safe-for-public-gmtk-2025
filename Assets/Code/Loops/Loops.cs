@@ -11,7 +11,7 @@ public class Loops : PersistentSingleton<Loops>
     private List<Frame> _frames = new();
     private CountdownTimer _timer;   
     private Tape _tape;
-    private float _prevSpeed;
+    public float _prevSpeed;
    
 
     void Start()
@@ -20,6 +20,8 @@ public class Loops : PersistentSingleton<Loops>
         _timer = new CountdownTimer(1f);
         _timer.Reset();
         _timer.OnTimerStart += () => Debug.Log($"El timer de {gameObject.name} ha empezado");
+        Debug.Log(_tape);
+        Debug.Log(_tape.TapeSpeed);
         _prevSpeed = _tape.TapeSpeed;
     }
 
@@ -30,29 +32,30 @@ public class Loops : PersistentSingleton<Loops>
 
     private void StopLoop()
     {
+        /*if (!_notebook.NotebookIsOpen)
+        {*/
         _prevSpeed = _tape.TapeSpeed;
         _tape.SetSpeed(0);
+        //}
         _timer.Start();
     }
 
     private void Update()
     {
-        if (_timer.IsFinished)
+        if (_timer.IsFinished/*&& !_notebook.NotebookIsOpen*/)
         {
             _timer.Stop();
             _timer.Reset();
-            CheckErrorInFrames();
-            CheckChangeSpeed();
         }
 
     }
 
-    private void CheckChangeSpeed()
+    public void CheckChangeSpeed()
     {
         _mistakes += _currentMistakes;
         Debug.Log($"Player has made {_mistakes} mistakes in total.");
         if (_maxMistakes <= _mistakes)
-            Debug.Log("Perdiste");
+            GameManager.Instance.PlayerLose();
         else
         {
             if (_currentMistakes > 0)
@@ -61,6 +64,10 @@ public class Loops : PersistentSingleton<Loops>
                 _tape.SetSpeed(_prevSpeed);
 
         }
+
+        if (_currentMistakes == 0)
+            GameManager.Instance.ChangeScene();
+
         _currentMistakes = 0;
     }
 
@@ -89,12 +96,18 @@ public class Loops : PersistentSingleton<Loops>
         }
     }
 
-    private void CheckErrorInFrames()
+    public void CheckErrorInFrames()
     {
         foreach (var frame in _frames)
         {
             if (!frame.CheckFrame())
                 _currentMistakes++;
         }
+    }
+
+    public void ResetMistakes()
+    {
+        _currentMistakes = 0;
+        _mistakes = 0;
     }
 }
