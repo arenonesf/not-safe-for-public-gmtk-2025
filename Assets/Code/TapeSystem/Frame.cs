@@ -13,6 +13,7 @@ public class Frame : MonoBehaviour
     private BoxCollider2D _boxCollider2D;
     private List<CensorItemType> _censorsApplied = new();
     public Action<Frame> OnErrorCensoring;
+    public Action<Frame> OnRightChoice;
 
     private void Awake()
     {
@@ -45,6 +46,8 @@ public class Frame : MonoBehaviour
     public void AddCensorToList(CensorItemType type)
     {
         _censorsApplied.Add(type);
+        if (CheckFrame())
+            OnRightChoice?.Invoke(this);
     }
 
     public bool CanApplyCensor(CensorItemType type)

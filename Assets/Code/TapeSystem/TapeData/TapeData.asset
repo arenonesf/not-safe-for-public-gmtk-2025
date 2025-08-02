@@ -34,6 +34,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e3dfd03da27552d4b990658bc1073dd2, type: 2}
   - {fileID: 11400000, guid: 47168c373fcde9e4b8586e93be2c70a2, type: 2}
   - {fileID: 11400000, guid: d06b055522fee0e469f450004df97dc7, type: 2}
+  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
+  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
+  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
+  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
+  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
+  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
+  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
+  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
+  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
+  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
+  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
+  - {fileID: 11400000, guid: 142fbfcbb489d324e9895a7359d85121, type: 2}
+  MinGoodChoices: 5
   InitialSpeed: 2
   SpawnOffset: 1
   SpawnRate: 0.1

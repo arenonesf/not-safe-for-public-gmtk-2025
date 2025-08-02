@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tape : MonoBehaviour
 {
     [SerializeField] private TapeData _tapeData;
+    public TapeData TapeData => _tapeData;
     [SerializeField] private GameObject _framePrefab;
     [SerializeField] private Transform _startPosition;
     private float _speed;
