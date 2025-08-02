@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 553af06dfee6f8a4ba00d276a275c829, type: 3}
-  m_Name: Capy
+  m_Name: Dog( ropa)
   m_EditorClassIdentifier: 
   FrameName: 
-  FrameImage: {fileID: 3149610612175073690, guid: 6ecb7694f1a35c148a5c4b00b75ac208, type: 3}
+  FrameImage: {fileID: 214872036638130504, guid: aa668ff32de04e44ebc2751d630beec1, type: 3}
   CensoredPenImage: {fileID: 0}
-  FrameCensorType: 
+  FrameCensorType: 03000000
