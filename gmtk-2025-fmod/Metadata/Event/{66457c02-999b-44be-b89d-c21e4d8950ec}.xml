@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{66457c02-999b-44be-b89d-c21e4d8950ec}">
 		<property name="name">
-			<value>BackgroundMusic</value>
+			<value>MainMenuMusic</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -84,6 +84,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{aa9d4f63-ee85-4886-b248-f4c46ac0a4e1}">
+		<relationship name="modulators">
+			<destination>{7e15beb2-2fe6-4fa2-ba2a-3c6cc26ee0fd}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{a2d1bf9b-0ea4-4b7e-b75f-90a236249608}</destination>
 		</relationship>
@@ -120,7 +123,6 @@
 		<property name="timelockedOffset">
 			<value>0.14999999999999999</value>
 		</property>
-		<property name="name" />
 		<relationship name="fadeOutCurve">
 			<destination>{9d3de20d-7c02-40bd-83f5-95f02ecb1522}</destination>
 		</relationship>
@@ -177,7 +179,7 @@
 			<value>0</value>
 		</property>
 		<property name="length">
-			<value>216.84999999999999</value>
+			<value>214.60000000000002</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{2b44b9e4-33db-4db8-88aa-bf7e5f3ff087}</destination>
@@ -188,6 +190,23 @@
 		<relationship name="transitionTimeline">
 			<destination>{5575e424-ee5b-4798-8b8b-c65409d18eae}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{7e15beb2-2fe6-4fa2-ba2a-3c6cc26ee0fd}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>240</value>
+		</property>
+		<property name="releaseTime">
+			<value>620</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{a2d1bf9b-0ea4-4b7e-b75f-90a236249608}">
 		<relationship name="effects">
@@ -246,7 +265,7 @@
 			<value>1</value>
 		</property>
 		<property name="curveShape">
-			<value>0.25471893</value>
+			<value>1</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{ddbba635-3a25-49a0-9144-e3d0101f5d98}">
@@ -265,7 +284,7 @@
 			<value>1</value>
 		</property>
 		<property name="curveShape">
-			<value>-1.00000048</value>
+			<value>0.12064486</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{80eadcc8-ef36-4b08-a310-a96a970add6a}">
