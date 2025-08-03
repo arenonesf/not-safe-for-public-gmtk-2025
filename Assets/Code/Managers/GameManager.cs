@@ -1,101 +1,51 @@
 using Code.Core;
 using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : PersistentSingleton<GameManager>
 {
     private Tape _tape;
+    public static Action OnBeginPlay;
+    public static Action OnBeginNextRound;
+    private int _censorWorkerCount = 0;
+    public int CensorWorkerCount => _censorWorkerCount;
 
-    private bool _changeToTapeRunning = false;
-
-    private int _numOfPlayer = 0000;
-
-    private FSM _fsm;
-
-    private bool _hasLosed = false;
-
-    public bool HasLosed => _hasLosed;
-
-    //private Notebook _notebook;
-
-    private void OnEnable()
+    protected override void Awake()
     {
-        SceneManager.sceneLoaded += FindSceneReference;
+        base.Awake();
+        _tape = FindFirstObjectByType<Tape>();
     }
+
     private void Start()
     {
-        _fsm = new();
-
-        var stop = new State_Stop(_tape);
-        var running = new State_Running(_tape);
-
-        void At(IState from, IState to, Func<bool> condition) => _fsm.AddTransition((IState)from, (IState)to, condition);
-
-        /*Func<bool> NotebookOpen() => () => _notebook.NotebookIsOpen;
-        Func<bool> NotebookClosed() => () => !_notebook.NotebookIsOpen;*/
-        Func<bool> StartWorking() => () => _changeToTapeRunning;
-        Func<bool> StopWorking() => () => !_changeToTapeRunning;
-
-        At(stop, running, StartWorking());
-        At(running, stop, StopWorking());
-        /*At(stop, running, NotebookClosed());
-        At(running, stop, NotebookOpen());*/
-
-        _fsm.SetState(stop);
+        LoopsManager.OnSuccessCensoringTheTape += PrepareForNextRound;
+        LoopsManager.OnExceedingMistakes += GameOver;
     }
 
-    private void Update()
+    private void OnDisable()
     {
-        _fsm.OnUpdate();
+        LoopsManager.OnSuccessCensoringTheTape -= PrepareForNextRound;
+        LoopsManager.OnExceedingMistakes -= GameOver;
     }
 
-    private void FindSceneReference(Scene scene, LoadSceneMode loadSceneMode)
+    private void GameOver()
     {
-        _tape = FindFirstObjectByType<Tape>();
-        Debug.Log(_tape);
+        _censorWorkerCount++;
     }
 
-    public Tape GetTape() 
+    private void PrepareForNextRound()
+    {
+        Debug.Log("NEXT ROUND BABY!");
+        OnBeginNextRound?.Invoke();
+    }
+
+    public Tape GetTape()
     {
         return _tape;
     }
 
-    public void ChangeToTapeRunning(bool wantToRun) 
+    public void BeginTapeRunning()
     {
-        _changeToTapeRunning = wantToRun;
-        Debug.Log($"ChangeToTapeRunning: {_changeToTapeRunning}");
-    }
-
-    /*
-    public void StopTape() 
-    {
-        OnStopTape?.Invoke();
-    }*/
-
-    public string GetName()
-    {
-        return _numOfPlayer.ToString();
-    }
-
-    public void PlayerLose()
-    {
-        _hasLosed = true;
-        ++_numOfPlayer;
-        RestartGame();
-    }
-
-    private void RestartGame()
-    {
-        Loops.Instance.ResetMistakes();
-        SceneManager.LoadScene(1);
-    }
-
-    public void ChangeScene()
-    {
-        if (SceneManager.sceneCount > SceneManager.GetActiveScene().buildIndex + 1)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        else
-            SceneManager.LoadScene(0);
+        OnBeginPlay?.Invoke();
     }
 }
