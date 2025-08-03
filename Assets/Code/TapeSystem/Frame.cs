@@ -38,18 +38,30 @@ public class Frame : MonoBehaviour
         _boxCollider2D.offset = _spriteRenderer.bounds.center - transform.position;
     }
 
-    public void ReturnToStartPosition() 
+    public void ReturnToStartPosition()
     {
+        int index = _tape.Frames.IndexOf(gameObject);
+
+        if (index == -1)
+        {
+            return;
+        }
+
         Vector3 lastElementPosition;
 
-        if (_tape.Frames.IndexOf(gameObject) == 0)
+        if (index == 0)
+        {
             lastElementPosition = _tape.GetLastFramePosition();
+        }
         else
-            lastElementPosition = _tape.Frames[_tape.Frames.IndexOf(gameObject) - 1].transform.position;
-        
+        {
+            lastElementPosition = _tape.Frames[index - 1].transform.position;
+        }
+
         lastElementPosition.x -= _tape.GetTapeDataOffset();
         _rigidbody2D.position = lastElementPosition;
     }
+
 
     public void AddCensorToList(CensorItemType type)
     {
