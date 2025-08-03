@@ -89,19 +89,32 @@ public class Frame : MonoBehaviour
 
     public bool CheckFrame()
     {
-        // If no censors applied
+        // Case 1: No censors applied, but expected censors exist: error
         if (_censorsApplied.Count == 0)
         {
             return _frameData.FrameCensorType.Count > 0;
         }
 
-        // All applied censors must be expected by the frame
+        // Case 2a: Some applied censors are invalid (not in expected list): error
         foreach (var censor in _censorsApplied)
         {
             if (!_frameData.FrameCensorType.Contains(censor))
-                return false;
+            {
+                return true; // Error
+            }
         }
 
-        return true;
+        // Case 2b: Compare exact contents of both lists (order doesn't matter)
+        var expected = new HashSet<CensorItemType>(_frameData.FrameCensorType);
+        var applied = new HashSet<CensorItemType>(_censorsApplied);
+
+        if (!expected.SetEquals(applied))
+        {
+            return true; // Error: not same elements
+        }
+
+        // No errors
+        return false;
     }
+
 }
