@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4e666b7f899c8498256f1d4259ab0e, type: 3}
+  m_Name: TestDelete
+  m_EditorClassIdentifier: 
+  Frames:
+  - {fileID: 11400000, guid: d06b055522fee0e469f450004df97dc7, type: 2}
+  - {fileID: 11400000, guid: 4b9006f142ff7ff42b1158aa197cc27b, type: 2}
+  - {fileID: 11400000, guid: cc288f7a1050a984fb93c153d4e4b2dc, type: 2}
+  - {fileID: 11400000, guid: caa3c810f11264446b8eca87adf10858, type: 2}
+  - {fileID: 11400000, guid: 89ef1661a43b93c4ea4f5f044e36be8d, type: 2}
+  MinGoodChoices: 1
+  InitialSpeed: 2
+  SpawnOffset: 5
+  SpawnRate: 0.1
