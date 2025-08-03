@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
 
     public void GameScene()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("NSFPGame");
     }
 
     public void Settings()
