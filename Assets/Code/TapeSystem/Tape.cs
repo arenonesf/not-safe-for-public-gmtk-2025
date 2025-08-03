@@ -10,6 +10,8 @@ public class Tape : MonoBehaviour
 
     private int _currentRoundIndex = 0;
     private float _speed;
+    private float _previousSpeed;
+    public float PreviousSpeed => _previousSpeed;
     private CountdownTimer _timer;
     private int _currentFrame = 0;
     private List<GameObject> _frames = new();
@@ -98,6 +100,7 @@ public class Tape : MonoBehaviour
         }
     }
 
+    public void SetPreviousSpeed(float speed) => _previousSpeed = speed;
     public Frame GetLastFrameInTape() => _frames[^1].GetComponent<Frame>();
     public void SetSpeed(float value) => _speed = value;
     public Vector3 GetLastFramePosition() => _frames[^1].transform.position;
