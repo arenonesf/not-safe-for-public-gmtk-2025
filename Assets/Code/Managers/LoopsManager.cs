@@ -1,9 +1,7 @@
 using Code.Core;
-using Code.Core.Timer;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class LoopsManager : PersistentSingleton<LoopsManager>
 {
