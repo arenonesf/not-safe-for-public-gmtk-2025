@@ -4,30 +4,35 @@ using UnityEngine;
 
 public class Tape : MonoBehaviour
 {
-    [SerializeField] private TapeData _tapeData;
-    public TapeData TapeData => _tapeData;
+    [SerializeField] private List<TapeData> _tapeRounds;
     [SerializeField] private GameObject _framePrefab;
     [SerializeField] private Transform _startPosition;
+
+    private int _currentRoundIndex = 0;
     private float _speed;
-    public float TapeSpeed => _speed;
-    private List<GameObject> _frames = new();
-    public List<GameObject> Frames => _frames;
     private CountdownTimer _timer;
     private int _currentFrame = 0;
+    private List<GameObject> _frames = new();
+
+    public float TapeSpeed => _speed;
+    public List<GameObject> Frames => _frames;
     public Transform StartPosition => _startPosition;
+    public TapeData CurrentTapeData => _tapeRounds[_currentRoundIndex];
 
     private void Awake()
     {
-        _speed = 0f;    
+        _speed = 0f;
     }
 
-    void Start()
+    private void Start()
     {
-        _timer = new CountdownTimer(_tapeData.SpawnRate);
+        if (_tapeRounds == null || _tapeRounds.Count == 0)
+        {
+            Debug.LogError("No TapeData rounds assigned.");
+            return;
+        }
 
-        //_timer.OnTimerStart += () => Debug.Log("Timer Started");
-        //_timer.OnTimerStop += () => Debug.Log("Timer Ended");
-
+        _timer = new CountdownTimer(CurrentTapeData.SpawnRate);
         InitFrames();
     }
 
@@ -39,25 +44,29 @@ public class Tape : MonoBehaviour
 
             if (_currentFrame != _frames.Count)
             {
-                _timer.Reset(_tapeData.SpawnRate);
+                _timer.Reset(CurrentTapeData.SpawnRate);
                 _timer.Start();
-            }               
+            }
         }
     }
 
     private void InitFrames()
     {
         _speed = 0;
+        _frames.Clear();
+        _currentFrame = 0;
 
-        for (int i = 0; i < _tapeData.Frames.Count; i++)
+        for (int i = 0; i < CurrentTapeData.Frames.Count; i++)
         {
-            Vector3 spawnPosition = _startPosition.position - _tapeData.SpawnOffset * i * Vector3.right;
+            Vector3 spawnPosition = _startPosition.position - CurrentTapeData.SpawnOffset * i * Vector3.right;
             var gameobject = Instantiate(_framePrefab, spawnPosition, Quaternion.identity);
-            gameobject.GetComponent<Frame>().InitFrame(_tapeData.Frames[i], this);
+            gameobject.GetComponent<Frame>().InitFrame(CurrentTapeData.Frames[i], this);
             gameobject.SetActive(false);
-            _frames.Add(gameobject);   
+            _frames.Add(gameobject);
         }
-        Loops.Instance.RegistrerFrame(_frames);
+
+        LoopsManager.Instance.RegistrerFrame(_frames);
+        _timer.Reset(CurrentTapeData.SpawnRate);
         _timer.Start();
     }
 
@@ -67,28 +76,33 @@ public class Tape : MonoBehaviour
         _currentFrame++;
     }
 
-    public Frame GetReturnFirstFrame()
+    public void TryStartNextRound()
     {
-        return _frames[^1].GetComponent<Frame>();
+        _currentRoundIndex++;
+
+        if (_currentRoundIndex < _tapeRounds.Count)
+        {
+            LoopsManager.Instance.DeregisterFrames(_frames);
+
+            foreach (var frame in _frames)
+            {
+                Destroy(frame);
+            }
+
+            _frames.Clear();
+            InitFrames();
+        }
+        else
+        {
+            Debug.Log("All tape rounds completed.");
+        }
     }
 
-    public void SetSpeed(float value)
-    {
-        _speed = value;
-    }
+    public Frame GetLastFrameInTape() => _frames[^1].GetComponent<Frame>();
+    public void SetSpeed(float value) => _speed = value;
+    public Vector3 GetLastFramePosition() => _frames[^1].transform.position;
+    public float GetTapeDataOffset() => CurrentTapeData.SpawnOffset;
+    public int GetCurrentRound() => _currentRoundIndex;
 
-    public Vector3 GetLastFramePosition()
-    {
-        return _frames[^1].transform.position;
-    }
-
-    public float GetTapeDataOffset()
-    {
-        return _tapeData.SpawnOffset;
-    }
-
-    private void OnDestroy()
-    {
-        _timer.Dispose();
-    }
+    private void OnDestroy() => _timer.Dispose();
 }

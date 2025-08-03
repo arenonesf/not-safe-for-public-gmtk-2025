@@ -77,12 +77,17 @@ public class Frame : MonoBehaviour
 
     public bool CheckFrame()
     {
-        if ( _censorsApplied.Count == 0 && _frameData.FrameCensorType.Count > 0)
-            return false;
-
-        for (int i = 0; i < _frameData.FrameCensorType.Count; i++)
+        // If no censors applied
+        if (_censorsApplied.Count == 0)
         {
-            if (!_frameData.FrameCensorType.Contains(_censorsApplied[i])) return false;
+            return _frameData.FrameCensorType.Count > 0;
+        }
+
+        // All applied censors must be expected by the frame
+        foreach (var censor in _censorsApplied)
+        {
+            if (!_frameData.FrameCensorType.Contains(censor))
+                return false;
         }
 
         return true;

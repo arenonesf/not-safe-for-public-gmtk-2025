@@ -14,12 +14,12 @@ public class State_Stop : MonoBehaviour, IState
     public void OnEnter()
     {
         Debug.Log(_tape);
-        if (_tape.TapeSpeed == 0) 
-            Loops.Instance._prevSpeed = _tape.TapeData.InitialSpeed;
-        else
-            Loops.Instance._prevSpeed = _tape.TapeSpeed;
+        //if (_tape.TapeSpeed == 0) 
+        //    //LoopsManager.Instance._prevSpeed = _tape.CurrentTapeData.InitialSpeed;
+        //else
+            //LoopsManager.Instance._prevSpeed = _tape.TapeSpeed;
         _tape.SetSpeed(0);
-        Debug.Log($"prevSpeed: {Loops.Instance._prevSpeed}");
+        //Debug.Log($"prevSpeed: {Loops.Instance._prevSpeed}");
 
         _censorItem = FindFirstObjectByType<CensorItemSelector>();
         _prevCensorItem = _censorItem.GetCensorItemSelect();
