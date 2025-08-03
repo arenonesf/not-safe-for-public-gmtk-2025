@@ -42,7 +42,7 @@ public class MenuManager : PersistentSingleton<MenuManager>
         _buttonCardOfConditions.gameObject.SetActive(true);
     }
 
-    private void PassToNextCard()
+    public void PassToNextCard()
     {
         _cardOfConditions.SetActive(false);
         _buttonCardOfConditions.gameObject.SetActive(false);
@@ -57,6 +57,13 @@ public class MenuManager : PersistentSingleton<MenuManager>
     {
         _cardOfRounds[_numOfRound - 1].SetActive(false);
         _buttonCardOfRounds.gameObject.SetActive(false);
+    }
+
+    public void RestartCardToShow()
+    {
+        _numOfRound = 0;
+        _cardOfRounds[_numOfRound].SetActive(true);
+        ++_numOfRound;
     }
 
     private void OnDisable()

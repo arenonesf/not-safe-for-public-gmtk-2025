@@ -7,6 +7,11 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
 {
     [SerializeField] private int totalMistakes = 5;
     [SerializeField] private float tapeSpeedMultiplier = 1.25f;
+
+    [SerializeField] private Stamp _stamp;
+    [SerializeField] private Scissors _scissors;
+    [SerializeField] private Pen _pen;
+
     private int _currentMistakesCount;
     private int _currentRightChoicesCount;
     private Tape _tape;
@@ -18,6 +23,12 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
     
     void Start()
     {
+        _stamp.GetComponent<Collider2D>().enabled = false;
+        _pen.GetComponent<Collider2D>().enabled = false;
+        _scissors.GetComponent<Collider2D>().enabled = false;
+        _stamp.enabled = false;
+        _pen.enabled = false;
+        _scissors.enabled = false;
         _tape = GameManager.Instance.GetTape();
         _endOfTapeTrigger = FindFirstObjectByType<EndOfTapeTrigger>();
         _currentMistakesCount = 0;
@@ -28,6 +39,13 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
 
     private void StartTape()
     {
+        _stamp.GetComponent<Collider2D>().enabled = true;
+        _pen.GetComponent<Collider2D>().enabled = true;
+        _scissors.GetComponent<Collider2D>().enabled = true;
+        _stamp.enabled = true;
+        _pen.enabled = true;
+        _scissors.enabled = true;      
+
         Debug.Log($"TAPE START. Current round: {_tape.GetCurrentRound() + 1}");
         //MenuManager.Instance.SetCardOfRound();
         if (_tape.PreviousSpeed == 0f)
@@ -43,6 +61,13 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
     }
     private void StopTape() 
     {
+        _stamp.GetComponent<Collider2D>().enabled = false;
+        _pen.GetComponent<Collider2D>().enabled = false;
+        _scissors.GetComponent<Collider2D>().enabled = false;
+        _stamp.enabled = false;
+        _pen.enabled = false;
+        _scissors.enabled = false;
+        
         AudioEvents.Instance.PlayStopTape();
         _tape.SetSpeed(0);
     }
@@ -120,9 +145,8 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
         else if (_currentMistakesCount >= totalMistakes )
         {
             // GAME OVER
-            Debug.Log($"The tape ended completely. Player has made {_currentMistakesCount} errors");
             StopTape();
-            Debug.Log("DESPEDIDO");
+            MenuManager.Instance.RestartCardToShow();
             CameraShakeManager.Instance.CameraShakeGameOver();
             OnExceedingMistakes?.Invoke();
         }

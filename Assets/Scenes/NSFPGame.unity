@@ -435,7 +435,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1692957973822092617, guid: 1ca79ff365a337646897a45a7c66f82e, type: 3}
       propertyPath: m_SortingOrder
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2820279297263416972, guid: 1ca79ff365a337646897a45a7c66f82e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1195,6 +1195,9 @@ MonoBehaviour:
   AutoUnparentOnAwake: 1
   totalMistakes: 5
   tapeSpeedMultiplier: 1.25
+  _stamp: {fileID: 1610599902}
+  _scissors: {fileID: 1629511371}
+  _pen: {fileID: 754718070}
 --- !u!114 &582703297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2576,8 +2579,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tapeRounds:
-  - {fileID: 11400000, guid: 963a58c5784866a4f8b756cb66006d53, type: 2}
-  - {fileID: 11400000, guid: 3cdd269f2e8de804b9018992a38cfa43, type: 2}
+  - {fileID: 11400000, guid: 5e84850639eaf1e4781c91f1f8fe01d5, type: 2}
+  - {fileID: 11400000, guid: bc10d652cbe9da0499a5da97fdcf0181, type: 2}
+  - {fileID: 11400000, guid: cf83bde248e8f2d44b198f0cfe92dd7b, type: 2}
+  - {fileID: 11400000, guid: 158bb7ec0cf6fb241b09810095125bf4, type: 2}
+  - {fileID: 11400000, guid: 93e7ca153dd98ec46b405fd1ccda35fe, type: 2}
   _framePrefab: {fileID: 9019433239480846398, guid: 29efc0e52189aef4186f1e7bf1051c8b, type: 3}
   _startPosition: {fileID: 121891347}
 --- !u!1 &1047154824
@@ -2822,7 +2828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7782453424632205033, guid: 63780be5b6690ff44ac062ba61ec3847, type: 3}
       propertyPath: m_SortingOrder
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4102,7 +4108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9008315671983878246, guid: e629894df0a7b3241b3bc7fdc9bd1b9e, type: 3}
       propertyPath: m_SortingOrder
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5465,7 +5471,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.8679245, g: 0.7948818, b: 0.55268776, a: 1}
-  m_Intensity: 0.99
+  m_Intensity: 0.69
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 000000009b6b4f53
@@ -5558,7 +5564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4430021458151939885, guid: 3c3d7618f881c8c4bb78a42634684a3b, type: 3}
       propertyPath: m_SortingOrder
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5628,7 +5634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7524486645396730300, guid: 449ff2fad0357634ba9ceafdb0d08524, type: 3}
       propertyPath: m_SortingOrder
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
