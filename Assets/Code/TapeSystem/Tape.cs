@@ -11,6 +11,7 @@ public class Tape : MonoBehaviour
     private float _speed;
     public float TapeSpeed => _speed;
     private List<GameObject> _frames = new();
+    public List<GameObject> Frames => _frames;
     private CountdownTimer _timer;
     private int _currentFrame = 0;
     public Transform StartPosition => _startPosition;

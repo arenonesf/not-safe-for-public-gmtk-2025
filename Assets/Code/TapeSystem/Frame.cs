@@ -40,8 +40,14 @@ public class Frame : MonoBehaviour
 
     public void ReturnToStartPosition() 
     {
-        Vector3 lastElementPosition = _tape.GetLastFramePosition();
-        lastElementPosition.x += _tape.GetTapeDataOffset();
+        Vector3 lastElementPosition;
+
+        if (_tape.Frames.IndexOf(gameObject) == 0)
+            lastElementPosition = _tape.GetLastFramePosition();
+        else
+            lastElementPosition = _tape.Frames[_tape.Frames.IndexOf(gameObject) - 1].transform.position;
+        
+        lastElementPosition.x -= _tape.GetTapeDataOffset();
         _rigidbody2D.position = lastElementPosition;
     }
 
