@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : PersistentSingleton<GameManager>
 {
     private Tape _tape;
+    public static Action OnOpenConditions;
+    public static Action OnOpenNextCard;
     public static Action OnBeginPlay;
     public static Action OnBeginNextRound;
     private int _censorWorkerCount = 0;
@@ -47,5 +49,15 @@ public class GameManager : PersistentSingleton<GameManager>
     public void BeginTapeRunning()
     {
         OnBeginPlay?.Invoke();
+    }
+    
+    public void OpenCardOfConditions()
+    {
+        OnOpenConditions?.Invoke();
+    }
+
+    public void OpenNextCard()
+    {
+        OnOpenNextCard?.Invoke();
     }
 }

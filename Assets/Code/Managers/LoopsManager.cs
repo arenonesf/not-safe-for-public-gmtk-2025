@@ -31,6 +31,7 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
     private void StartTape()
     {
         Debug.Log($"TAPE START. Current round: {_tape.GetCurrentRound() + 1}");
+        MenuManager.Instance.SetCardOfRound();
         _tape.SetSpeed(_tape.CurrentTapeData.InitialSpeed);
     } 
     private void StopTape() => _tape.SetSpeed(0);
