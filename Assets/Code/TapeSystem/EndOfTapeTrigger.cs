@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 public class EndOfTapeTrigger : MonoBehaviour
 {
     private Camera _camera;
     [SerializeField] private Tape _tape;
+    public Action<Frame> OnFrameWithError;
 
     private void Awake()
     {
@@ -31,11 +33,20 @@ public class EndOfTapeTrigger : MonoBehaviour
     {
         if (collision.TryGetComponent<Frame>(out Frame frameObject))
         {
-            if (_tape.GetReturnFirstFrame().Equals(frameObject))
+            
+
+            if (_tape.GetLastFrameInTape().Equals(frameObject))
             {
-                Loops.Instance.SetFinishLoop();
+                LoopsManager.Instance.TapeRunnedCompletely();
+            }
+            else
+            {
+                var hasFrameError = frameObject.CheckFrame();
+                Debug.Log($"SHOULD ADD ERROR {hasFrameError}");
+                if (hasFrameError) OnFrameWithError?.Invoke(frameObject);
             }
 
+            if (frameObject == null) return;
             frameObject.ReturnToStartPosition();
         }
     }
