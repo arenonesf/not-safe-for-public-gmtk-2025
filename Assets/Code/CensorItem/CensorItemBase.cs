@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -11,6 +12,7 @@ public abstract class CensorItemBase : MonoBehaviour, ICensorItem, IPointerEnter
     protected Sprite _defaultSprite;
     public abstract CensorItemType Type { get; }
     private Vector3 _initialPosition;
+
 
     protected virtual void Awake()
     {
@@ -26,7 +28,10 @@ public abstract class CensorItemBase : MonoBehaviour, ICensorItem, IPointerEnter
             ApplyEffect(frame);
             frame.AddCensorToList(Type);
             Debug.Log($"{Type} Applied");
+            AudioEvents.Instance.PlayCensorItemSound(Type);
         }
+        else
+            AudioEvents.Instance.PlayError();
     }
 
     // Default behavior - override in subclasses if needed

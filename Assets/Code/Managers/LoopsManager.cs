@@ -38,8 +38,14 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
         {
             _tape.SetSpeed(_tape.PreviousSpeed);
         }
-    } 
-    private void StopTape() => _tape.SetSpeed(0);
+        AudioEvents.Instance.PlayStartRound();
+        AudioEvents.Instance.PlayStartTape();
+    }
+    private void StopTape() 
+    {
+        AudioEvents.Instance.PlayStopTape();
+        _tape.SetSpeed(0);
+    }
 
     private void PrepareForNextRound()
     {
