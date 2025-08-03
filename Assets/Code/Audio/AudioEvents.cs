@@ -1,8 +1,9 @@
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using Code.Core;
 
-public class AudioEvents : MonoBehaviour
+public class AudioEvents : PersistentSingleton<AudioEvents>
 {
     [SerializeField] private EventReference _applyPenEvent;
     [SerializeField] private EventReference _applyStampEvent;
@@ -14,6 +15,25 @@ public class AudioEvents : MonoBehaviour
     [SerializeField] private EventReference _switchOnLamp;
     [SerializeField] private EventReference _tapeLoop;
     private EventInstance _tapeLoopInstance;
+
+    public void PlayCensorItemSound(CensorItemType type) 
+    {
+        switch (type)
+        {
+            case CensorItemType.Pen:
+                PlayApplyPen();
+                break;
+            case CensorItemType.Stamp:
+                PlayApplyStamp();
+                break;
+            case CensorItemType.Scissors:
+                PlayApplyScissors();
+                break;
+            default:
+                Debug.LogWarning($"No sound defined for {type}");
+                break;
+        }
+    }
 
     private void PlayApplyPen() 
     {
@@ -36,45 +56,46 @@ public class AudioEvents : MonoBehaviour
         applyScissorsInstance.release();
     }
 
-    private void PlayError()
+    public void PlayError()
     {
         FMOD.Studio.EventInstance errorInstance = RuntimeManager.CreateInstance(_errorEvent);
         errorInstance.start();
         errorInstance.release();
     }
 
-    private void PlayOpenCloseNotebook()
+    public void PlayOpenCloseNotebook()
     {
         FMOD.Studio.EventInstance openCloseNotebookInstance = RuntimeManager.CreateInstance(_openCloseNotebookEvent);
         openCloseNotebookInstance.start();
         openCloseNotebookInstance.release();
     }
 
-    private void PlayStartRound()
+    public void PlayStartRound()
     {
         FMOD.Studio.EventInstance startRoundInstance = RuntimeManager.CreateInstance(_startRoundEvent);
         startRoundInstance.start();
         startRoundInstance.release();
     }
 
-    private void PlaySwitchOnLamp()
+    public void PlaySwitchOnLamp()
     {
         FMOD.Studio.EventInstance switchOnLampInstance = RuntimeManager.CreateInstance(_switchOnLamp);
         switchOnLampInstance.start();
         switchOnLampInstance.release();
     }
 
-    private void PlayStartTape()
+    public void PlayStartTape()
     {
         _tapeLoopInstance = RuntimeManager.CreateInstance(_tapeLoop);
         _tapeLoopInstance.start();
     }
 
-    private void PlayStopTape()
+    public void PlayStopTape()
     {
         FMOD.Studio.EventInstance stopTapeInstance = RuntimeManager.CreateInstance(_stopTape);
         stopTapeInstance.start();
         stopTapeInstance.release();
+        _tapeLoopInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         _tapeLoopInstance.release();
     }
 }
