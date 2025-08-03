@@ -7,11 +7,9 @@ using UnityEngine;
 public class LoopsManager : PersistentSingleton<LoopsManager>
 {
     [SerializeField] private int totalMistakes = 5;
-    [SerializeField] private float spawnCardRate = 0.1f;
     [SerializeField] private float tapeSpeedMultiplier = 1.25f;
     private int _currentMistakesCount;
     private int _currentRightChoicesCount;
-    private CountdownTimer _spawnCardsTimer;
     private Tape _tape;
     private List<Frame> _frames = new();
     private EndOfTapeTrigger _endOfTapeTrigger;
@@ -24,7 +22,6 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
         _tape = GameManager.Instance.GetTape();
         _endOfTapeTrigger = FindFirstObjectByType<EndOfTapeTrigger>();
         _currentMistakesCount = 0;
-        _spawnCardsTimer = new(spawnCardRate);
         GameManager.OnBeginPlay += StartTape;
         GameManager.OnBeginNextRound += PrepareForNextRound;
         _endOfTapeTrigger.OnFrameWithError += AddErrorToCount;
@@ -117,6 +114,4 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
             frame.OnRightChoice -= AddRightChoiceToCount;
         }
     }
-
-    private void OnDestroy() => _spawnCardsTimer.Dispose();
 }
