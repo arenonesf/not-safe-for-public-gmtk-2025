@@ -231,7 +231,7 @@ Transform:
   m_GameObject: {fileID: 121891346}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.02, y: 0, z: 0}
+  m_LocalPosition: {x: -11.02, y: 0.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1772,7 +1772,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 966813514}
-  - component: {fileID: 966813515}
   m_Layer: 0
   m_Name: Lights
   m_TagString: Untagged
@@ -1798,28 +1797,6 @@ Transform:
   - {fileID: 1542140572}
   m_Father: {fileID: 1816533426}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &966813515
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 966813513}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f75c6f00e2b048a4e84222d9d22df0c4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &968950149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1868,7 +1845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57fed72d3a5980241b743099d6d9ac3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tapeData: {fileID: 11400000, guid: 5e84850639eaf1e4781c91f1f8fe01d5, type: 2}
+  _tapeData: {fileID: 11400000, guid: 35a8f73daceb7d84998af2766f74caf2, type: 2}
   _framePrefab: {fileID: 9019433239480846398, guid: 29efc0e52189aef4186f1e7bf1051c8b, type: 3}
   _startPosition: {fileID: 121891347}
 --- !u!1 &1031676168
