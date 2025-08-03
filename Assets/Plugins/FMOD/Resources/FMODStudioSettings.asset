@@ -380,8 +380,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: gmtk-2025-fmod/gmtk-2025-fmod.fspro
-  sourceBankPath: gmtk-2025-fmod/Build
+  sourceProjectPath: ../../GMTK 25 - test/gmtk-2025-training/gmtk-2025-fmod/gmtk-2025-fmod.fspro
+  sourceBankPath: ../../GMTK 25 - test/gmtk-2025-training/gmtk-2025-fmod/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -402,11 +402,8 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks:
-  - Master
-  Banks:
-  - Music
-  - SFX
+  MasterBanks: []
+  Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
