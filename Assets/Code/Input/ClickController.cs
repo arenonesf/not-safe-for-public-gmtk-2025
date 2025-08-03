@@ -8,6 +8,7 @@ public class ClickController : MonoBehaviour
     private NSFPInput _input;
     public Action<Vector2> OnMouseLeftButtonClick;
     public Action OnMouseRightButtonClick;
+    public static Action OnEscapeButtonPress;
 
     private void Awake()
     {
@@ -19,12 +20,14 @@ public class ClickController : MonoBehaviour
         _input.Gameplay.Enable();
         _input.Gameplay.LeftClick.performed += OnClickLeftButton;
         _input.Gameplay.RightClick.performed += OnClickRightButton;
+        _input.Gameplay.PauseMenu.performed += OnEscapeButton;
     }
 
     private void OnDisable()
     {
         _input.Gameplay.LeftClick.performed -= OnClickLeftButton;
         _input.Gameplay.RightClick.performed -= OnClickRightButton;
+        _input.Gameplay.PauseMenu.performed -= OnEscapeButton;
         _input.Gameplay.Disable();
     }
 
@@ -38,5 +41,10 @@ public class ClickController : MonoBehaviour
     private void OnClickRightButton(InputAction.CallbackContext context)
     {
         OnMouseRightButtonClick?.Invoke();
+    }
+    private void OnEscapeButton(InputAction.CallbackContext context)
+    {
+        if(_input.Gameplay.PauseMenu.IsPressed())
+            OnEscapeButtonPress?.Invoke();
     }
 }
