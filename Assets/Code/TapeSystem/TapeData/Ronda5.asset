@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4e666b7f899c8498256f1d4259ab0e, type: 3}
+  m_Name: Ronda5
+  m_EditorClassIdentifier: 
+  Frames:
+  - {fileID: 11400000, guid: 1df84b84e80f8fb4ca96b4cc8e4871ce, type: 2}
+  - {fileID: 11400000, guid: d564ce2a30cd3654cb71a6ad55a95f65, type: 2}
+  - {fileID: 11400000, guid: 8bc2b47c94c09b942b4582f6c5471319, type: 2}
+  - {fileID: 11400000, guid: 7571b5d9d44a8b14ea0083d279453c73, type: 2}
+  - {fileID: 11400000, guid: 910abb60d060941468ff2091c247e01e, type: 2}
+  - {fileID: 11400000, guid: d460385e95eded3488cd6d679e05c5c7, type: 2}
+  - {fileID: 11400000, guid: caa3c810f11264446b8eca87adf10858, type: 2}
+  - {fileID: 11400000, guid: 4da4f86134b942443a2740e4397ba60f, type: 2}
+  - {fileID: 11400000, guid: f48106d8a4864194ba384994367c8219, type: 2}
+  - {fileID: 11400000, guid: 8df313d1ebf84b141b5dafc4bc1a8d97, type: 2}
+  - {fileID: 11400000, guid: c9ced040f6259024597f725223dc0e6f, type: 2}
+  - {fileID: 11400000, guid: 5690e6e992a2d34459bc1a493716f8b9, type: 2}
+  - {fileID: 11400000, guid: 1df84b84e80f8fb4ca96b4cc8e4871ce, type: 2}
+  - {fileID: 11400000, guid: d564ce2a30cd3654cb71a6ad55a95f65, type: 2}
+  - {fileID: 11400000, guid: 98bf2e99736a5eb4a9070659aa8343bc, type: 2}
+  - {fileID: 11400000, guid: bd5c1cb16eedc314ab0ee4ffd39b3423, type: 2}
+  - {fileID: 11400000, guid: 8ebe1389c4ce3f046b865d597c1f6447, type: 2}
+  - {fileID: 11400000, guid: 8bc2b47c94c09b942b4582f6c5471319, type: 2}
+  - {fileID: 11400000, guid: 910abb60d060941468ff2091c247e01e, type: 2}
+  - {fileID: 11400000, guid: 7571b5d9d44a8b14ea0083d279453c73, type: 2}
+  MinGoodChoices: 20
+  InitialSpeed: 2
+  SpawnOffset: 5
+  SpawnRate: 0.1
