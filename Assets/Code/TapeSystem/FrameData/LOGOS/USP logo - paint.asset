@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 553af06dfee6f8a4ba00d276a275c829, type: 3}
-  m_Name: T2- PLUMA+STAMP
+  m_Name: USP logo - paint
   m_EditorClassIdentifier: 
   FrameName: 
-  FrameImage: {fileID: -250176574044412076, guid: e9db6beba812b1b4dbd5b539754ffc06, type: 3}
-  CensoredPenImage: {fileID: -2387161231779114977, guid: 24e921bcf1344ad48b1d9c0ec6df8b0a, type: 3}
-  FrameCensorType: 0000000002000000
+  FrameImage: {fileID: 838255823261701204, guid: 42e72b92a393a0b498cf626efd8b013e, type: 3}
+  CensoredPenImage: {fileID: 21300000, guid: 904f7d2df4e0af849aa3029bc7cbf5b2, type: 3}
+  FrameCensorType: 02000000

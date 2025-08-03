@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 553af06dfee6f8a4ba00d276a275c829, type: 3}
-  m_Name: "Se\xF1or sonrisa1"
+  m_Name: SoldierSad - final
   m_EditorClassIdentifier: 
   FrameName: 
-  FrameImage: {fileID: -8784922534606449006, guid: 7fad0517272c92944825f8638486be03, type: 3}
-  CensoredPenImage: {fileID: 0}
-  FrameCensorType: 
+  FrameImage: {fileID: 6246832655069406539, guid: 3b9e1dc8387b7104f86b25cc5333e546, type: 3}
+  CensoredPenImage: {fileID: 21300000, guid: ebcad5a87aa3d9848b0bb0acb22cf5a0, type: 3}
+  FrameCensorType: 000000000100000002000000

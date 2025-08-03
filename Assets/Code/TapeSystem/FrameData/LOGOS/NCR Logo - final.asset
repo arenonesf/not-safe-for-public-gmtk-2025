@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FrameName: 
   FrameImage: {fileID: -6864723604932376362, guid: 7be735caf5e7a634ab5360d8eb7428c3, type: 3}
-  CensoredPenImage: {fileID: 21300000, guid: 25cfcd021d05110469845e65ecb87514, type: 3}
+  CensoredPenImage: {fileID: 21300000, guid: 83b5d4a7d8b36534caeb2f66bd50c72c, type: 3}
   FrameCensorType: 000000000200000001000000

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 553af06dfee6f8a4ba00d276a275c829, type: 3}
-  m_Name: Kojima
+  m_Name: "Se\xF1or Triste - draw happy"
   m_EditorClassIdentifier: 
   FrameName: 
-  FrameImage: {fileID: -6053735894238660146, guid: 9a678241b3dfda842901cd148e2fd804, type: 3}
-  CensoredPenImage: {fileID: 0}
-  FrameCensorType: 
+  FrameImage: {fileID: -3623511298759537625, guid: 630efa2db5fb895478e703601df5eb1b, type: 3}
+  CensoredPenImage: {fileID: 21300000, guid: 48eea2cb27530ea41ba070859dc30017, type: 3}
+  FrameCensorType: 02000000

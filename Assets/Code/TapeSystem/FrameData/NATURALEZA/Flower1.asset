@@ -15,4 +15,4 @@ MonoBehaviour:
   FrameName: 
   FrameImage: {fileID: -8658850166083280144, guid: 9560734eee086a94b8012c9f5a27e5c5, type: 3}
   CensoredPenImage: {fileID: 0}
-  FrameCensorType: 03000000
+  FrameCensorType: 

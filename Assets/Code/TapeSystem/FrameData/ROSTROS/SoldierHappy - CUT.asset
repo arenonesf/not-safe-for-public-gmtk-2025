@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 553af06dfee6f8a4ba00d276a275c829, type: 3}
+  m_Name: SoldierHappy - CUT
+  m_EditorClassIdentifier: 
+  FrameName: 
+  FrameImage: {fileID: 7456761395338220020, guid: de09b26368ded89438f8860b18cd3176, type: 3}
+  CensoredPenImage: {fileID: 0}
+  FrameCensorType: 01000000
