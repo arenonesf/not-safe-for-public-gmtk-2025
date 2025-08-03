@@ -13,6 +13,7 @@ public class Frame : MonoBehaviour
     private BoxCollider2D _boxCollider2D;
     private List<CensorItemType> _censorsApplied = new();
     public Action<Frame> OnErrorCensoring;
+    public Action<Frame> OnRightChoice;
 
     private void Awake()
     {
@@ -39,12 +40,22 @@ public class Frame : MonoBehaviour
 
     public void ReturnToStartPosition() 
     {
-        _rigidbody2D.position = _tape.StartPosition.position;
+        Vector3 lastElementPosition;
+
+        if (_tape.Frames.IndexOf(gameObject) == 0)
+            lastElementPosition = _tape.GetLastFramePosition();
+        else
+            lastElementPosition = _tape.Frames[_tape.Frames.IndexOf(gameObject) - 1].transform.position;
+        
+        lastElementPosition.x -= _tape.GetTapeDataOffset();
+        _rigidbody2D.position = lastElementPosition;
     }
 
     public void AddCensorToList(CensorItemType type)
     {
         _censorsApplied.Add(type);
+        if (CheckFrame())
+            OnRightChoice?.Invoke(this);
     }
 
     public bool CanApplyCensor(CensorItemType type)

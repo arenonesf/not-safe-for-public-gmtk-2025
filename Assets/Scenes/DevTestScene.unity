@@ -164,7 +164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AutoUnparentOnAwake: 1
-  _tape: {fileID: 540579214}
 --- !u!1 &99091329
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AutoUnparentOnAwake: 0
   _maxMistakes: 3
+  _countdownTime: 1
   _prevSpeed: 0
 --- !u!1 &183691885
 GameObject:
@@ -297,15 +297,15 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 33008580}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: StartWorking
-        m_Mode: 1
+        m_MethodName: ChangeToTapeRunning
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &183691888
 MonoBehaviour:
@@ -723,6 +723,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13bf0064968d13e4ab79a519fad91da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HoveredSprite: {fileID: 0}
+  _hoverMoveAmount: 0
+  _hoverMoveDuration: 0
   _stampedSprite: {fileID: 8277155475492361754, guid: 7fbfb43e6ca19e043bd13c8932ad910d, type: 3}
 --- !u!1 &759191444
 GameObject:
@@ -871,6 +874,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b0677a413e1d5a448188923a2c673f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HoveredSprite: {fileID: 0}
+  _hoverMoveAmount: 0
+  _hoverMoveDuration: 0
 --- !u!1 &797381488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,6 +1205,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8549b375de1cf469fba68dba32eef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HoveredSprite: {fileID: 0}
+  _hoverMoveAmount: 0
+  _hoverMoveDuration: 0
 --- !u!1 &1233094339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,7 +1464,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 7ce701432a984824ba256bea964a6f88, type: 3}
   - {fileID: 2800000, guid: fd2aa0e53ea093f45929ed6a61e721fc, type: 3}
   - {fileID: 2800000, guid: 439af3ab649bd254fbccbc8b337cb200, type: 3}
-  _clickController: {fileID: 0}
+  _clickController: {fileID: 589408311}
 --- !u!4 &1358349556
 Transform:
   m_ObjectHideFlags: 0
