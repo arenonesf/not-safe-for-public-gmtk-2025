@@ -34,7 +34,7 @@ public class Frame : MonoBehaviour
         _frameData = data;
         _spriteRenderer.sprite = data.FrameImage;
         _penCensoredSpriteRenderer.sprite = data.CensoredPenImage;
-        _boxCollider2D.size = _spriteRenderer.bounds.size;
+        _boxCollider2D.size = _spriteRenderer.bounds.size / 2;
         _boxCollider2D.offset = _spriteRenderer.bounds.center - transform.position;
     }
 

@@ -1772,6 +1772,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 966813514}
+  - component: {fileID: 966813515}
   m_Layer: 0
   m_Name: Lights
   m_TagString: Untagged
@@ -1797,6 +1798,28 @@ Transform:
   - {fileID: 1542140572}
   m_Father: {fileID: 1816533426}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &966813515
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966813513}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f75c6f00e2b048a4e84222d9d22df0c4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &968950149
 GameObject:
   m_ObjectHideFlags: 0
