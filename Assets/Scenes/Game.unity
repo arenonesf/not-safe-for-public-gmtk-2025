@@ -763,8 +763,8 @@ Transform:
   m_GameObject: {fileID: 604564948}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.007963259, y: -0.038431644, z: 0}
-  m_LocalScale: {x: 2.79, y: 2.786672, z: 1}
+  m_LocalPosition: {x: 0.007963259, y: -0.0273, z: 0}
+  m_LocalScale: {x: 2.79, y: 2.7928028, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1816533426}
@@ -991,6 +991,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 7ce701432a984824ba256bea964a6f88, type: 3}
   - {fileID: 2800000, guid: fd2aa0e53ea093f45929ed6a61e721fc, type: 3}
   - {fileID: 2800000, guid: 439af3ab649bd254fbccbc8b337cb200, type: 3}
+  _clickController: {fileID: 0}
 --- !u!1 &709195232
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,6 +1177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8549b375de1cf469fba68dba32eef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HoveredSprite: {fileID: 0}
+  _hoverMoveAmount: 0
+  _hoverMoveDuration: 0
 --- !u!61 &754718071
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1921,6 +1925,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13bf0064968d13e4ab79a519fad91da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HoveredSprite: {fileID: 0}
+  _hoverMoveAmount: 0
+  _hoverMoveDuration: 0
   _stampedSprite: {fileID: 8277155475492361754, guid: 7fbfb43e6ca19e043bd13c8932ad910d, type: 3}
 --- !u!61 &1610599903
 BoxCollider2D:
@@ -2069,6 +2076,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b0677a413e1d5a448188923a2c673f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HoveredSprite: {fileID: 0}
+  _hoverMoveAmount: 0
+  _hoverMoveDuration: 0
 --- !u!61 &1629511372
 BoxCollider2D:
   m_ObjectHideFlags: 0
