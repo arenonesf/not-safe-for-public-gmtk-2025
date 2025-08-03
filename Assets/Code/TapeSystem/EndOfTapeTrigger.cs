@@ -34,7 +34,6 @@ public class EndOfTapeTrigger : MonoBehaviour
         if (collision.TryGetComponent<Frame>(out Frame frameObject))
         {
             
-
             if (_tape.GetLastFrameInTape().Equals(frameObject))
             {
                 LoopsManager.Instance.TapeRunnedCompletely();

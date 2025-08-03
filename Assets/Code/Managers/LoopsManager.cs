@@ -29,7 +29,7 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
     private void StartTape()
     {
         Debug.Log($"TAPE START. Current round: {_tape.GetCurrentRound() + 1}");
-        MenuManager.Instance.SetCardOfRound();
+        //MenuManager.Instance.SetCardOfRound();
         _tape.SetSpeed(_tape.CurrentTapeData.InitialSpeed);
     } 
     private void StopTape() => _tape.SetSpeed(0);
@@ -68,7 +68,13 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
         }
     }
 
-    private void AddRightChoiceToCount(Frame frame) => _currentRightChoicesCount++;
+    private void AddRightChoiceToCount(Frame frame)
+    {
+        Debug.Log("ADDING RIGHT CHOICE");
+        _currentRightChoicesCount++;
+        CheckIfWonRound();
+    }
+        
     private void AddErrorToCount(Frame frame)
     {
         CameraShakeManager.Instance.CameraShakeOnError();
@@ -79,21 +85,24 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
     {
         Debug.Log($"The tape ended. Total mistakes: {_currentMistakesCount}");
 
-        if(_currentRightChoicesCount == _tape.CurrentTapeData.MinGoodChoices)
-        {
-            // GAME WIN
-            Debug.Log("Player has nailed it.");
-            OnSuccessCensoringTheTape?.Invoke();
-            return;
-        }
-
         if(_currentMistakesCount < totalMistakes)
         {
             // KEEP PLAYING BUT MORE DIFFICULT
             Debug.Log($"Total errors: {_currentMistakesCount}. Player keeps playing but with increased speed.");
             AddSpeedToTape();
         }
-        else
+    }
+
+    public void CheckIfWonRound()
+    {
+        if (_currentRightChoicesCount == _tape.CurrentTapeData.MinGoodChoices)
+        {
+            // GAME WIN
+            Debug.Log("Player has nailed it.");
+            OnSuccessCensoringTheTape?.Invoke();
+            return;
+        }
+        else if (_currentMistakesCount >= totalMistakes )
         {
             // GAME OVER
             Debug.Log($"The tape ended completely. Player has made {_currentMistakesCount} errors");
