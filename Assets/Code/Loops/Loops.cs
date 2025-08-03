@@ -127,4 +127,9 @@ public class Loops : PersistentSingleton<Loops>
         _currentMistakes = 0;
         _mistakes = 0;
     }
+
+    private void OnDestroy()
+    {
+        _timer.Dispose();
+    }
 }

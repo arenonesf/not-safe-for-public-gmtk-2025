@@ -76,6 +76,16 @@ public class Tape : MonoBehaviour
         _speed = value;
     }
 
+    public Vector3 GetLastFramePosition()
+    {
+        return _frames[^1].transform.position;
+    }
+
+    public float GetTapeDataOffset()
+    {
+        return _tapeData.SpawnOffset;
+    }
+
     private void OnDestroy()
     {
         _timer.Dispose();

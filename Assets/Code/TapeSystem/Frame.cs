@@ -40,7 +40,9 @@ public class Frame : MonoBehaviour
 
     public void ReturnToStartPosition() 
     {
-        _rigidbody2D.position = _tape.StartPosition.position;
+        Vector3 lastElementPosition = _tape.GetLastFramePosition();
+        lastElementPosition.x += _tape.GetTapeDataOffset();
+        _rigidbody2D.position = lastElementPosition;
     }
 
     public void AddCensorToList(CensorItemType type)
