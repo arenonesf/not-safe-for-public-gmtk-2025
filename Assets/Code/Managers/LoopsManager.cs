@@ -3,6 +3,7 @@ using Code.Core.Timer;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class LoopsManager : PersistentSingleton<LoopsManager>
 {
@@ -59,6 +60,15 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
         }
     }
 
+    public void DeregisterFrames(List<GameObject> frames)
+    {
+        foreach(var frame in _frames)
+        {
+            frame.OnErrorCensoring -= AddErrorToCount;
+            frame.OnRightChoice -= AddRightChoiceToCount;
+        }
+    }
+
     private void AddRightChoiceToCount(Frame frame) => _currentRightChoicesCount++;
     private void AddErrorToCount(Frame frame)
     {
@@ -107,11 +117,5 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
         GameManager.OnBeginPlay -= StartTape;
         GameManager.OnBeginNextRound -= PrepareForNextRound;
         _endOfTapeTrigger.OnFrameWithError -= AddErrorToCount;
-
-        foreach (var frame in _frames)
-        {
-            frame.OnErrorCensoring -= AddErrorToCount;
-            frame.OnRightChoice -= AddRightChoiceToCount;
-        }
     }
 }

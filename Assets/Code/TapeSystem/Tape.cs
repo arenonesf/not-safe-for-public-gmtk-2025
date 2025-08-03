@@ -82,6 +82,8 @@ public class Tape : MonoBehaviour
 
         if (_currentRoundIndex < _tapeRounds.Count)
         {
+            LoopsManager.Instance.DeregisterFrames(_frames);
+
             foreach (var frame in _frames)
             {
                 Destroy(frame);
