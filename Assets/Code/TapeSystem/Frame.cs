@@ -66,7 +66,8 @@ public class Frame : MonoBehaviour
     public void AddCensorToList(CensorItemType type)
     {
         _censorsApplied.Add(type);
-        if (CheckFrame())
+        Debug.Log($"ADD CENSOR TO LIST {CheckFrame()}");
+        if (!CheckFrame())
             OnRightChoice?.Invoke(this);
     }
 
@@ -116,5 +117,4 @@ public class Frame : MonoBehaviour
         // No errors
         return false;
     }
-
 }

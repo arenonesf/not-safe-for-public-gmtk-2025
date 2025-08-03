@@ -11,12 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 8d2731e80499ae24f81431a6cf0e0998
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game.unity
     guid: c0a2e56fa249a8e44991efcd7e752a12
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Settings.unity
     guid: ed3b0358903dbdc49a814ba7e8812705
+  - enabled: 1
+    path: Assets/Scenes/NSFPGame.unity
+    guid: a09e4472939eb2147ba006a9a276e1ab
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
