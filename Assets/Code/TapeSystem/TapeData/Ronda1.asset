@@ -21,7 +21,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cc288f7a1050a984fb93c153d4e4b2dc, type: 2}
   - {fileID: 11400000, guid: 3bc5fdb0ad920524fb4cf44c08accbe7, type: 2}
   - {fileID: 11400000, guid: 30cd688236cafcf41916170e9c626313, type: 2}
-  - {fileID: 11400000, guid: 89ef1661a43b93c4ea4f5f044e36be8d, type: 2}
+  - {fileID: 11400000, guid: d06b055522fee0e469f450004df97dc7, type: 2}
   - {fileID: 11400000, guid: bcfc9a660e47bd9439cdcfa45fc41f33, type: 2}
   - {fileID: 11400000, guid: 3bc5fdb0ad920524fb4cf44c08accbe7, type: 2}
   - {fileID: 11400000, guid: 03245fc7f516f2e418f96ee5753b8e1c, type: 2}
@@ -33,7 +33,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d06b055522fee0e469f450004df97dc7, type: 2}
   - {fileID: 11400000, guid: ba204e248917aa4498ec81e167e55bfb, type: 2}
   - {fileID: 11400000, guid: 0b4115bf10b9823488a548fee7f1c328, type: 2}
-  MinGoodChoices: 3
+  MinGoodChoices: 5
   InitialSpeed: 2
   SpawnOffset: 5
   SpawnRate: 0.1
