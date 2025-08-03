@@ -15,8 +15,8 @@ public class MenuManager : PersistentSingleton<MenuManager>
     void Start()
     {
         _cardOfConditions.transform.position = new Vector3(-0.008930326f, -1.02f, 0);
-        _cardOfConditions.SetActive(false);
-        _buttonCardOfConditions.gameObject.SetActive(false);
+        //_cardOfConditions.SetActive(false);
+        //_buttonCardOfConditions.gameObject.SetActive(false);
         _buttonCardOfRounds.gameObject.SetActive(false);
 
         foreach (GameObject card in _cardOfRounds)
@@ -29,15 +29,21 @@ public class MenuManager : PersistentSingleton<MenuManager>
         GameManager.OnOpenNextCard += PassToNextCard;
     }
 
-    private void PassToCardCondition()
+    public void PassToCardCondition()
     {
-        _cardOfConditions.SetActive(true);
+        Debug.Log("Entraaaaaaaaaaaaaa");
+
+        if (_cardOfConditions == null)
+            GameObject.FindWithTag("WelcomeCard").SetActive(true);
+
+        Debug.Log(_cardOfConditions);
+
+        //_cardOfConditions.SetActive(true);
         _buttonCardOfConditions.gameObject.SetActive(true);
     }
 
     private void PassToNextCard()
     {
-        Debug.Log("Entra");
         _cardOfConditions.SetActive(false);
         _buttonCardOfConditions.gameObject.SetActive(false);
 

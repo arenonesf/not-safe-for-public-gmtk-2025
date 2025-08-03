@@ -1,6 +1,7 @@
 using Code.Core;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : PersistentSingleton<GameManager>
 {
@@ -22,12 +23,26 @@ public class GameManager : PersistentSingleton<GameManager>
     {
         LoopsManager.OnSuccessCensoringTheTape += PrepareForNextRound;
         LoopsManager.OnExceedingMistakes += GameOver;
+        SceneManager.sceneLoaded += ActiveCard;
     }
 
     private void OnDisable()
     {
         LoopsManager.OnSuccessCensoringTheTape -= PrepareForNextRound;
         LoopsManager.OnExceedingMistakes -= GameOver;
+        SceneManager.sceneLoaded -= ActiveCard;
+    }
+
+
+    private void ActiveCard(Scene scene, LoadSceneMode load)
+    {
+        Debug.Log("Entra o que");
+        if (scene.name == "NSFPGame")
+        {
+            MenuManager.Instance.PassToCardCondition();
+            Debug.Log("Entracño");
+
+        }
     }
 
     private void GameOver()
