@@ -46,7 +46,6 @@ public class EndOfTapeTrigger : MonoBehaviour
                 if (hasFrameError) OnFrameWithError?.Invoke(frameObject);
             }
 
-            if (frameObject == null) return;
             frameObject.ReturnToStartPosition();
         }
     }

@@ -111,6 +111,15 @@ namespace Code.Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""b5bad331-34b6-4210-a598-70dd403b0d1d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -135,6 +144,17 @@ namespace Code.Input
                     ""action"": ""Right Click"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""258014d8-6b2c-4b18-99b7-9dd35c37a77f"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -145,6 +165,7 @@ namespace Code.Input
             m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
             m_Gameplay_LeftClick = m_Gameplay.FindAction("Left Click", throwIfNotFound: true);
             m_Gameplay_RightClick = m_Gameplay.FindAction("Right Click", throwIfNotFound: true);
+            m_Gameplay_PauseMenu = m_Gameplay.FindAction("Pause Menu", throwIfNotFound: true);
         }
 
         ~@NSFPInput()
@@ -227,6 +248,7 @@ namespace Code.Input
         private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
         private readonly InputAction m_Gameplay_LeftClick;
         private readonly InputAction m_Gameplay_RightClick;
+        private readonly InputAction m_Gameplay_PauseMenu;
         /// <summary>
         /// Provides access to input actions defined in input action map "Gameplay".
         /// </summary>
@@ -246,6 +268,10 @@ namespace Code.Input
             /// Provides access to the underlying input action "Gameplay/RightClick".
             /// </summary>
             public InputAction @RightClick => m_Wrapper.m_Gameplay_RightClick;
+            /// <summary>
+            /// Provides access to the underlying input action "Gameplay/PauseMenu".
+            /// </summary>
+            public InputAction @PauseMenu => m_Wrapper.m_Gameplay_PauseMenu;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -278,6 +304,9 @@ namespace Code.Input
                 @RightClick.started += instance.OnRightClick;
                 @RightClick.performed += instance.OnRightClick;
                 @RightClick.canceled += instance.OnRightClick;
+                @PauseMenu.started += instance.OnPauseMenu;
+                @PauseMenu.performed += instance.OnPauseMenu;
+                @PauseMenu.canceled += instance.OnPauseMenu;
             }
 
             /// <summary>
@@ -295,6 +324,9 @@ namespace Code.Input
                 @RightClick.started -= instance.OnRightClick;
                 @RightClick.performed -= instance.OnRightClick;
                 @RightClick.canceled -= instance.OnRightClick;
+                @PauseMenu.started -= instance.OnPauseMenu;
+                @PauseMenu.performed -= instance.OnPauseMenu;
+                @PauseMenu.canceled -= instance.OnPauseMenu;
             }
 
             /// <summary>
@@ -349,6 +381,13 @@ namespace Code.Input
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnRightClick(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Pause Menu" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnPauseMenu(InputAction.CallbackContext context);
         }
     }
 }

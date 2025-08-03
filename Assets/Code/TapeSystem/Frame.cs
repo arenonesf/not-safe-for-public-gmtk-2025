@@ -38,18 +38,30 @@ public class Frame : MonoBehaviour
         _boxCollider2D.offset = _spriteRenderer.bounds.center - transform.position;
     }
 
-    public void ReturnToStartPosition() 
+    public void ReturnToStartPosition()
     {
+        int index = _tape.Frames.IndexOf(gameObject);
+
+        if (index == -1)
+        {
+            return;
+        }
+
         Vector3 lastElementPosition;
 
-        if (_tape.Frames.IndexOf(gameObject) == 0)
+        if (index == 0)
+        {
             lastElementPosition = _tape.GetLastFramePosition();
+        }
         else
-            lastElementPosition = _tape.Frames[_tape.Frames.IndexOf(gameObject) - 1].transform.position;
-        
+        {
+            lastElementPosition = _tape.Frames[index - 1].transform.position;
+        }
+
         lastElementPosition.x -= _tape.GetTapeDataOffset();
         _rigidbody2D.position = lastElementPosition;
     }
+
 
     public void AddCensorToList(CensorItemType type)
     {
@@ -77,19 +89,32 @@ public class Frame : MonoBehaviour
 
     public bool CheckFrame()
     {
-        // If no censors applied
+        // Case 1: No censors applied, but expected censors exist: error
         if (_censorsApplied.Count == 0)
         {
             return _frameData.FrameCensorType.Count > 0;
         }
 
-        // All applied censors must be expected by the frame
+        // Case 2a: Some applied censors are invalid (not in expected list): error
         foreach (var censor in _censorsApplied)
         {
             if (!_frameData.FrameCensorType.Contains(censor))
-                return false;
+            {
+                return true; // Error
+            }
         }
 
-        return true;
+        // Case 2b: Compare exact contents of both lists (order doesn't matter)
+        var expected = new HashSet<CensorItemType>(_frameData.FrameCensorType);
+        var applied = new HashSet<CensorItemType>(_censorsApplied);
+
+        if (!expected.SetEquals(applied))
+        {
+            return true; // Error: not same elements
+        }
+
+        // No errors
+        return false;
     }
+
 }
