@@ -142,7 +142,7 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
             // GAME WIN
             Debug.Log("Player has nailed it.");
             OnSuccessCensoringTheTape?.Invoke();
-            MenuManager.Instance.RestartCardToShow();
+            //MenuManager.Instance.RestartCardToShow();
             return;
         }
         else if (_currentMistakesCount >= totalMistakes )

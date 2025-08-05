@@ -56,6 +56,7 @@ public class MenuManager : PersistentSingleton<MenuManager>
     public void SetCardOfRound()
     {
         _cardOfRounds[_numOfRound - 1].SetActive(false);
+        Debug.Log($"CurrentCardOfRound name: {_cardOfRounds[_numOfRound - 1].name}");
         _buttonCardOfRounds.gameObject.SetActive(false);
     }
 
