@@ -8,7 +8,6 @@ public class Tape : MonoBehaviour
     [SerializeField] private GameObject _framePrefab;
     [SerializeField] private Transform _startPosition;
 
-    private int _currentRoundIndex = 0;
     private float _speed;
     private float _previousSpeed;
     public float PreviousSpeed => _previousSpeed;
@@ -19,7 +18,7 @@ public class Tape : MonoBehaviour
     public float TapeSpeed => _speed;
     public List<GameObject> Frames => _frames;
     public Transform StartPosition => _startPosition;
-    public TapeData CurrentTapeData => _tapeRounds[_currentRoundIndex];
+    public TapeData CurrentTapeData => _tapeRounds[LoopsManager.Instance.GetCurrentRound()];
 
     private void Awake()
     {
@@ -80,12 +79,12 @@ public class Tape : MonoBehaviour
 
     public void TryStartNextRound()
     {
-        _currentRoundIndex++;
+        LoopsManager.Instance.UpdateNextRoundIndex();
 
-        if (_currentRoundIndex < _tapeRounds.Count)
+        if (LoopsManager.Instance.GetCurrentRound() < _tapeRounds.Count)
         {
             LoopsManager.Instance.DeregisterFrames(_frames);
-            MenuManager.Instance.PassToNextCard();
+            GameManager.Instance.GetMenuManager().PassToNextCard();
             foreach (var frame in _frames)
             {
                 Destroy(frame);
@@ -105,7 +104,6 @@ public class Tape : MonoBehaviour
     public void SetSpeed(float value) => _speed = value;
     public Vector3 GetLastFramePosition() => _frames[^1].transform.position;
     public float GetTapeDataOffset() => CurrentTapeData.SpawnOffset;
-    public int GetCurrentRound() => _currentRoundIndex;
 
     private void OnDestroy() => _timer.Dispose();
 }
