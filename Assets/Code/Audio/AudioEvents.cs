@@ -98,4 +98,10 @@ public class AudioEvents : PersistentSingleton<AudioEvents>
         _tapeLoopInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         _tapeLoopInstance.release();
     }
+
+    public void StopAllAudioEvents() 
+    {
+        _tapeLoopInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        _tapeLoopInstance.release();
+    }
 }

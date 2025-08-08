@@ -41,7 +41,10 @@ public class PauseMenu : MonoBehaviour {
     }
 
     //For return to menu
-    public void ToMainMenu(string scene) {
+    public void ToMainMenu(string scene) 
+    {
+        AudioEvents.Instance.StopAllAudioEvents();
+        LoopsManager.Instance.Reset();
         PauseUI.SetActive(false);
         Time.timeScale = 1f;
         isPauseMenuActive = false;

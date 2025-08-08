@@ -1790,9 +1790,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1512829453}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: OpenNextCard
+      - m_Target: {fileID: 1929306368}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: PassToNextCard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5593,7 +5593,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df27ed76a6f29746ad96898fe9b156d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AutoUnparentOnAwake: 1
   _cardOfConditions: {fileID: 708451020}
   _buttonCardOfConditions: {fileID: 636249218}
   _cardOfRounds:

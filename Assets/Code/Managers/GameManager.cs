@@ -6,43 +6,39 @@ using UnityEngine.SceneManagement;
 public class GameManager : PersistentSingleton<GameManager>
 {
     private Tape _tape;
-    public static Action OnOpenConditions;
-    public static Action OnOpenNextCard;
+    private MenuManager _menuManager;
     public static Action OnBeginPlay;
-    public static Action OnBeginNextRound;
     private int _censorWorkerCount = 0;
     public int CensorWorkerCount => _censorWorkerCount;
 
     protected override void Awake()
     {
         base.Awake();
-        _tape = FindFirstObjectByType<Tape>();
+        SceneManager.sceneLoaded += FindGameplayReferences;
     }
 
     private void Start()
     {
-        LoopsManager.OnSuccessCensoringTheTape += PrepareForNextRound;
-        LoopsManager.OnExceedingMistakes += GameOver;
-        SceneManager.sceneLoaded += ActiveCard;
+        LoopsManager.OnExceedingMistakes += GameOver;        
     }
 
     private void OnDisable()
     {
-        LoopsManager.OnSuccessCensoringTheTape -= PrepareForNextRound;
         LoopsManager.OnExceedingMistakes -= GameOver;
-        SceneManager.sceneLoaded -= ActiveCard;
+        SceneManager.sceneLoaded -= FindGameplayReferences;
     }
 
-
-    private void ActiveCard(Scene scene, LoadSceneMode load)
+    private void FindGameplayReferences(Scene scene, LoadSceneMode load) 
     {
-        Debug.Log("Entra o que");
-        if (scene.name == "NSFPGame")
-        {
-            MenuManager.Instance.PassToCardCondition();
-            Debug.Log("Entracño");
+        _tape = FindFirstObjectByType<Tape>();
+        _menuManager = FindFirstObjectByType<MenuManager>();
+        OpenCardOfConditions(scene);
+    }
 
-        }
+    private void OpenCardOfConditions(Scene scene)
+    {
+        if (scene.name == "NSFPGame")
+            _menuManager.PassToCardCondition();
     }
 
     private void GameOver()
@@ -50,29 +46,18 @@ public class GameManager : PersistentSingleton<GameManager>
         _censorWorkerCount++;
     }
 
-    private void PrepareForNextRound()
-    {
-        Debug.Log("NEXT ROUND BABY!");
-        OnBeginNextRound?.Invoke();
-    }
-
     public Tape GetTape()
     {
         return _tape;
     }
 
+    public MenuManager GetMenuManager() 
+    {
+        return _menuManager;
+    }
+
     public void BeginTapeRunning()
     {
         OnBeginPlay?.Invoke();
-    }
-    
-    public void OpenCardOfConditions()
-    {
-        OnOpenConditions?.Invoke();
-    }
-
-    public void OpenNextCard()
-    {
-        OnOpenNextCard?.Invoke();
     }
 }

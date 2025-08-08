@@ -13,13 +13,13 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
     [SerializeField] private Pen _pen;
     [SerializeField] private GameObject _gameoverCard;
 
+    private int _currentRoundIndex = 0;
     private int _currentMistakesCount;
     private int _currentRightChoicesCount;
     private Tape _tape;
     private List<Frame> _frames = new();
     private EndOfTapeTrigger _endOfTapeTrigger;
     
-    public static Action OnSuccessCensoringTheTape;
     public static Action OnExceedingMistakes;
     
     void Start()
@@ -34,7 +34,6 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
         _endOfTapeTrigger = FindFirstObjectByType<EndOfTapeTrigger>();
         _currentMistakesCount = 0;
         GameManager.OnBeginPlay += StartTape;
-        GameManager.OnBeginNextRound += PrepareForNextRound;
         _endOfTapeTrigger.OnFrameWithError += AddErrorToCount;
     }
 
@@ -47,7 +46,7 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
         _pen.enabled = true;
         _scissors.enabled = true;      
 
-        Debug.Log($"TAPE START. Current round: {_tape.GetCurrentRound() + 1}");
+        Debug.Log($"TAPE START. Current round: {_currentRoundIndex + 1}");
         //MenuManager.Instance.SetCardOfRound();
         if (_tape.PreviousSpeed == 0f)
         {
@@ -141,8 +140,7 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
         {
             // GAME WIN
             Debug.Log("Player has nailed it.");
-            OnSuccessCensoringTheTape?.Invoke();
-            //MenuManager.Instance.RestartCardToShow();
+            PrepareForNextRound();
             return;
         }
         else if (_currentMistakesCount >= totalMistakes )
@@ -163,10 +161,23 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
         Debug.Log($"New speed: {newSpeed}");
     }
 
+    public int GetCurrentRound() => _currentRoundIndex;
+
+    public void UpdateNextRoundIndex() 
+    {
+        _currentRoundIndex++;
+    }
+
+    public void Reset()
+    {
+        _currentRoundIndex = 0;
+        _currentMistakesCount = 0;
+        _currentRightChoicesCount = 0;
+    }
+
     private void OnDisable()
     {
         GameManager.OnBeginPlay -= StartTape;
-        GameManager.OnBeginNextRound -= PrepareForNextRound;
         _endOfTapeTrigger.OnFrameWithError -= AddErrorToCount;
     }
 }
