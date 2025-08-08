@@ -11,6 +11,7 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
     [SerializeField] private Stamp _stamp;
     [SerializeField] private Scissors _scissors;
     [SerializeField] private Pen _pen;
+    [SerializeField] private GameObject _gameoverCard;
 
     private int _currentMistakesCount;
     private int _currentRightChoicesCount;
@@ -119,6 +120,7 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
     {
         CameraShakeManager.Instance.CameraShakeOnError();
         _currentMistakesCount++;
+        CheckIfWonRound();
     }
 
     public void TapeRunnedCompletely()
@@ -140,15 +142,17 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
             // GAME WIN
             Debug.Log("Player has nailed it.");
             OnSuccessCensoringTheTape?.Invoke();
+            //MenuManager.Instance.RestartCardToShow();
             return;
         }
         else if (_currentMistakesCount >= totalMistakes )
         {
             // GAME OVER
-            StopTape();
-            MenuManager.Instance.RestartCardToShow();
+            Debug.Log("GameOver!!!");
+            StopTape();            
             CameraShakeManager.Instance.CameraShakeGameOver();
             OnExceedingMistakes?.Invoke();
+            _gameoverCard.SetActive(true);
         }
     }
 
