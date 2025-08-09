@@ -47,3 +47,9 @@ Assets/StreamingAssets/*.fsb.meta
 gmtk-2025-fmod/Build/**
 gmtk-2025-fmod/.cache/**
 gmtk-2025-fmod/*.fspro.user
+
+# FMOD Unity plugin cache
+Assets/Plugins/FMOD/Cache/
+
+# FMOD logs
+fmod_editor.log
