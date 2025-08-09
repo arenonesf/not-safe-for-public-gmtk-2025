@@ -1,8 +1,7 @@
 # --- Defaults ---
-# Let Git auto-detect text; we'll override specifics below.
 * text=auto
 
-# --- Unity text assets: always LF (cross-platform + no warnings) ---
+# --- Unity text assets: always LF ---
 *.meta    text eol=lf
 *.unity   text eol=lf
 *.prefab  text eol=lf
@@ -18,13 +17,16 @@
 ProjectSettings/** text eol=lf
 Packages/**       text eol=lf
 
-# --- FMOD integration (Unity plugin): don't touch endings ---
+# --- FMOD Unity plugin: don't normalize endings ---
 Assets/Plugins/FMOD/** -text
 
-# --- FMOD Studio project (your root folder): don't touch endings ---
+# FMOD macOS bundles (stop plist churn)
+Assets/Plugins/FMOD/platforms/mac/lib/**/*.bundle/** -text
+
+# --- FMOD Studio project ---
 gmtk-2025-fmod/** -text
 
-# --- Binary files (never diff/normalize) ---
+# --- Binary files ---
 *.png binary
 *.jpg binary
 *.jpeg binary
@@ -43,7 +45,7 @@ gmtk-2025-fmod/** -text
 *.exe binary
 *.unitypackage binary
 
-# --- FMOD banks: always binary (both Unity StreamingAssets and FMOD project builds) ---
+# --- FMOD banks: binary ---
 Assets/StreamingAssets/*.bank binary
 Assets/StreamingAssets/*.fsb  binary
 gmtk-2025-fmod/**/*.bank      binary
