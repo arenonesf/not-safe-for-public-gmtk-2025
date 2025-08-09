@@ -1,21 +1,14 @@
-# ==============================
-# FMOD integration (Unity)
-# ==============================
-
-# Prevent line ending conversion in Unity FMOD plugin scripts
+# FMOD (Unity plugin)
 /Assets/Plugins/FMOD/**   -text
 
-# Mark FMOD built banks as binary (Unity default location)
+# FMOD Studio project in repo root
+/gmtk-2025-fmod/**        -text
+
+# Unity text assets: keep LF to avoid warnings
+*.asset                    text eol=lf
+
+# FMOD banks are binary
 /Assets/StreamingAssets/*.bank   binary
 /Assets/StreamingAssets/*.fsb    binary
-
-# ==============================
-# FMOD Studio project (root-level)
-# ==============================
-
-# Keep original line endings for all FMOD Studio project files
-/gmtk-2025-fmod/**   -text
-
-# Mark built banks in the FMOD Studio project as binary
-/gmtk-2025-fmod/**/*.bank   binary
-/gmtk-2025-fmod/**/*.fsb    binary
+/gmtk-2025-fmod/**/*.bank         binary
+/gmtk-2025-fmod/**/*.fsb          binary
