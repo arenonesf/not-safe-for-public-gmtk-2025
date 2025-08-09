@@ -1,14 +1,50 @@
-# FMOD (Unity plugin)
-/Assets/Plugins/FMOD/**   -text
+# --- Defaults ---
+# Let Git auto-detect text; we'll override specifics below.
+* text=auto
 
-# FMOD Studio project in repo root
-/gmtk-2025-fmod/**        -text
+# --- Unity text assets: always LF (cross-platform + no warnings) ---
+*.meta    text eol=lf
+*.unity   text eol=lf
+*.prefab  text eol=lf
+*.anim    text eol=lf
+*.mat     text eol=lf
+*.shader  text eol=lf
+*.cginc   text eol=lf
+*.compute text eol=lf
+*.asset   text eol=lf
+*.json    text eol=lf
+*.yaml    text eol=lf
+*.yml     text eol=lf
+ProjectSettings/** text eol=lf
+Packages/**       text eol=lf
 
-# Unity text assets: keep LF to avoid warnings
-*.asset                    text eol=lf
+# --- FMOD integration (Unity plugin): don't touch endings ---
+Assets/Plugins/FMOD/** -text
 
-# FMOD banks are binary
-/Assets/StreamingAssets/*.bank   binary
-/Assets/StreamingAssets/*.fsb    binary
-/gmtk-2025-fmod/**/*.bank         binary
-/gmtk-2025-fmod/**/*.fsb          binary
+# --- FMOD Studio project (your root folder): don't touch endings ---
+gmtk-2025-fmod/** -text
+
+# --- Binary files (never diff/normalize) ---
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.tga binary
+*.psd binary
+*.fbx binary
+*.mp3 binary
+*.ogg binary
+*.wav binary
+*.zip binary
+*.7z  binary
+*.dll binary
+*.lib binary
+*.pdb binary
+*.exe binary
+*.unitypackage binary
+
+# --- FMOD banks: always binary (both Unity StreamingAssets and FMOD project builds) ---
+Assets/StreamingAssets/*.bank binary
+Assets/StreamingAssets/*.fsb  binary
+gmtk-2025-fmod/**/*.bank      binary
+gmtk-2025-fmod/**/*.fsb       binary
