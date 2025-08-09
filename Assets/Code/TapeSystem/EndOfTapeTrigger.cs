@@ -21,31 +21,28 @@ public class EndOfTapeTrigger : MonoBehaviour
     {
         float altura = _camera.orthographicSize * 2f;
         float ancho = altura * _camera.aspect;
-
-        // Centro de la cámara
+        
         Vector3 centro = _camera.transform.position;
-
-        // Posición del borde izquierdo (a la mitad de la altura)
         Vector3 ladoIzquierdo = new Vector3(centro.x - (ancho / 2f), centro.y, centro.z);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<Frame>(out Frame frameObject))
-        {
-            
-            if (_tape.GetLastFrameInTape().Equals(frameObject))
-            {
-                LoopsManager.Instance.TapeRunnedCompletely();
-            }
-            else
-            {
-                var hasFrameError = frameObject.CheckFrame();
-                Debug.Log($"SHOULD ADD ERROR {hasFrameError}");
-                if (hasFrameError) OnFrameWithError?.Invoke(frameObject);
-            }
+        if (!collision) return;
+        if (!collision.TryGetComponent<Frame>(out var frameObject) || !frameObject) return;
 
-            frameObject.ReturnToStartPosition();
+        var last = _tape ? _tape.GetLastFrameInTape() : null;
+
+        if (last && last == frameObject)
+        {
+            LoopsManager.Instance?.TapeRunnedCompletely();
         }
+        else
+        {
+            bool hasFrameError = frameObject && frameObject.CheckFrame();
+            if (hasFrameError) OnFrameWithError?.Invoke(frameObject);
+        }
+
+        if (frameObject) frameObject.ReturnToStartPosition();
     }
 }

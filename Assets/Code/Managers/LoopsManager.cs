@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoopsManager : PersistentSingleton<LoopsManager>
+public class LoopsManager : RegulatorSingleton<LoopsManager>
 {
     [SerializeField] private int totalMistakes = 5;
     [SerializeField] private float tapeSpeedMultiplier = 1.25f;
@@ -141,7 +141,6 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
             // GAME WIN
             Debug.Log("Player has nailed it.");
             PrepareForNextRound();
-            return;
         }
         else if (_currentMistakesCount >= totalMistakes )
         {
