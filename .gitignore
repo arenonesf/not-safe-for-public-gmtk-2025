@@ -37,19 +37,39 @@ Assets/StreamingAssets/aa/
 # Uncomment if you want to keep these out of git:
 # LightingData.asset
 
-# FMOD: generated banks (Unity side)
-Assets/StreamingAssets/*.bank
-Assets/StreamingAssets/*.bank.meta
-Assets/StreamingAssets/*.fsb
-Assets/StreamingAssets/*.fsb.meta
+########################
+# FMOD Unity Integration
+########################
 
-# FMOD Studio project: generated stuff
+# Local FMOD Unity plugin cache (regenerated per machine)
+Assets/Plugins/FMOD/Cache/
+
+# Local FMOD editor log
+fmod_editor.log
+
+# FMOD Unity generated settings backups (if any)
+Assets/Plugins/FMOD/Resources/*_backup.asset
+Assets/Plugins/FMOD/Resources/*_backup.asset.meta
+
+########################
+# FMOD Studio Project
+########################
+
+# FMOD build output (banks, GUIDs, cache)
 gmtk-2025-fmod/Build/**
 gmtk-2025-fmod/.cache/**
 gmtk-2025-fmod/*.fspro.user
 
-# FMOD Unity plugin cache
-Assets/Plugins/FMOD/Cache/
+# Temporary local data FMOD creates
+gmtk-2025-fmod/.unsaved/**
+gmtk-2025-fmod/Temp/**
+gmtk-2025-fmod/Logs/**
 
-# FMOD logs
-fmod_editor.log
+########################
+# FMOD Audio Assets
+########################
+
+# Ignore built audio banks (Unity already gets these from StreamingAssets)
+/Assets/StreamingAssets/*.bank
+/Assets/StreamingAssets/*.fsb
+
