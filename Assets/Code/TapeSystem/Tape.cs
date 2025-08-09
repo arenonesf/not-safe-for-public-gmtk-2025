@@ -100,7 +100,20 @@ public class Tape : MonoBehaviour
     }
 
     public void SetPreviousSpeed(float speed) => _previousSpeed = speed;
-    public Frame GetLastFrameInTape() => _frames[^1].GetComponent<Frame>();
+
+    public Frame GetLastFrameInTape()
+    {
+        for (int i = _frames.Count - 1; i >= 0; i--)
+        {
+            var go = _frames[i];
+            if (!go) { _frames.RemoveAt(i); continue; } // remove destroyed
+            if (go.TryGetComponent<Frame>(out var frame) && frame)
+                return frame;
+        }
+        
+        return null;
+    }
+
     public void SetSpeed(float value) => _speed = value;
     public Vector3 GetLastFramePosition() => _frames[^1].transform.position;
     public float GetTapeDataOffset() => CurrentTapeData.SpawnOffset;
