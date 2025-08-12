@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoopsManager : PersistentSingleton<LoopsManager>
+public class LoopsManager : MonoBehaviour
 {
     [SerializeField] private int totalMistakes = 5;
     [SerializeField] private float tapeSpeedMultiplier = 1.25f;
@@ -11,59 +11,67 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
     [SerializeField] private Stamp _stamp;
     [SerializeField] private Scissors _scissors;
     [SerializeField] private Pen _pen;
+    [SerializeField] private GameObject _gameoverCard;
+    private Collider2D _stampCollider;
+    private Collider2D _penCollider;
+    private Collider2D _scissorsCollider;
 
+    private int _currentRoundIndex = 0;
     private int _currentMistakesCount;
     private int _currentRightChoicesCount;
     private Tape _tape;
     private List<Frame> _frames = new();
     private EndOfTapeTrigger _endOfTapeTrigger;
     
-    public static Action OnSuccessCensoringTheTape;
     public static Action OnExceedingMistakes;
-    
+
+    private void Awake()
+    {
+        _stampCollider = _stamp.GetComponent<Collider2D>();
+        _stampCollider.enabled = false;
+        _penCollider = _pen.GetComponent<Collider2D>();
+        _penCollider.enabled = false;
+        _scissorsCollider = _scissors.GetComponent<Collider2D>();
+        _scissorsCollider.enabled = false;
+        _endOfTapeTrigger = FindAnyObjectByType<EndOfTapeTrigger>();
+    }
+
+    private void OnEnable()
+    {
+        GameManager.OnBeginPlay += StartTape;
+        _endOfTapeTrigger.OnFrameWithError += AddErrorToCount;
+    }
+
     void Start()
     {
-        _stamp.GetComponent<Collider2D>().enabled = false;
-        _pen.GetComponent<Collider2D>().enabled = false;
-        _scissors.GetComponent<Collider2D>().enabled = false;
         _stamp.enabled = false;
         _pen.enabled = false;
         _scissors.enabled = false;
         _tape = GameManager.Instance.GetTape();
         _endOfTapeTrigger = FindFirstObjectByType<EndOfTapeTrigger>();
         _currentMistakesCount = 0;
-        GameManager.OnBeginPlay += StartTape;
-        GameManager.OnBeginNextRound += PrepareForNextRound;
-        _endOfTapeTrigger.OnFrameWithError += AddErrorToCount;
     }
 
     private void StartTape()
     {
-        _stamp.GetComponent<Collider2D>().enabled = true;
-        _pen.GetComponent<Collider2D>().enabled = true;
-        _scissors.GetComponent<Collider2D>().enabled = true;
         _stamp.enabled = true;
         _pen.enabled = true;
-        _scissors.enabled = true;      
+        _scissors.enabled = true;
+        _stampCollider.enabled = true;
+        _penCollider.enabled = true;
+        _scissorsCollider.enabled = true;
 
-        Debug.Log($"TAPE START. Current round: {_tape.GetCurrentRound() + 1}");
+        Debug.Log($"TAPE START. Current round: {_currentRoundIndex + 1}");
         //MenuManager.Instance.SetCardOfRound();
-        if (_tape.PreviousSpeed == 0f)
-        {
-            _tape.SetSpeed(_tape.CurrentTapeData.InitialSpeed);
-        }
-        else
-        {
-            _tape.SetSpeed(_tape.PreviousSpeed);
-        }
+        _tape.SetSpeed(_tape.CurrentTapeData.InitialSpeed);
         AudioEvents.Instance.PlayStartRound();
         AudioEvents.Instance.PlayStartTape();
     }
     private void StopTape() 
     {
-        _stamp.GetComponent<Collider2D>().enabled = false;
-        _pen.GetComponent<Collider2D>().enabled = false;
-        _scissors.GetComponent<Collider2D>().enabled = false;
+        _stampCollider.enabled = false;
+        _penCollider.enabled = false;
+        _scissorsCollider.enabled = false;
         _stamp.enabled = false;
         _pen.enabled = false;
         _scissors.enabled = false;
@@ -87,7 +95,7 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
         _currentRightChoicesCount = 0;
     }
 
-    public void RegistrerFrame(List<GameObject> frames)
+    public void RegistrerFrames(List<GameObject> frames)
     {
         foreach (var frame in frames)
         {
@@ -99,7 +107,14 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
         }
     }
 
-    public void DeregisterFrames(List<GameObject> frames)
+    public void RegisterFrame(Frame frame)
+    {
+        frame.OnErrorCensoring += AddErrorToCount;
+        frame.OnRightChoice += AddRightChoiceToCount;
+        _frames.Add(frame);
+    }
+
+    public void DeregisterFrames()
     {
         foreach(var frame in _frames)
         {
@@ -119,6 +134,7 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
     {
         CameraShakeManager.Instance.CameraShakeOnError();
         _currentMistakesCount++;
+        CheckIfWonRound();
     }
 
     public void TapeRunnedCompletely()
@@ -139,16 +155,16 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
         {
             // GAME WIN
             Debug.Log("Player has nailed it.");
-            OnSuccessCensoringTheTape?.Invoke();
-            return;
+            PrepareForNextRound();
         }
         else if (_currentMistakesCount >= totalMistakes )
         {
             // GAME OVER
-            StopTape();
-            MenuManager.Instance.RestartCardToShow();
+            Debug.Log("GameOver!!!");
+            StopTape();            
             CameraShakeManager.Instance.CameraShakeGameOver();
             OnExceedingMistakes?.Invoke();
+            _gameoverCard.SetActive(true);
         }
     }
 
@@ -159,10 +175,23 @@ public class LoopsManager : PersistentSingleton<LoopsManager>
         Debug.Log($"New speed: {newSpeed}");
     }
 
+    public int GetCurrentRound() => _currentRoundIndex;
+
+    public void UpdateNextRoundIndex() 
+    {
+        _currentRoundIndex++;
+    }
+
+    public void Reset()
+    {
+        _currentRoundIndex = 0;
+        _currentMistakesCount = 0;
+        _currentRightChoicesCount = 0;
+    }
+
     private void OnDisable()
     {
         GameManager.OnBeginPlay -= StartTape;
-        GameManager.OnBeginNextRound -= PrepareForNextRound;
         _endOfTapeTrigger.OnFrameWithError -= AddErrorToCount;
     }
 }

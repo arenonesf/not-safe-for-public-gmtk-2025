@@ -1,0 +1,52 @@
+# --- Defaults ---
+* text=auto
+
+# --- Unity text assets: always LF ---
+*.meta    text eol=lf
+*.unity   text eol=lf
+*.prefab  text eol=lf
+*.anim    text eol=lf
+*.mat     text eol=lf
+*.shader  text eol=lf
+*.cginc   text eol=lf
+*.compute text eol=lf
+*.asset   text eol=lf
+*.json    text eol=lf
+*.yaml    text eol=lf
+*.yml     text eol=lf
+ProjectSettings/** text eol=lf
+Packages/**       text eol=lf
+
+# --- FMOD Unity plugin: don't normalize endings ---
+Assets/Plugins/FMOD/** -text
+
+# FMOD macOS bundles (stop plist churn)
+Assets/Plugins/FMOD/platforms/mac/lib/**/*.bundle/** -text
+
+# --- FMOD Studio project ---
+gmtk-2025-fmod/** -text
+
+# --- Binary files ---
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.tga binary
+*.psd binary
+*.fbx binary
+*.mp3 binary
+*.ogg binary
+*.wav binary
+*.zip binary
+*.7z  binary
+*.dll binary
+*.lib binary
+*.pdb binary
+*.exe binary
+*.unitypackage binary
+
+# --- FMOD banks: binary ---
+Assets/StreamingAssets/*.bank binary
+Assets/StreamingAssets/*.fsb  binary
+gmtk-2025-fmod/**/*.bank      binary
+gmtk-2025-fmod/**/*.fsb       binary

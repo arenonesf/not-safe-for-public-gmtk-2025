@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour {
     //Variable Pause UI
     [SerializeField] private GameObject PauseUI;
+    [SerializeField] private LoopsManager _loopsManager;
 
     //Variable for to confirm if is active
     public static bool isPauseMenuActive;
@@ -41,11 +42,12 @@ public class PauseMenu : MonoBehaviour {
     }
 
     //For return to menu
-    public void ToMainMenu(string scene) {
+    public void ToMainMenu(string scene) 
+    {
+        AudioEvents.Instance.StopAllAudioEvents();
         PauseUI.SetActive(false);
         Time.timeScale = 1f;
         isPauseMenuActive = false;
-
         SceneManager.LoadScene(scene);
     }
 

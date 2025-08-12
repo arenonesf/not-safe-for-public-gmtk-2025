@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5640003832051986270}
   - component: {fileID: 9008315671983878246}
   m_Layer: 0
-  m_Name: letter_roun2_0
+  m_Name: letter_round2_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

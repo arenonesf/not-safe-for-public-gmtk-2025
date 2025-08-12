@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuManager : PersistentSingleton<MenuManager>
+public class MenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject _cardOfConditions;
     [SerializeField] private Button _buttonCardOfConditions;
@@ -24,9 +24,6 @@ public class MenuManager : PersistentSingleton<MenuManager>
             card.transform.position = new Vector3(-0.008930326f, -1.02f, 0);
             card.SetActive(false);
         }
-
-        GameManager.OnOpenConditions += PassToCardCondition;
-        GameManager.OnOpenNextCard += PassToNextCard;
     }
 
     public void PassToCardCondition()
@@ -56,6 +53,7 @@ public class MenuManager : PersistentSingleton<MenuManager>
     public void SetCardOfRound()
     {
         _cardOfRounds[_numOfRound - 1].SetActive(false);
+        Debug.Log($"CurrentCardOfRound name: {_cardOfRounds[_numOfRound - 1].name}");
         _buttonCardOfRounds.gameObject.SetActive(false);
     }
 
@@ -64,11 +62,5 @@ public class MenuManager : PersistentSingleton<MenuManager>
         _numOfRound = 0;
         _cardOfRounds[_numOfRound].SetActive(true);
         ++_numOfRound;
-    }
-
-    private void OnDisable()
-    {
-        GameManager.OnOpenConditions -= PassToCardCondition;
-        GameManager.OnOpenNextCard -= PassToNextCard;
     }
 }

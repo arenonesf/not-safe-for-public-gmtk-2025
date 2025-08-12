@@ -1,118 +1,75 @@
-# This .gitignore file should be placed at the root of your Unity project directory
-# Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
-
-# Unity generated folders and files
-.utmp/
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
-*.log
-
-# Blender
-*.blend1
-*.blend1.meta
-
-# Large or sensitive files
-/[Mm]emoryCaptures/
-/[Rr]ecordings/
-
-# Uncomment to ignore Asset Store Tools
-# /[Aa]ssets/AssetStoreTools*
-
-# JetBrains Rider integration
-/[Aa]ssets/Plugins/Editor/JetBrains*
-*.DotSettings.user
-
-# Ignore entire .idea folder but allow useful project settings
-.idea/
-!.idea/codeStyles
-!.idea/inspectionProfiles
-!.idea/dictionaries
-!.idea/runConfigurations
-!.idea/modules.xml
-!.idea/vcs.xml
-!.idea/.name
-
-# Ignore Rider/IDE user-specific files
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/usage.statistics.xml
-.idea/shelf/
-.idea/gradle.xml
-.idea/uiDesigner.xml
-.idea/dataSources/
-.idea/httpRequests/
-
-# Visual Studio and .NET related
-.vs/
-.gradle/
-ExportedObj/
-.consulo/
+# Unity
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+UserSettings/
+sysinfo.txt
 *.csproj
-*.unityproj
 *.sln
 *.suo
-*.tmp
 *.user
 *.userprefs
-*.pidb
-*.booproj
-*.svd
-*.pdb
-*.mdb
-*.opendb
-*.VC.db
 
-# Unity meta files for debug files
-*.pidb.meta
-*.pdb.meta
-*.mdb.meta
-
-# Unity crash reports
-sysinfo.txt
-mono_crash.*
-
-# Builds
-*.apk
-*.aab
-*.unitypackage
-*.unitypackage.meta
-*.app
-
-# Crashlytics
-crashlytics-build.properties
-
-# TestRunner
-InitTestScene*.unity*
-
-# Addressables
-/ServerData
-/[Aa]ssets/StreamingAssets/aa*
-/[Aa]ssets/AddressableAssetsData/link.xml*
-/[Aa]ssets/Addressables_Temp*
-/[Aa]ssets/AddressableAssetsData/*/*.bin*
-
-# Visual Scripting
-/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db
-/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta
-/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers
-/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers.meta
-
-# Auto-generated test scenes
-/[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
-
-# FMOD
-!/[Aa]ssets/Plugins/FMOD/**/lib/*
-!/[Aa]ssets/Gizmos/FMOD/*
-!/[Aa]ssets/Editor Default Resources/FMOD/*
-/[Aa]ssets/Plugins/FMOD/Cache/*
-/[Aa]ssets/StreamingAssets/**/*.bank
-/[Aa]ssets/StreamingAssets/**/*.bank.meta
-
-# FMOD log
-fmod_editor.log
+# IDEs
+.vs/
+.vscode/
 .vsconfig
+.idea/
+*.DotSettings.user
+
+# Rider / JetBrains
+.gradle/
+*.iml
+
+# Crash/Reports
+CrashReports/
+*.stacktrace
+
+# Addressables / Cache
+Assets/AddressableAssetsData/*/*.bin*
+Assets/StreamingAssets/aa/
+
+# Lightmaps / GI Cache (optional to ignore globally)
+# Uncomment if you want to keep these out of git:
+# LightingData.asset
+
+########################
+# FMOD Unity Integration
+########################
+
+# Local FMOD Unity plugin cache (regenerated per machine)
+Assets/Plugins/FMOD/Cache/
+
+# Local FMOD editor log
+fmod_editor.log
+
+# FMOD Unity generated settings backups (if any)
+Assets/Plugins/FMOD/Resources/*_backup.asset
+Assets/Plugins/FMOD/Resources/*_backup.asset.meta
+
+########################
+# FMOD Studio Project
+########################
+
+# FMOD build output (banks, GUIDs, cache)
+gmtk-2025-fmod/Build/**
+gmtk-2025-fmod/.cache/**
+gmtk-2025-fmod/*.fspro.user
+
+# Temporary local data FMOD creates
+gmtk-2025-fmod/.unsaved/**
+gmtk-2025-fmod/Temp/**
+gmtk-2025-fmod/Logs/**
+
+########################
+# FMOD Audio Assets
+########################
+
+# Ignore built audio banks (Unity already gets these from StreamingAssets)
+/Assets/StreamingAssets/*.bank
+/Assets/StreamingAssets/*.fsb
+

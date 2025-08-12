@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: b2299a930d2cb194492fe3317cf43c8e
+guid: 467c55b790334044a894a6ac5ac58432
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8871750365745515610
-    second: button2_0
-  - first:
-      213: 7348533661700182467
-    second: button2_1
+      213: 7082573407765203036
+    second: boton carta-READYa_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -99,17 +96,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: button2_0
+      name: boton carta-READYa_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 0
-        width: 120
-        height: 60
+        x: 1
+        y: 2
+        width: 126
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a5c043ef3f9ce1b70800000000000000
-      internalID: 8871750365745515610
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: button2_1
-      rect:
-        serializedVersion: 2
-        x: 132
-        y: 0
-        width: 120
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3c1d3ad5e6c3bf560800000000000000
-      internalID: 7348533661700182467
+      spriteID: c5809714dfa5a4260800000000000000
+      internalID: 7082573407765203036
       vertices: []
       indices: 
       edges: []
@@ -160,8 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      button2_0: 8871750365745515610
-      button2_1: 7348533661700182467
+      boton carta-READYa_0: 7082573407765203036
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
