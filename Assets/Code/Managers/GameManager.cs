@@ -1,6 +1,5 @@
 using Code.Core;
 using System;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : PersistentSingleton<GameManager>
