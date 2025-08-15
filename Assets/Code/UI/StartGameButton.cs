@@ -11,18 +11,20 @@ public class StartGameButton : MonoBehaviour
         _buttonComponent = GetComponent<Button>();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         _buttonComponent.onClick.AddListener(StartTape);
     }
 
     private void OnDisable()
     {
+        Debug.Log("Stop Hearing Event");
         _buttonComponent.onClick.RemoveAllListeners();
     }
 
     public void StartTape()
     {
+        Debug.Log("PATATA");
         GameManager.Instance.BeginTapeRunning();
         menuManager.SetCardOfRound();
     }
