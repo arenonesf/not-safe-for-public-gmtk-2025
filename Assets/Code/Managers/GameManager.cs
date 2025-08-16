@@ -6,6 +6,7 @@ public class GameManager : PersistentSingleton<GameManager>
 {
     private Tape _tape;
     private MenuManager _menuManager;
+    private LoopsManager _loopsManager;
     public static Action OnBeginPlay;
     private int _censorWorkerCount = 0;
     public int CensorWorkerCount => _censorWorkerCount;
@@ -31,6 +32,7 @@ public class GameManager : PersistentSingleton<GameManager>
     {
         _tape = FindFirstObjectByType<Tape>();
         _menuManager = FindFirstObjectByType<MenuManager>();
+        _loopsManager = FindFirstObjectByType<LoopsManager>();
         OpenCardOfConditions(scene);
     }
 
@@ -48,6 +50,11 @@ public class GameManager : PersistentSingleton<GameManager>
     public Tape GetTape()
     {
         return _tape;
+    }
+
+    public LoopsManager GetLoopsManager() 
+    {
+        return _loopsManager;
     }
 
     public MenuManager GetMenuManager() 

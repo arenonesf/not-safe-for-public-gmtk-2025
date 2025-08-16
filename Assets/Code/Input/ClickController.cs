@@ -34,7 +34,6 @@ public class ClickController : MonoBehaviour
     private void OnClickLeftButton(InputAction.CallbackContext context)
     {
         var mousePosition = Mouse.current.position.ReadValue();
-        Debug.Log($"Mouse Clicked at position: {mousePosition}");
         OnMouseLeftButtonClick?.Invoke(mousePosition);
     }
 

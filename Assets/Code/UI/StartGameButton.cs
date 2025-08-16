@@ -18,13 +18,11 @@ public class StartGameButton : MonoBehaviour
 
     private void OnDisable()
     {
-        Debug.Log("Stop Hearing Event");
         _buttonComponent.onClick.RemoveAllListeners();
     }
 
     public void StartTape()
     {
-        Debug.Log("PATATA");
         GameManager.Instance.BeginTapeRunning();
         menuManager.SetCardOfRound();
     }
