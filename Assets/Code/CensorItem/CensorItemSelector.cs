@@ -37,25 +37,17 @@ public class CensorItemSelector : MonoBehaviour
 
         if (hit.collider != null)
         {
-            Debug.Log($"Hit Object: {hit.collider.name}");
-
             if (hit.collider.TryGetComponent<ICensorItem>(out var censorItem))
             {
-                Debug.Log($"Censor Item Selected: {censorItem.Type}");
                 _censorItemSelected = censorItem;
                 ChangeToolCursor(censorItem.Type);
             }
             else
             {
-                Debug.Log("The hit object is not a censor item.");
                 if (hit.collider.TryGetComponent<Frame>(out var frameItem))
                     return;
                 ChangeToolCursor(CensorItemType.None);
             }
-        }
-        else
-        {
-            Debug.Log("No object hit.");
         }
     }
 
@@ -75,10 +67,6 @@ public class CensorItemSelector : MonoBehaviour
                     return;
 
                 _censorItemSelected.TryApplyCensorToolToFrame(frameItem);
-            }
-            else
-            {
-                Debug.Log("The hit object is not a frame item.");
             }
         }
     }
@@ -106,6 +94,7 @@ public class CensorItemSelector : MonoBehaviour
     private void ResetCursorToDefault()
     {
         Cursor.SetCursor(null, Vector2.left, CursorMode.Auto);
+        _censorItemSelected = null;
     }
 
     public ICensorItem GetCensorItemSelect()

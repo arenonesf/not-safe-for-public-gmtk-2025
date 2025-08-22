@@ -34,15 +34,8 @@ public class EndOfTapeTrigger : MonoBehaviour
 
         var last = _tape ? _tape.GetLastFrameInTape() : null;
 
-        if (last && last == frameObject)
-        {
-            _loopsManager.TapeRunnedCompletely();
-        }
-        else
-        {
-            bool hasFrameError = frameObject && frameObject.CheckFrame();
-            if (hasFrameError) OnFrameWithError?.Invoke(frameObject);
-        }
+        bool hasFrameError = frameObject && frameObject.CheckFrame();
+        if (hasFrameError) OnFrameWithError?.Invoke(frameObject);
 
         if (frameObject) frameObject.ReturnToStartPosition();
     }

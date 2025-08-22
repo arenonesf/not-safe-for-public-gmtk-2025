@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{c64691a8-cf51-4dbb-b437-edea3862ba91}">
+		<property name="assetPath">
+			<value>SFX/UI/buttons-67224.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>21.792000000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{293d6afd-7907-4158-bfdf-efe3a15ed9c6}</destination>
+		</relationship>
+	</object>
+</objects>

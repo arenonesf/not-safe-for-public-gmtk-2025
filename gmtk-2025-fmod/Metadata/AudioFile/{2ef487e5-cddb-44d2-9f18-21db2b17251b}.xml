@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{2ef487e5-cddb-44d2-9f18-21db2b17251b}">
+		<property name="assetPath">
+			<value>Music/old-nuclear-factory-atmo-drone-thriller-9358.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>60.503999999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{293d6afd-7907-4158-bfdf-efe3a15ed9c6}</destination>
+		</relationship>
+	</object>
+</objects>
