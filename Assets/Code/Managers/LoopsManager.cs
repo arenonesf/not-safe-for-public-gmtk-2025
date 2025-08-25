@@ -23,6 +23,7 @@ public class LoopsManager : MonoBehaviour
     private Tape _tape;
     private List<Frame> _frames = new();
     private EndOfTapeTrigger _endOfTapeTrigger;
+    private CensorItemSelector _censorItemSelector;
     
     public static Action OnExceedingMistakes;
 
@@ -35,6 +36,7 @@ public class LoopsManager : MonoBehaviour
         _scissorsCollider = _scissors.GetComponent<Collider2D>();
         _scissorsCollider.enabled = false;
         _endOfTapeTrigger = FindAnyObjectByType<EndOfTapeTrigger>();
+        _censorItemSelector = FindAnyObjectByType<CensorItemSelector>();
     }
 
     private void OnEnable()
@@ -165,6 +167,7 @@ public class LoopsManager : MonoBehaviour
             CameraShakeManager.Instance.CameraShakeGameOver();
             OnExceedingMistakes?.Invoke();
             _gameoverCard.SetActive(true);
+            _censorItemSelector.ResetCursorToDefault();
         }
     }
 
@@ -193,5 +196,10 @@ public class LoopsManager : MonoBehaviour
     {
         GameManager.OnBeginPlay -= StartTape;
         _endOfTapeTrigger.OnFrameWithError -= AddErrorToCount;
+    }
+
+    public bool GetGameIsOver()
+    {
+        return _gameoverCard.activeSelf;
     }
 }
