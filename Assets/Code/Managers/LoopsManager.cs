@@ -83,7 +83,7 @@ public class LoopsManager : MonoBehaviour
         AudioEvents.Instance.PlayStartRound();
         AudioEvents.Instance.PlayStartTape();
     }
-    private void StopTape() 
+    public void StopTape(bool NeedStopSpeed) 
     {
         _stampCollider.enabled = false;
         _penCollider.enabled = false;
@@ -93,13 +93,28 @@ public class LoopsManager : MonoBehaviour
         _scissors.enabled = false;
         
         AudioEvents.Instance.PlayStopTape();
-        _tape.SetSpeed(0);
+
+        if(NeedStopSpeed)
+            _tape.SetSpeed(0);
+    }
+
+    public void ContinueTape()
+    {
+        _stamp.enabled = true;
+        _pen.enabled = true;
+        _scissors.enabled = true;
+        _stampCollider.enabled = true;
+        _penCollider.enabled = true;
+        _scissorsCollider.enabled = true;
+        
+        AudioEvents.Instance.PlayStartRound();
+        AudioEvents.Instance.PlayStartTape();
     }
 
     private void PrepareForNextRound()
     {
         Debug.Log($"Exit Speed {_tape.TapeSpeed}");
-        StopTape();
+        StopTape(true);
         ResetErrorsAndRightChoices();
         _tape.TryStartNextRound();
     }
@@ -163,7 +178,7 @@ public class LoopsManager : MonoBehaviour
         else if (_totalMistakesCount >= totalMistakes )
         {
             // GAME OVER
-            StopTape();            
+            StopTape(true);            
             CameraShakeManager.Instance.CameraShakeGameOver();
             OnExceedingMistakes?.Invoke();
             _gameoverCard.SetActive(true);

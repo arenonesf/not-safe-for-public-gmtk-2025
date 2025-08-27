@@ -33,6 +33,8 @@ public class PauseMenu : MonoBehaviour {
         PauseUI.SetActive(!PauseUI.activeSelf);
 
         if (PauseUI.activeSelf) {
+            
+            _loopsManager.StopTape(false);
             Time.timeScale = 0f;
 
             if (_censorItemSelector == null)
@@ -44,6 +46,7 @@ public class PauseMenu : MonoBehaviour {
         }
         else {
             Time.timeScale = 1f;
+            _loopsManager.ContinueTape();
             isPauseMenuActive = false;
         }
     }
