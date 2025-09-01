@@ -12,10 +12,8 @@ public class Tape : MonoBehaviour
     private float _speed;
     private float _previousSpeed;
     public float PreviousSpeed => _previousSpeed;
-    private List<GameObject> _frames = new();
 
     public float TapeSpeed => _speed;
-    public List<GameObject> Frames => _frames;
     public Transform StartPosition => _startPosition;
     public TapeData CurrentTapeData => _tapeRounds[_loopsManager.GetCurrentRound()];
 
@@ -38,7 +36,7 @@ public class Tape : MonoBehaviour
     private void InitFrames()
     {
         _speed = 0;
-        _frames.Clear();
+        _loopsManager.ClearFrames();
 
         for (int i = 0; i < CurrentTapeData.Frames.Count; i++)
         {
@@ -59,12 +57,12 @@ public class Tape : MonoBehaviour
         {
             _loopsManager.DeregisterFrames();
             GameManager.Instance.GetMenuManager().PassToNextCard();
-            foreach (var frame in _frames)
+            foreach (var frame in _loopsManager.GetFrames())
             {
-                Destroy(frame);
+                Destroy(frame.gameObject);
             }
 
-            _frames.Clear();
+            _loopsManager.ClearFrames();
             InitFrames();
         }
         else
@@ -77,10 +75,10 @@ public class Tape : MonoBehaviour
 
     public Frame GetLastFrameInTape()
     {
-        for (int i = _frames.Count - 1; i >= 0; i--)
+        for (int i = _loopsManager.GetFrames().Count - 1; i >= 0; i--)
         {
-            var go = _frames[i];
-            if (!go) { _frames.RemoveAt(i); continue; } // remove destroyed
+            var go = _loopsManager.GetFrames()[i];
+            if (!go) { _loopsManager.GetFrames().RemoveAt(i); continue; } // remove destroyed
             if (go.TryGetComponent<Frame>(out var frame) && frame)
                 return frame;
         }
@@ -89,6 +87,6 @@ public class Tape : MonoBehaviour
     }
 
     public void SetSpeed(float value) => _speed = value;
-    public Vector3 GetLastFramePosition() => _frames[^1].transform.position;
+    public Vector3 GetLastFramePosition() => _loopsManager.GetFrames()[^1].transform.position;
     public float GetTapeDataOffset() => CurrentTapeData.SpawnOffset;
 }

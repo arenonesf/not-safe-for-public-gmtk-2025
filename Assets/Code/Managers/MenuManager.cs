@@ -15,8 +15,6 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         _cardOfConditions.transform.position = new Vector3(-0.008930326f, -1.02f, 0);
-        //_cardOfConditions.SetActive(false);
-        //_buttonCardOfConditions.gameObject.SetActive(false);
         _buttonCardOfRounds.gameObject.SetActive(false);
 
         foreach (GameObject card in _cardOfRounds)
@@ -28,14 +26,8 @@ public class MenuManager : MonoBehaviour
 
     public void PassToCardCondition()
     {
-        Debug.Log("Entraaaaaaaaaaaaaa");
-
         if (_cardOfConditions == null)
             GameObject.FindWithTag("WelcomeCard").SetActive(true);
-
-        Debug.Log(_cardOfConditions);
-
-        //_cardOfConditions.SetActive(true);
         _buttonCardOfConditions.gameObject.SetActive(true);
     }
 
@@ -53,7 +45,6 @@ public class MenuManager : MonoBehaviour
     public void SetCardOfRound()
     {
         _cardOfRounds[_numOfRound - 1].SetActive(false);
-        Debug.Log($"CurrentCardOfRound name: {_cardOfRounds[_numOfRound - 1].name}");
         _buttonCardOfRounds.gameObject.SetActive(false);
     }
 

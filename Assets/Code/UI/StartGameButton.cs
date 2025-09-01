@@ -11,7 +11,7 @@ public class StartGameButton : MonoBehaviour
         _buttonComponent = GetComponent<Button>();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         _buttonComponent.onClick.AddListener(StartTape);
     }

@@ -17,7 +17,8 @@ public class LoopsManager : MonoBehaviour
     private Collider2D _scissorsCollider;
 
     private int _currentRoundIndex = 0;
-    private int _currentMistakesCount;
+    private int _totalMistakesCount;
+    private int _roundMistakesCount;
     private int _currentRightChoicesCount;
     private Tape _tape;
     private List<Frame> _frames = new();
@@ -49,7 +50,17 @@ public class LoopsManager : MonoBehaviour
         _scissors.enabled = false;
         _tape = GameManager.Instance.GetTape();
         _endOfTapeTrigger = FindFirstObjectByType<EndOfTapeTrigger>();
-        _currentMistakesCount = 0;
+        _totalMistakesCount = 0;
+    }
+
+    public List<Frame> GetFrames() 
+    {
+        return _frames;
+    }
+
+    public void ClearFrames() 
+    {
+        _frames.Clear();
     }
 
     private void StartTape()
@@ -62,8 +73,11 @@ public class LoopsManager : MonoBehaviour
         _scissorsCollider.enabled = true;
 
         Debug.Log($"TAPE START. Current round: {_currentRoundIndex + 1}");
-        //MenuManager.Instance.SetCardOfRound();
-        _tape.SetSpeed(_tape.CurrentTapeData.InitialSpeed);
+        if (_tape.PreviousSpeed != 0)
+            _tape.SetSpeed( _tape.PreviousSpeed);
+        else
+            _tape.SetSpeed(_tape.CurrentTapeData.InitialSpeed);
+        Debug.Log($"Start Speed {_tape.TapeSpeed}");
         AudioEvents.Instance.PlayStartRound();
         AudioEvents.Instance.PlayStartTape();
     }
@@ -82,8 +96,7 @@ public class LoopsManager : MonoBehaviour
 
     private void PrepareForNextRound()
     {
-        _tape.SetPreviousSpeed(_tape.TapeSpeed);
-        Debug.Log($"Current Speed {_tape.TapeSpeed}");
+        Debug.Log($"Exit Speed {_tape.TapeSpeed}");
         StopTape();
         ResetErrorsAndRightChoices();
         _tape.TryStartNextRound();
@@ -91,20 +104,8 @@ public class LoopsManager : MonoBehaviour
 
     private void ResetErrorsAndRightChoices()
     {
-        _currentMistakesCount = 0;
+        _roundMistakesCount = 0;
         _currentRightChoicesCount = 0;
-    }
-
-    public void RegistrerFrames(List<GameObject> frames)
-    {
-        foreach (var frame in frames)
-        {
-            var frameComponent = frame.GetComponent<Frame>();
-
-            frameComponent.OnErrorCensoring += AddErrorToCount;
-            frameComponent.OnRightChoice += AddRightChoiceToCount;
-            _frames.Add(frameComponent);
-        }
     }
 
     public void RegisterFrame(Frame frame)
@@ -133,34 +134,33 @@ public class LoopsManager : MonoBehaviour
     private void AddErrorToCount(Frame frame)
     {
         CameraShakeManager.Instance.CameraShakeOnError();
-        _currentMistakesCount++;
+        _totalMistakesCount++;
+        _roundMistakesCount++;
         CheckIfWonRound();
-    }
-
-    public void TapeRunnedCompletely()
-    {
-        Debug.Log($"The tape ended. Total mistakes: {_currentMistakesCount}");
-
-        if(_currentMistakesCount < totalMistakes)
+        if (_totalMistakesCount < totalMistakes)
         {
             // KEEP PLAYING BUT MORE DIFFICULT
-            Debug.Log($"Total errors: {_currentMistakesCount}. Player keeps playing but with increased speed.");
             AddSpeedToTape();
         }
     }
 
     public void CheckIfWonRound()
     {
+        Debug.Log($"Round Mistakes: {_roundMistakesCount}");
         if (_currentRightChoicesCount == _tape.CurrentTapeData.MinGoodChoices)
         {
             // GAME WIN
-            Debug.Log("Player has nailed it.");
+            if (_roundMistakesCount == 0 && _tape.TapeSpeed > _tape.CurrentTapeData.InitialSpeed) 
+            {
+                _tape.SetPreviousSpeed(_tape.TapeSpeed / tapeSpeedMultiplier);
+            }
+            else
+                _tape.SetPreviousSpeed(_tape.TapeSpeed);
             PrepareForNextRound();
         }
-        else if (_currentMistakesCount >= totalMistakes )
+        else if (_totalMistakesCount >= totalMistakes )
         {
             // GAME OVER
-            Debug.Log("GameOver!!!");
             StopTape();            
             CameraShakeManager.Instance.CameraShakeGameOver();
             OnExceedingMistakes?.Invoke();
@@ -172,7 +172,6 @@ public class LoopsManager : MonoBehaviour
     {
         var newSpeed = _tape.TapeSpeed * tapeSpeedMultiplier;
         _tape.SetSpeed(newSpeed);
-        Debug.Log($"New speed: {newSpeed}");
     }
 
     public int GetCurrentRound() => _currentRoundIndex;
@@ -185,7 +184,8 @@ public class LoopsManager : MonoBehaviour
     public void Reset()
     {
         _currentRoundIndex = 0;
-        _currentMistakesCount = 0;
+        _roundMistakesCount = 0;
+        _totalMistakesCount = 0;
         _currentRightChoicesCount = 0;
     }
 

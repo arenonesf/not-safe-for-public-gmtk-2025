@@ -31,8 +31,6 @@ public class CameraShakeManager : PersistentSingleton<CameraShakeManager>
         Vector3 impulse = shakeDirection * gameOverShakeForce;
 
         _impulseSource.GenerateImpulse(impulse);
-
-        Debug.Log($"[CameraShake] GAME OVER shake | Force: {gameOverShakeForce:F2} | Direction: {shakeDirection}");
     }
 
 
@@ -52,7 +50,5 @@ public class CameraShakeManager : PersistentSingleton<CameraShakeManager>
         Vector3 impulse = shakeDirection * baseForce;
 
         _impulseSource.GenerateImpulse(impulse);
-
-        Debug.Log($"[CameraShake] Error shake | Force: {baseForce:F2} | Direction: {shakeDirection} | Strong: {isStrongShake}");
     }
 }

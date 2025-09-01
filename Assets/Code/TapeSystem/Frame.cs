@@ -6,6 +6,7 @@ public class Frame : MonoBehaviour
 {
     private Tape _tape;
     private FrameData _frameData;
+    private LoopsManager _loopsManager;
     public FrameData FrameData => _frameData;
     private SpriteRenderer _spriteRenderer;
     [SerializeField] private SpriteRenderer _penCensoredSpriteRenderer;
@@ -20,6 +21,11 @@ public class Frame : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
+    }
+
+    private void Start()
+    {
+        _loopsManager = GameManager.Instance.GetLoopsManager();
     }
 
     private void FixedUpdate()
@@ -40,7 +46,7 @@ public class Frame : MonoBehaviour
 
     public void ReturnToStartPosition()
     {
-        int index = _tape.Frames.IndexOf(gameObject);
+        int index = _loopsManager.GetFrames().IndexOf(this);
 
         if (index == -1)
         {
@@ -55,9 +61,9 @@ public class Frame : MonoBehaviour
         }
         else
         {
-            lastElementPosition = _tape.Frames[index - 1].transform.position;
+            lastElementPosition = _loopsManager.GetFrames()[index - 1].transform.position;
         }
-
+        
         lastElementPosition.x -= _tape.GetTapeDataOffset();
         _rigidbody2D.position = lastElementPosition;
     }
@@ -66,7 +72,6 @@ public class Frame : MonoBehaviour
     public void AddCensorToList(CensorItemType type)
     {
         _censorsApplied.Add(type);
-        Debug.Log($"ADD CENSOR TO LIST {CheckFrame()}");
         if (!CheckFrame())
             OnRightChoice?.Invoke(this);
     }
