@@ -5,6 +5,7 @@ public class EndOfTapeTrigger : MonoBehaviour
 {
     private Camera _camera;
     [SerializeField] private Tape _tape;
+    [SerializeField] private LoopsManager _loopsManager;
     public Action<Frame> OnFrameWithError;
 
     private void Awake()
@@ -35,7 +36,7 @@ public class EndOfTapeTrigger : MonoBehaviour
 
         if (last && last == frameObject)
         {
-            LoopsManager.Instance?.TapeRunnedCompletely();
+            _loopsManager.TapeRunnedCompletely();
         }
         else
         {

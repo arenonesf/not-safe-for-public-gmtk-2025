@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoopsManager : RegulatorSingleton<LoopsManager>
+public class LoopsManager : MonoBehaviour
 {
     [SerializeField] private int totalMistakes = 5;
     [SerializeField] private float tapeSpeedMultiplier = 1.25f;
@@ -12,6 +12,9 @@ public class LoopsManager : RegulatorSingleton<LoopsManager>
     [SerializeField] private Scissors _scissors;
     [SerializeField] private Pen _pen;
     [SerializeField] private GameObject _gameoverCard;
+    private Collider2D _stampCollider;
+    private Collider2D _penCollider;
+    private Collider2D _scissorsCollider;
 
     private int _currentRoundIndex = 0;
     private int _currentMistakesCount;
@@ -21,49 +24,54 @@ public class LoopsManager : RegulatorSingleton<LoopsManager>
     private EndOfTapeTrigger _endOfTapeTrigger;
     
     public static Action OnExceedingMistakes;
-    
+
+    private void Awake()
+    {
+        _stampCollider = _stamp.GetComponent<Collider2D>();
+        _stampCollider.enabled = false;
+        _penCollider = _pen.GetComponent<Collider2D>();
+        _penCollider.enabled = false;
+        _scissorsCollider = _scissors.GetComponent<Collider2D>();
+        _scissorsCollider.enabled = false;
+        _endOfTapeTrigger = FindAnyObjectByType<EndOfTapeTrigger>();
+    }
+
+    private void OnEnable()
+    {
+        GameManager.OnBeginPlay += StartTape;
+        _endOfTapeTrigger.OnFrameWithError += AddErrorToCount;
+    }
+
     void Start()
     {
-        _stamp.GetComponent<Collider2D>().enabled = false;
-        _pen.GetComponent<Collider2D>().enabled = false;
-        _scissors.GetComponent<Collider2D>().enabled = false;
         _stamp.enabled = false;
         _pen.enabled = false;
         _scissors.enabled = false;
         _tape = GameManager.Instance.GetTape();
         _endOfTapeTrigger = FindFirstObjectByType<EndOfTapeTrigger>();
         _currentMistakesCount = 0;
-        GameManager.OnBeginPlay += StartTape;
-        _endOfTapeTrigger.OnFrameWithError += AddErrorToCount;
     }
 
     private void StartTape()
     {
-        _stamp.GetComponent<Collider2D>().enabled = true;
-        _pen.GetComponent<Collider2D>().enabled = true;
-        _scissors.GetComponent<Collider2D>().enabled = true;
         _stamp.enabled = true;
         _pen.enabled = true;
-        _scissors.enabled = true;      
+        _scissors.enabled = true;
+        _stampCollider.enabled = true;
+        _penCollider.enabled = true;
+        _scissorsCollider.enabled = true;
 
         Debug.Log($"TAPE START. Current round: {_currentRoundIndex + 1}");
         //MenuManager.Instance.SetCardOfRound();
-        if (_tape.PreviousSpeed == 0f)
-        {
-            _tape.SetSpeed(_tape.CurrentTapeData.InitialSpeed);
-        }
-        else
-        {
-            _tape.SetSpeed(_tape.PreviousSpeed);
-        }
+        _tape.SetSpeed(_tape.CurrentTapeData.InitialSpeed);
         AudioEvents.Instance.PlayStartRound();
         AudioEvents.Instance.PlayStartTape();
     }
     private void StopTape() 
     {
-        _stamp.GetComponent<Collider2D>().enabled = false;
-        _pen.GetComponent<Collider2D>().enabled = false;
-        _scissors.GetComponent<Collider2D>().enabled = false;
+        _stampCollider.enabled = false;
+        _penCollider.enabled = false;
+        _scissorsCollider.enabled = false;
         _stamp.enabled = false;
         _pen.enabled = false;
         _scissors.enabled = false;
@@ -87,7 +95,7 @@ public class LoopsManager : RegulatorSingleton<LoopsManager>
         _currentRightChoicesCount = 0;
     }
 
-    public void RegistrerFrame(List<GameObject> frames)
+    public void RegistrerFrames(List<GameObject> frames)
     {
         foreach (var frame in frames)
         {
@@ -99,7 +107,14 @@ public class LoopsManager : RegulatorSingleton<LoopsManager>
         }
     }
 
-    public void DeregisterFrames(List<GameObject> frames)
+    public void RegisterFrame(Frame frame)
+    {
+        frame.OnErrorCensoring += AddErrorToCount;
+        frame.OnRightChoice += AddRightChoiceToCount;
+        _frames.Add(frame);
+    }
+
+    public void DeregisterFrames()
     {
         foreach(var frame in _frames)
         {
