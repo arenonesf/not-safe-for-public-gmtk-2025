@@ -91,7 +91,7 @@ public class CensorItemSelector : MonoBehaviour
         }
     }
 
-    private void ResetCursorToDefault()
+    public void ResetCursorToDefault()
     {
         Cursor.SetCursor(null, Vector2.left, CursorMode.Auto);
         _censorItemSelected = null;
