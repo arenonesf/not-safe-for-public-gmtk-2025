@@ -14,7 +14,11 @@ public class AudioEvents : PersistentSingleton<AudioEvents>
     [SerializeField] private EventReference _stopTape;
     [SerializeField] private EventReference _switchOnLamp;
     [SerializeField] private EventReference _tapeLoop;
+    [SerializeField] private EventReference _beginRoundMusic;
+    [SerializeField] private EventReference _backgroundMusic;
+    [SerializeField] private EventReference _gameOverMusic;
     private EventInstance _tapeLoopInstance;
+    private EventInstance _musicInstance;
 
     public void PlayCensorItemSound(CensorItemType type) 
     {
@@ -99,9 +103,34 @@ public class AudioEvents : PersistentSingleton<AudioEvents>
         _tapeLoopInstance.release();
     }
 
+    public void PlayBeginRoundMusic() 
+    {
+        _musicInstance = RuntimeManager.CreateInstance(_beginRoundMusic);
+        _musicInstance.start();
+    }
+
+    public void PlayBackgroundMusic() 
+    {
+        _musicInstance = RuntimeManager.CreateInstance(_backgroundMusic);
+        _musicInstance.start();
+    }
+
+    public void PlayGameOverMusic() 
+    {
+        _musicInstance = RuntimeManager.CreateInstance(_gameOverMusic);
+        _musicInstance.start();
+    }
+
+    public void StopMusic() 
+    {
+        _musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        _musicInstance.release();
+    }
+
     public void StopAllAudioEvents() 
     {
         _tapeLoopInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         _tapeLoopInstance.release();
+        StopMusic();        
     }
 }

@@ -29,6 +29,8 @@ public class MenuManager : MonoBehaviour
         if (_cardOfConditions == null)
             GameObject.FindWithTag("WelcomeCard").SetActive(true);
         _buttonCardOfConditions.gameObject.SetActive(true);
+        AudioEvents.Instance.StopMusic();
+        AudioEvents.Instance.PlayBeginRoundMusic();
     }
 
     public void PassToNextCard()

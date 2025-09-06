@@ -53,7 +53,6 @@ public class GameManagerOld : PersistentSingleton<GameManagerOld>
     private void FindSceneReference(Scene scene, LoadSceneMode loadSceneMode)
     {
         _tape = FindFirstObjectByType<Tape>();
-        Debug.Log(_tape);
     }
 
     public Tape GetTape() 
@@ -64,7 +63,6 @@ public class GameManagerOld : PersistentSingleton<GameManagerOld>
     public void ChangeToTapeRunning(bool wantToRun) 
     {
         _changeToTapeRunning = wantToRun;
-        Debug.Log($"ChangeToTapeRunning: {_changeToTapeRunning}");
     }
 
     /*

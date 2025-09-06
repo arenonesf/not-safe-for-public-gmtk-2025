@@ -1018,6 +1018,66 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioEvents
       objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _gameOverMusic.Path
+      value: event:/Music/GameOverMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _backgroundMusic.Path
+      value: event:/Music/BackgroundMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _beginRoundMusic.Path
+      value: event:/Music/BeginningRoundMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _gameOverMusic.Guid.Data1
+      value: -2119062018
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _gameOverMusic.Guid.Data2
+      value: 1259900484
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _gameOverMusic.Guid.Data3
+      value: 219333017
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _gameOverMusic.Guid.Data4
+      value: 1439566227
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _backgroundMusic.Guid.Data1
+      value: 1664608581
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _backgroundMusic.Guid.Data2
+      value: 1111187992
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _backgroundMusic.Guid.Data3
+      value: -1071416944
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _backgroundMusic.Guid.Data4
+      value: -735998664
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _beginRoundMusic.Guid.Data1
+      value: 561760406
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _beginRoundMusic.Guid.Data2
+      value: 1243309041
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _beginRoundMusic.Guid.Data3
+      value: -1049977676
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _beginRoundMusic.Guid.Data4
+      value: 1827628085
+      objectReference: {fileID: 0}
     - target: {fileID: 5628924972664362320, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.35056245
@@ -1574,6 +1634,7 @@ GameObject:
   - component: {fileID: 621405912}
   - component: {fileID: 621405911}
   - component: {fileID: 621405914}
+  - component: {fileID: 621405915}
   m_Layer: 5
   m_Name: StartTapeButton (1)
   m_TagString: Untagged
@@ -1696,6 +1757,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuManager: {fileID: 1929306368}
+--- !u!114 &621405915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621405909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -698383890
+      Data2: 1337839975
+      Data3: -1256601926
+      Data4: 2024568657
+    Path: event:/SFX/MenuButtonPressed
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &636249216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1708,6 +1800,7 @@ GameObject:
   - component: {fileID: 636249220}
   - component: {fileID: 636249219}
   - component: {fileID: 636249218}
+  - component: {fileID: 636249221}
   m_Layer: 5
   m_Name: StartTapeButton
   m_TagString: Untagged
@@ -1829,63 +1922,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636249216}
   m_CullTransparentMesh: 1
---- !u!1001 &656810786
-PrefabInstance:
+--- !u!114 &636249221
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1234283745782890177, guid: dee4920d66afe7d49b4eb1255526e519, type: 3}
-      propertyPath: m_Name
-      value: Music
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037174892307428611, guid: dee4920d66afe7d49b4eb1255526e519, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037174892307428611, guid: dee4920d66afe7d49b4eb1255526e519, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037174892307428611, guid: dee4920d66afe7d49b4eb1255526e519, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037174892307428611, guid: dee4920d66afe7d49b4eb1255526e519, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037174892307428611, guid: dee4920d66afe7d49b4eb1255526e519, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037174892307428611, guid: dee4920d66afe7d49b4eb1255526e519, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037174892307428611, guid: dee4920d66afe7d49b4eb1255526e519, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037174892307428611, guid: dee4920d66afe7d49b4eb1255526e519, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037174892307428611, guid: dee4920d66afe7d49b4eb1255526e519, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037174892307428611, guid: dee4920d66afe7d49b4eb1255526e519, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dee4920d66afe7d49b4eb1255526e519, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636249216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -698383890
+      Data2: 1337839975
+      Data3: -1256601926
+      Data4: 2024568657
+    Path: event:/SFX/MenuButtonPressed
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &674279858
 GameObject:
   m_ObjectHideFlags: 0
@@ -3546,6 +3613,7 @@ GameObject:
   - component: {fileID: 1252444222}
   - component: {fileID: 1252444221}
   - component: {fileID: 1252444224}
+  - component: {fileID: 1252444225}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -3679,6 +3747,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a825ab3ad5fda03448746c13ce657ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1252444225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252444219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -698383890
+      Data2: 1337839975
+      Data3: -1256601926
+      Data4: 2024568657
+    Path: event:/SFX/MenuButtonPressed
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1325044454
 GameObject:
   m_ObjectHideFlags: 0
@@ -6023,7 +6122,6 @@ SceneRoots:
   - {fileID: 1816533426}
   - {fileID: 968950150}
   - {fileID: 674279859}
-  - {fileID: 656810786}
   - {fileID: 513038570}
   - {fileID: 1062171900}
   - {fileID: 1582243783}

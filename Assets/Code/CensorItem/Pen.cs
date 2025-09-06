@@ -8,6 +8,5 @@ public class Pen : CensorItemBase
     protected override void ApplyEffect(Frame frame)
     {
         frame.ActivateCensoredPenImage();
-        Debug.Log("Pen Applied");
     }
 }

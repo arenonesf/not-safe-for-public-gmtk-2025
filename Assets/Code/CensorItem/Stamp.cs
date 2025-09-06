@@ -14,6 +14,5 @@ public class Stamp : CensorItemBase
         GameObject stamp = Instantiate(_stampedSprite, gameObject.transform.position, Quaternion.identity);
         stamp.transform.SetParent(gameObject.transform);
         frame.AddCensorToList(_type);
-        Debug.Log("Stamp Applied");
     }
 }

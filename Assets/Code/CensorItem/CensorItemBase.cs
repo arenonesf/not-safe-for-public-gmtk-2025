@@ -27,7 +27,6 @@ public abstract class CensorItemBase : MonoBehaviour, ICensorItem, IPointerEnter
         {
             ApplyEffect(frame);
             frame.AddCensorToList(Type);
-            Debug.Log($"{Type} Applied");
             AudioEvents.Instance.PlayCensorItemSound(Type);
         }
         else

@@ -74,12 +74,12 @@ public class LoopsManager : MonoBehaviour
         _penCollider.enabled = true;
         _scissorsCollider.enabled = true;
 
-        Debug.Log($"TAPE START. Current round: {_currentRoundIndex + 1}");
         if (_tape.PreviousSpeed != 0)
             _tape.SetSpeed( _tape.PreviousSpeed);
         else
             _tape.SetSpeed(_tape.CurrentTapeData.InitialSpeed);
-        Debug.Log($"Start Speed {_tape.TapeSpeed}");
+        AudioEvents.Instance.StopMusic();
+        AudioEvents.Instance.PlayBackgroundMusic();
         AudioEvents.Instance.PlayStartRound();
         AudioEvents.Instance.PlayStartTape();
     }
@@ -113,7 +113,8 @@ public class LoopsManager : MonoBehaviour
 
     private void PrepareForNextRound()
     {
-        Debug.Log($"Exit Speed {_tape.TapeSpeed}");
+        AudioEvents.Instance.StopMusic();
+        AudioEvents.Instance.PlayBeginRoundMusic();
         StopTape(true);
         ResetErrorsAndRightChoices();
         _tape.TryStartNextRound();
@@ -143,7 +144,6 @@ public class LoopsManager : MonoBehaviour
 
     private void AddRightChoiceToCount(Frame frame)
     {
-        Debug.Log("ADDING RIGHT CHOICE");
         _currentRightChoicesCount++;
         CheckIfWonRound();
     }
@@ -163,7 +163,6 @@ public class LoopsManager : MonoBehaviour
 
     public void CheckIfWonRound()
     {
-        Debug.Log($"Round Mistakes: {_roundMistakesCount}");
         if (_currentRightChoicesCount == _tape.CurrentTapeData.MinGoodChoices)
         {
             // GAME WIN
@@ -182,6 +181,8 @@ public class LoopsManager : MonoBehaviour
             CameraShakeManager.Instance.CameraShakeGameOver();
             OnExceedingMistakes?.Invoke();
             _gameoverCard.SetActive(true);
+            AudioEvents.Instance.StopMusic();
+            AudioEvents.Instance.PlayGameOverMusic();
             _censorItemSelector.ResetCursorToDefault();
         }
     }
