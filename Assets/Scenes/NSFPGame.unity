@@ -1019,8 +1019,20 @@ PrefabInstance:
       value: AudioEvents
       objectReference: {fileID: 0}
     - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _correctEvent.Path
+      value: event:/SFX/Correct
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
       propertyPath: _gameOverMusic.Path
       value: event:/Music/GameOverMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _stopTapeEvent.Path
+      value: event:/SFX/StopTape
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _tapeLoopEvent.Path
+      value: event:/SFX/TapeLoop
       objectReference: {fileID: 0}
     - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
       propertyPath: _backgroundMusic.Path
@@ -1029,6 +1041,30 @@ PrefabInstance:
     - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
       propertyPath: _beginRoundMusic.Path
       value: event:/Music/BeginningRoundMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _switchOnLampEvent.Path
+      value: event:/SFX/SwitchOnLamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _correctEvent.Guid.Data1
+      value: 267483216
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _correctEvent.Guid.Data2
+      value: 1290336432
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _correctEvent.Guid.Data3
+      value: 1526039205
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _correctEvent.Guid.Data4
+      value: -1211685429
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _gameOverMusicEvent.Path
+      value: event:/Music/GameOverMusic
       objectReference: {fileID: 0}
     - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
       propertyPath: _gameOverMusic.Guid.Data1
@@ -1045,6 +1081,46 @@ PrefabInstance:
     - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
       propertyPath: _gameOverMusic.Guid.Data4
       value: 1439566227
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _stopTapeEvent.Guid.Data1
+      value: 1755336305
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _stopTapeEvent.Guid.Data2
+      value: 1167617292
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _stopTapeEvent.Guid.Data3
+      value: -532154444
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _stopTapeEvent.Guid.Data4
+      value: -698273240
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _tapeLoopEvent.Guid.Data1
+      value: 1334754683
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _tapeLoopEvent.Guid.Data2
+      value: 1275214543
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _tapeLoopEvent.Guid.Data3
+      value: 313376184
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _tapeLoopEvent.Guid.Data4
+      value: -1719990755
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _backgroundMusicEvent.Path
+      value: event:/Music/BackgroundMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _beginRoundMusicEvent.Path
+      value: event:/Music/BeginningRoundMusic
       objectReference: {fileID: 0}
     - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
       propertyPath: _backgroundMusic.Guid.Data1
@@ -1076,6 +1152,70 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
       propertyPath: _beginRoundMusic.Guid.Data4
+      value: 1827628085
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _switchOnLampEvent.Guid.Data1
+      value: 1414511273
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _switchOnLampEvent.Guid.Data2
+      value: 1153428163
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _switchOnLampEvent.Guid.Data3
+      value: 1236985512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _switchOnLampEvent.Guid.Data4
+      value: -1351003490
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _gameOverMusicEvent.Guid.Data1
+      value: -2119062018
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _gameOverMusicEvent.Guid.Data2
+      value: 1259900484
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _gameOverMusicEvent.Guid.Data3
+      value: 219333017
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _gameOverMusicEvent.Guid.Data4
+      value: 1439566227
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _backgroundMusicEvent.Guid.Data1
+      value: 1664608581
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _backgroundMusicEvent.Guid.Data2
+      value: 1111187992
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _backgroundMusicEvent.Guid.Data3
+      value: -1071416944
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _backgroundMusicEvent.Guid.Data4
+      value: -735998664
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _beginRoundMusicEvent.Guid.Data1
+      value: 561760406
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _beginRoundMusicEvent.Guid.Data2
+      value: 1243309041
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _beginRoundMusicEvent.Guid.Data3
+      value: -1049977676
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460883959398245590, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}
+      propertyPath: _beginRoundMusicEvent.Guid.Data4
       value: 1827628085
       objectReference: {fileID: 0}
     - target: {fileID: 5628924972664362320, guid: 07495571b49ba924f9cd467f0b336e03, type: 3}

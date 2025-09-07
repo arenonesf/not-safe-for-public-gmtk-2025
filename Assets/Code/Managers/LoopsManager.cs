@@ -145,6 +145,7 @@ public class LoopsManager : MonoBehaviour
     private void AddRightChoiceToCount(Frame frame)
     {
         _currentRightChoicesCount++;
+        AudioEvents.Instance.PlayCorrect();
         CheckIfWonRound();
     }
         
