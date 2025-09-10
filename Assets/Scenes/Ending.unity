@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 863062025}
   - component: {fileID: 863062027}
   - component: {fileID: 863062026}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,8 +232,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9, y: -43}
-  m_SizeDelta: {x: 333.1334, y: 281.048}
+  m_AnchoredPosition: {x: -35.0685, y: -43}
+  m_SizeDelta: {x: 315.7544, y: 281.048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &863062026
 MonoBehaviour:
@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 1201179712}
   - component: {fileID: 1201179714}
   - component: {fileID: 1201179713}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 1630753959}
   - component: {fileID: 1630753958}
   - component: {fileID: 1630753957}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fondo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1876613548}
   - component: {fileID: 1876613547}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: button1_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,7 +559,7 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
@@ -582,7 +582,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 772994859
   m_SortingLayer: 1
-  m_SortingOrder: 30
+  m_SortingOrder: 5
   m_Sprite: {fileID: 1086331387851373080, guid: d5a7b56aa5c317a4cb5596e638e37ff4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -603,8 +603,8 @@ Transform:
   m_GameObject: {fileID: 1876613546}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 567.76, y: 99.008, z: 0}
-  m_LocalScale: {x: 58.99715, y: 62.68203, z: 1}
+  m_LocalPosition: {x: 824.8, y: 16.3, z: 0}
+  m_LocalScale: {x: 60, y: 60, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
