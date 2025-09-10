@@ -14,8 +14,6 @@ public class State_Running : MonoBehaviour, IState
 
     public void OnEnter()
     {
-        //Debug.Log($"prevSpeed: {Loops.Instance._prevSpeed}");
-        //_tape.SetSpeed(Loops.Instance._prevSpeed);
         _pen = FindFirstObjectByType<Pen>();
         _scissor = FindFirstObjectByType<Scissors>();
         _stamp = FindFirstObjectByType<Stamp>();

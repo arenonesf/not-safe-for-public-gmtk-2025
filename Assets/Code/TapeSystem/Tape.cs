@@ -65,10 +65,6 @@ public class Tape : MonoBehaviour
             _loopsManager.ClearFrames();
             InitFrames();
         }
-        else
-        {
-            Debug.Log("All tape rounds completed.");
-        }
     }
 
     public void SetPreviousSpeed(float speed) => _previousSpeed = speed;

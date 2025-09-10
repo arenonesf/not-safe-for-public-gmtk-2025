@@ -11,10 +11,15 @@ public class AudioEvents : PersistentSingleton<AudioEvents>
     [SerializeField] private EventReference _errorEvent;
     [SerializeField] private EventReference _openCloseNotebookEvent;
     [SerializeField] private EventReference _startRoundEvent;
-    [SerializeField] private EventReference _stopTape;
-    [SerializeField] private EventReference _switchOnLamp;
-    [SerializeField] private EventReference _tapeLoop;
+    [SerializeField] private EventReference _stopTapeEvent;
+    [SerializeField] private EventReference _switchOnLampEvent;
+    [SerializeField] private EventReference _tapeLoopEvent;
+    [SerializeField] private EventReference _correctEvent;
+    [SerializeField] private EventReference _beginRoundMusicEvent;
+    [SerializeField] private EventReference _backgroundMusicEvent;
+    [SerializeField] private EventReference _gameOverMusicEvent;
     private EventInstance _tapeLoopInstance;
+    private EventInstance _musicInstance;
 
     public void PlayCensorItemSound(CensorItemType type) 
     {
@@ -63,6 +68,13 @@ public class AudioEvents : PersistentSingleton<AudioEvents>
         errorInstance.release();
     }
 
+    public void PlayCorrect()
+    {
+        FMOD.Studio.EventInstance correctInstance = RuntimeManager.CreateInstance(_correctEvent);
+        correctInstance.start();
+        correctInstance.release();
+    }
+
     public void PlayOpenCloseNotebook()
     {
         FMOD.Studio.EventInstance openCloseNotebookInstance = RuntimeManager.CreateInstance(_openCloseNotebookEvent);
@@ -79,29 +91,54 @@ public class AudioEvents : PersistentSingleton<AudioEvents>
 
     public void PlaySwitchOnLamp()
     {
-        FMOD.Studio.EventInstance switchOnLampInstance = RuntimeManager.CreateInstance(_switchOnLamp);
+        FMOD.Studio.EventInstance switchOnLampInstance = RuntimeManager.CreateInstance(_switchOnLampEvent);
         switchOnLampInstance.start();
         switchOnLampInstance.release();
     }
 
     public void PlayStartTape()
     {
-        _tapeLoopInstance = RuntimeManager.CreateInstance(_tapeLoop);
+        _tapeLoopInstance = RuntimeManager.CreateInstance(_tapeLoopEvent);
         _tapeLoopInstance.start();
     }
 
     public void PlayStopTape()
     {
-        FMOD.Studio.EventInstance stopTapeInstance = RuntimeManager.CreateInstance(_stopTape);
+        FMOD.Studio.EventInstance stopTapeInstance = RuntimeManager.CreateInstance(_stopTapeEvent);
         stopTapeInstance.start();
         stopTapeInstance.release();
         _tapeLoopInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         _tapeLoopInstance.release();
     }
 
+    public void PlayBeginRoundMusic() 
+    {
+        _musicInstance = RuntimeManager.CreateInstance(_beginRoundMusicEvent);
+        _musicInstance.start();
+    }
+
+    public void PlayBackgroundMusic() 
+    {
+        _musicInstance = RuntimeManager.CreateInstance(_backgroundMusicEvent);
+        _musicInstance.start();
+    }
+
+    public void PlayGameOverMusic() 
+    {
+        _musicInstance = RuntimeManager.CreateInstance(_gameOverMusicEvent);
+        _musicInstance.start();
+    }
+
+    public void StopMusic() 
+    {
+        _musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        _musicInstance.release();
+    }
+
     public void StopAllAudioEvents() 
     {
         _tapeLoopInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         _tapeLoopInstance.release();
+        StopMusic();        
     }
 }

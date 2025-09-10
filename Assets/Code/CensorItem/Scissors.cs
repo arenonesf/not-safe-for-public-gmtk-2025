@@ -11,6 +11,5 @@ public class Scissors : CensorItemBase
         SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         Color originalColor = spriteRenderer.color;
         spriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0.2f);
-        Debug.Log("Scissors Applied");
     }
 }
