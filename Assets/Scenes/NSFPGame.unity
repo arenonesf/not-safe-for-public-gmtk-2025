@@ -1616,8 +1616,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a62252dd83304a54992d74120ea7beda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalMistakes: 5
-  tapeSpeedMultiplier: 1.25
+  totalMistakes: 7
+  tapeSpeedMultiplier: 1.1
   _stamp: {fileID: 1610599902}
   _scissors: {fileID: 1629511371}
   _pen: {fileID: 754718070}
@@ -3087,11 +3087,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tapeRounds:
+  - {fileID: 11400000, guid: 93e7ca153dd98ec46b405fd1ccda35fe, type: 2}
   - {fileID: 11400000, guid: 5e84850639eaf1e4781c91f1f8fe01d5, type: 2}
   - {fileID: 11400000, guid: bc10d652cbe9da0499a5da97fdcf0181, type: 2}
   - {fileID: 11400000, guid: cf83bde248e8f2d44b198f0cfe92dd7b, type: 2}
   - {fileID: 11400000, guid: 158bb7ec0cf6fb241b09810095125bf4, type: 2}
-  - {fileID: 11400000, guid: 93e7ca153dd98ec46b405fd1ccda35fe, type: 2}
   _framePrefab: {fileID: 9019433239480846398, guid: 29efc0e52189aef4186f1e7bf1051c8b, type: 3}
   _startPosition: {fileID: 121891347}
   _loopsManager: {fileID: 582703296}
@@ -4526,7 +4526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tape: {fileID: 968950151}
-  _loopsManager: {fileID: 0}
+  _loopsManager: {fileID: 582703296}
 --- !u!61 &1402551757
 BoxCollider2D:
   m_ObjectHideFlags: 0

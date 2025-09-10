@@ -13,27 +13,27 @@ MonoBehaviour:
   m_Name: Ronda3
   m_EditorClassIdentifier: 
   Frames:
-  - {fileID: 11400000, guid: 8b14cb553ccab3a4683bec6224ad60a6, type: 2}
+  - {fileID: 11400000, guid: 89ef1661a43b93c4ea4f5f044e36be8d, type: 2}
   - {fileID: 11400000, guid: 362faf5674952cf439cc7c67fb02ff41, type: 2}
   - {fileID: 11400000, guid: 47168c373fcde9e4b8586e93be2c70a2, type: 2}
   - {fileID: 11400000, guid: bc13061f1d21ef1408f0712e17009124, type: 2}
   - {fileID: 11400000, guid: e5b11425e5831854a8b8aff849e3da41, type: 2}
   - {fileID: 11400000, guid: cc288f7a1050a984fb93c153d4e4b2dc, type: 2}
   - {fileID: 11400000, guid: e5301ef3ce038fa45a54b365891d77fb, type: 2}
-  - {fileID: 11400000, guid: 30cd688236cafcf41916170e9c626313, type: 2}
+  - {fileID: 11400000, guid: bc13061f1d21ef1408f0712e17009124, type: 2}
   - {fileID: 11400000, guid: 89ef1661a43b93c4ea4f5f044e36be8d, type: 2}
   - {fileID: 11400000, guid: 1da916d7386d9904083dc16cb619a711, type: 2}
   - {fileID: 11400000, guid: b52a76a1b16f84743925d1e375cae7a7, type: 2}
-  - {fileID: 11400000, guid: 5866c95c75a2a5241964fef15fa9c54f, type: 2}
-  - {fileID: 11400000, guid: 8b14cb553ccab3a4683bec6224ad60a6, type: 2}
+  - {fileID: 11400000, guid: 050366c5da528f54794decdaa38dce92, type: 2}
+  - {fileID: 11400000, guid: 89ef1661a43b93c4ea4f5f044e36be8d, type: 2}
   - {fileID: 11400000, guid: cb9ccc465e9315e46bec4884edbac827, type: 2}
   - {fileID: 11400000, guid: d869715cb9625444c86fde877113107d, type: 2}
   - {fileID: 11400000, guid: cc288f7a1050a984fb93c153d4e4b2dc, type: 2}
   - {fileID: 11400000, guid: b52a76a1b16f84743925d1e375cae7a7, type: 2}
-  - {fileID: 11400000, guid: db73e3f0e6fd6f646ad1a71e5981ea24, type: 2}
+  - {fileID: 11400000, guid: 4b9006f142ff7ff42b1158aa197cc27b, type: 2}
   - {fileID: 11400000, guid: e5b11425e5831854a8b8aff849e3da41, type: 2}
   - {fileID: 11400000, guid: 90d3caa9b15a7434b96cadeac3249e66, type: 2}
-  MinGoodChoices: 10
+  MinGoodChoices: 9
   InitialSpeed: 3
   SpawnOffset: 5
   SpawnRate: 0.1
