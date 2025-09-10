@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 6358c4550c8a2dc4ca546479471a8572
+labels:
+- FMOD
 DefaultImporter:
   externalObjects: {}
   userData: 
