@@ -1,6 +1,7 @@
 using Code.Core.Timer;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Tape : MonoBehaviour
 {
@@ -65,6 +66,10 @@ public class Tape : MonoBehaviour
             _loopsManager.ClearFrames();
             InitFrames();
         }
+        else 
+        {
+            GoToWinScene();
+        }
     }
 
     public void SetPreviousSpeed(float speed) => _previousSpeed = speed;
@@ -80,6 +85,12 @@ public class Tape : MonoBehaviour
         }
         
         return null;
+    }
+
+    private void GoToWinScene() 
+    {
+        AudioEvents.Instance.StopAllAudioEvents();
+        SceneManager.LoadScene("Ending");
     }
 
     public void SetSpeed(float value) => _speed = value;
