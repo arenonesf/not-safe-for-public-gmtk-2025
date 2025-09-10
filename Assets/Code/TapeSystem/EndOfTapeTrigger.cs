@@ -16,6 +16,8 @@ public class EndOfTapeTrigger : MonoBehaviour
     private void Start()
     {
         CalculateRightCamera();
+        _loopsManager = GameManager.Instance.GetLoopsManager();
+        _tape = GameManager.Instance.GetTape();
     }
 
     private void CalculateRightCamera()
@@ -38,5 +40,8 @@ public class EndOfTapeTrigger : MonoBehaviour
         if (hasFrameError) OnFrameWithError?.Invoke(frameObject);
 
         if (frameObject) frameObject.ReturnToStartPosition();
+
+        if (frameObject == last && _tape.CurrentTapeData.Invulnerable)
+            _loopsManager.InvulnerableWin();
     }
 }

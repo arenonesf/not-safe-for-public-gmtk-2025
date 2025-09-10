@@ -151,15 +151,18 @@ public class LoopsManager : MonoBehaviour
         
     private void AddErrorToCount(Frame frame)
     {
-        CameraShakeManager.Instance.CameraShakeOnError();
-        _totalMistakesCount++;
-        _roundMistakesCount++;
-        CheckIfWonRound();
-        if (_totalMistakesCount < totalMistakes)
+        if (!_tape.CurrentTapeData.Invulnerable) 
         {
-            // KEEP PLAYING BUT MORE DIFFICULT
-            AddSpeedToTape();
-        }
+            CameraShakeManager.Instance.CameraShakeOnError();
+            _totalMistakesCount++;
+            _roundMistakesCount++;
+            CheckIfWonRound();
+            if (_totalMistakesCount < totalMistakes)
+            {
+                // KEEP PLAYING BUT MORE DIFFICULT
+                AddSpeedToTape();
+            }
+        }       
     }
 
     public void CheckIfWonRound()
@@ -186,6 +189,18 @@ public class LoopsManager : MonoBehaviour
             AudioEvents.Instance.PlayGameOverMusic();
             _censorItemSelector.ResetCursorToDefault();
         }
+    }
+
+    public void InvulnerableWin() 
+    {
+        // GAME WIN
+        if (_roundMistakesCount == 0 && _tape.TapeSpeed > _tape.CurrentTapeData.InitialSpeed)
+        {
+            _tape.SetPreviousSpeed(_tape.TapeSpeed / tapeSpeedMultiplier);
+        }
+        else
+            _tape.SetPreviousSpeed(_tape.TapeSpeed);
+        PrepareForNextRound();
     }
 
     private void AddSpeedToTape()

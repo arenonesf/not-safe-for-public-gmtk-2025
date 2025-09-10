@@ -33,6 +33,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8bc2b47c94c09b942b4582f6c5471319, type: 2}
   - {fileID: 11400000, guid: 910abb60d060941468ff2091c247e01e, type: 2}
   - {fileID: 11400000, guid: 7571b5d9d44a8b14ea0083d279453c73, type: 2}
+  Invulnerable: 1
   MinGoodChoices: 20
   InitialSpeed: 3
   SpawnOffset: 5
