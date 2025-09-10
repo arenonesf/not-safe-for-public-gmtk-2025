@@ -3087,11 +3087,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tapeRounds:
-  - {fileID: 11400000, guid: 93e7ca153dd98ec46b405fd1ccda35fe, type: 2}
   - {fileID: 11400000, guid: 5e84850639eaf1e4781c91f1f8fe01d5, type: 2}
   - {fileID: 11400000, guid: bc10d652cbe9da0499a5da97fdcf0181, type: 2}
   - {fileID: 11400000, guid: cf83bde248e8f2d44b198f0cfe92dd7b, type: 2}
-  - {fileID: 11400000, guid: 158bb7ec0cf6fb241b09810095125bf4, type: 2}
+  - {fileID: 11400000, guid: 93e7ca153dd98ec46b405fd1ccda35fe, type: 2}
   _framePrefab: {fileID: 9019433239480846398, guid: 29efc0e52189aef4186f1e7bf1051c8b, type: 3}
   _startPosition: {fileID: 121891347}
   _loopsManager: {fileID: 582703296}
@@ -6342,7 +6341,6 @@ MonoBehaviour:
   - {fileID: 1062171901}
   - {fileID: 1582243784}
   - {fileID: 250142982}
-  - {fileID: 2421312716033238390}
   - {fileID: 6609871263356068813}
   _buttonCardOfRounds: {fileID: 621405911}
 --- !u!1 &1945624583
@@ -6893,11 +6891,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c3d7618f881c8c4bb78a42634684a3b, type: 3}
---- !u!1 &2421312716033238390 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1677962441784080206, guid: 3c3d7618f881c8c4bb78a42634684a3b, type: 3}
-  m_PrefabInstance: {fileID: 2421312716033238389}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6609871263356068812
 PrefabInstance:
   m_ObjectHideFlags: 0

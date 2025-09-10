@@ -7,6 +7,6 @@ public class ToMainMenu : MonoBehaviour
     public void GoToMainMenu()
     {
         AudioEvents.Instance.StopAllAudioEvents();
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Main Menu");
     }
 }
