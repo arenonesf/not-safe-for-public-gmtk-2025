@@ -30,7 +30,11 @@ public abstract class CensorItemBase : MonoBehaviour, ICensorItem, IPointerEnter
             AudioEvents.Instance.PlayCensorItemSound(Type);
         }
         else
-            AudioEvents.Instance.PlayError();
+        {
+            if (!GameManager.Instance.GetTape().CurrentTapeData.Invulnerable)
+                AudioEvents.Instance.PlayError();
+        }
+            
     }
 
     // Default behavior - override in subclasses if needed
